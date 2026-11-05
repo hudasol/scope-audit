@@ -1,0 +1,17 @@
+{
+  "label": "PUBLISHED by the cited source, read at snippet level on 2026-11-06, not independently verified",
+  "figures": [
+    {"id": "ewwf_cameras_2024", "value": 50, "unit": "camera traps deployed in 2024",
+     "source": "Emirates Nature-WWF and Mashreq, Notice Nature report 2024",
+     "url": "https://mashreq.com/-/jssmedia/pdfs/aboutus/systainability-reports/mashreq-notice-nature-report-2024-en.ashx"},
+    {"id": "ewwf_images_2024", "value": 52495, "unit": "images recorded by those cameras in 2024",
+     "source": "Emirates Nature-WWF and Mashreq, Notice Nature report 2024",
+     "url": "https://mashreq.com/-/jssmedia/pdfs/aboutus/systainability-reports/mashreq-notice-nature-report-2024-en.ashx"},
+    {"id": "ewwf_classified_2024", "value": 8158, "unit": "images classified by volunteers in 2024",
+     "source": "Emirates Nature-WWF and Mashreq, Notice Nature report 2024",
+     "url": "https://mashreq.com/-/jssmedia/pdfs/aboutus/systainability-reports/mashreq-notice-nature-report-2024-en.ashx"},
+    {"id": "ead_programme_start", "value": 2011, "unit": "year the Environment Agency Abu Dhabi camera trap monitoring programme began",
+     "source": "Gulf News report on EAD camera traps (paywalled, snippet only)",
+     "url": "https://gulfnews.com/amp/uae/environment/watch-rare-animal-species-spotted-in-abu-dhabi-emirate-1.84606939"}
+  ]
+}
