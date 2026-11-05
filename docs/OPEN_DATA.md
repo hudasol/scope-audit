@@ -6,7 +6,7 @@ A short search on 6 November 2026 asked whether UAE government open data exists 
 
 | Source | What it offers | Status |
 | --- | --- | --- |
-| Bayanat.ae, the national open data portal | Federal and emirate datasets in machine readable formats, with environment among the sectors. A short search found no public camera trap image dataset on it. | VERIFIED for the portal, UNVERIFIED for the absence of a wildlife dataset |
+| Bayanat.ae, the national open data portal | Federal and emirate datasets in machine readable formats, with environment among the sectors. A short search found no public camera trap image dataset on it. | VERIFIED for the portal, UNVERIFIED on whether any wildlife dataset exists there |
 | Abu Dhabi Spatial Data Infrastructure open data service | A protected areas layer managed by the Environment Agency Abu Dhabi, with area type, status and purpose, usable to place a deployment inside a protected area. | VERIFIED |
 | GBIF and Camtrap DP | Camera trap datasets published as Camtrap DP and registered with GBIF are discoverable through the GBIF interface. Mammal occurrence records for the UAE are available for the candidate species list. | VERIFIED |
 | Abu Dhabi Global Environmental Data Initiative | A GBIF hosted repository for biodiversity data from environmental impact assessments in West Asia. | VERIFIED |
