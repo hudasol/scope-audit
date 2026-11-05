@@ -2,7 +2,7 @@
 
 # Status 🌸
 
-Repository: https://github.com/hudasol/scope-audit. Push status: not yet pushed.
+Repository: https://github.com/hudasol/scope-audit. Push status: pushed to main, public.
 
 ## Data rung used
 
