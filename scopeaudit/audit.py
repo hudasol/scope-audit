@@ -15,7 +15,8 @@ from .mc import RISK_OFFSET, SCHEMES
 from .sampling import allocate, draw_ids, rng_for, simple_random_ids
 from .strata import confidence_bins, condition_strata
 
-DEFAULT_INTERVAL = "bayes_jeffreys"
+DEFAULT_INTERVAL = "wald_smoothed"  # post hoc choice, see DECISIONS.md entry 10
+SRS_INTERVAL = "wilson_fpc"
 METHOD_NAMES = {"M0": "Simple random sample", "M1": "Condition strata (proportional)",
                 "M2": "Detector confidence strata, risk weighted", "M3": "Confidence by day or night, risk weighted"}
 
@@ -115,3 +116,9 @@ def estimate(pool: pd.DataFrame, scheme: str, reviews: pd.DataFrame, seed: int =
                                     x_use[None, :], (tab["u"].to_numpy()[n_res > 0] if (n_res == 0).any() else tab["u"].to_numpy())[None, :].astype(np.int64))
         out["sensitivity"] = {k: float(v[0]) for k, v in sb.items()}
     return out
+
+
+def headline_interval(est: dict) -> tuple[str, list]:
+    """Name and limits of the interval shown first: smoothed Wald for stratified designs, Wilson for simple random."""
+    name = SRS_INTERVAL if est["scheme"] == "M0" else DEFAULT_INTERVAL
+    return name, est["interval"][name]

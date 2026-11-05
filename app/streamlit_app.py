@@ -118,8 +118,8 @@ elif screen.startswith("2"):
     m = st.columns(4)
     m[0].metric("AI negative events", f"{len(pool):,}")
     m[1].metric("Estimated false omission rate", f"{100 * e['estimate']:.2f}%")
-    lo, hi = e["interval"]["bayes_jeffreys" if "bayes_jeffreys" in e["interval"] else list(e["interval"])[0]]
-    m[2].metric("95% interval", f"{100 * lo:.2f}% to {100 * hi:.2f}%")
+    iname, (lo, hi) = au.headline_interval(e)
+    m[2].metric(f"95% interval ({iname})", f"{100 * lo:.2f}% to {100 * hi:.2f}%")
     m[3].metric("Hidden events found per 100 reviews", f"{e['yield_per_100_reviews']:.1f}")
     st.write(f"Reviewed {e['reviewed']} events, found {e['hidden_found']} with an animal, {e['unresolved']} unresolved. "
              f"Benchmark value for this pool, known only because the data are labelled: {100 * truth:.2f}%.")
