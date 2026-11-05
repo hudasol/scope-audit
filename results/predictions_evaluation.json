@@ -1,0 +1,180 @@
+{
+  "stress_threshold": 0.6,
+  "predictions": {
+    "P1": {
+      "claim": "Event level FOR below 3 percent at T of 0.2 (full benchmark, experiment A).",
+      "observed": {
+        "event_for": 0.014120602591446709
+      },
+      "held": true
+    },
+    "P2": {
+      "claim": "In the stress regime, M2 yield per 100 reviews is at least 1.5 times M0 at budgets 100 to 400.",
+      "observed": {
+        "100": {
+          "ratio": 3.196039603960396,
+          "lo": 3.063290285714785,
+          "hi": 3.3326524263790955
+        },
+        "200": {
+          "ratio": 3.2596456692913387,
+          "lo": 3.163131519858628,
+          "hi": 3.3622134596475273
+        },
+        "400": {
+          "ratio": 3.375530839231547,
+          "lo": 3.3071451540490657,
+          "hi": 3.444247638034151
+        }
+      },
+      "held": true
+    },
+    "P3": {
+      "claim": "M1 yield is below 1.3 times M0 (budgets 100 to 400) and the ratio interval includes 1.0 for at least one budget.",
+      "observed": {
+        "100": {
+          "ratio": 1.7231683168316831,
+          "lo": 1.6542995125012767,
+          "hi": 1.7963156459365477
+        },
+        "200": {
+          "ratio": 1.327952755905512,
+          "lo": 1.284033348085275,
+          "hi": 1.372508050943657
+        },
+        "400": {
+          "ratio": 1.185540950455005,
+          "lo": 1.156612397130635,
+          "hi": 1.2172778573740044
+        }
+      },
+      "held": false
+    },
+    "P4": {
+      "claim": "M3 yield is within 10 percent of M2 (stress regime, budgets 100 to 400).",
+      "observed": {
+        "100": {
+          "M3": 8.41,
+          "M2": 8.07,
+          "relative_difference": 0.04213135068153662
+        },
+        "200": {
+          "M3": 8.3885,
+          "M2": 8.2795,
+          "relative_difference": 0.013165046198441832
+        },
+        "400": {
+          "M3": 8.35125,
+          "M2": 8.346,
+          "relative_difference": 0.0006290438533429477
+        }
+      },
+      "held": true
+    },
+    "P5": {
+      "claim": "M2 mean error within 0.25 percentage points at budgets of 200 or more (stress regime).",
+      "observed": {
+        "200": -0.00037167530097744075,
+        "400": -0.00012288806262361108,
+        "800": 0.0002702534552363894
+      },
+      "held": true
+    },
+    "P6": {
+      "claim": "Wald plug in undercovers (below 93 percent) somewhere; smoothed or bootstrap intervals reach 93 to 97 percent at budgets 400 or more (M2, stress regime).",
+      "observed": {
+        "cells_checked": 225,
+        "undercovering_cells": 205,
+        "worst": [
+          {
+            "where": "C rare budget 50 M1",
+            "coverage": 0.18
+          },
+          {
+            "where": "C rare budget 50 M4",
+            "coverage": 0.2338
+          },
+          {
+            "where": "C rare budget 50 M2p",
+            "coverage": 0.2348
+          }
+        ],
+        "smoothed_or_bootstrap_M2_stress": {
+          "400": {
+            "wald_smoothed": 0.987,
+            "bootstrap": 0.844
+          },
+          "800": {
+            "wald_smoothed": 0.945,
+            "bootstrap": 0.905
+          }
+        }
+      },
+      "first_clause_held": true,
+      "second_clause_held": false,
+      "held": false
+    },
+    "P7": {
+      "claim": "Wilson with finite population correction covers 93 to 97 percent at budgets of 200 or more when FOR is at least 1 percent.",
+      "observed": {
+        "cells": 24,
+        "min": 0.927,
+        "max": 0.98,
+        "outside": [
+          {
+            "where": "B T=0.4 budget 200",
+            "coverage": 0.98
+          },
+          {
+            "where": "B T=0.8 budget 200",
+            "coverage": 0.927
+          }
+        ]
+      },
+      "held": false
+    },
+    "P8": {
+      "claim": "Identical inputs, configuration and seed give identical sample identifiers in 100 percent of runs.",
+      "observed": {
+        "runs": 1000,
+        "identical": 1000,
+        "rate": 1.0
+      },
+      "held": true
+    }
+  },
+  "criteria": {
+    "S1": {
+      "claim": "P2 holds.",
+      "held": true
+    },
+    "S2": {
+      "claim": "The recommended estimator covers 93 to 97 percent (read as: a P6 named interval, M2, stress regime, budgets 400 and 800).",
+      "observed": {
+        "400": {
+          "wald_smoothed": 0.987,
+          "bootstrap": 0.844
+        },
+        "800": {
+          "wald_smoothed": 0.945,
+          "bootstrap": 0.905
+        }
+      },
+      "held": false
+    },
+    "S3": {
+      "claim": "P5 holds.",
+      "held": true
+    },
+    "S4": {
+      "claim": "P8 holds.",
+      "held": true
+    },
+    "S5": {
+      "claim": "The claims lint passes.",
+      "held": true,
+      "note": "0 issue(s)\n"
+    }
+  },
+  "superiority_claim_allowed": true
+}
