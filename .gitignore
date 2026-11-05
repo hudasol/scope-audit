@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+data/raw/
+data/cache/
+data/images/
+*.sqlite
+*.db
+.DS_Store
