@@ -9,4 +9,4 @@
 7. The candidate species list was built from GBIF occurrence records. It has not been approved by an expert and may contain errors or species unsuited to camera traps.
 8. The beta binomial interval was added after a first calibration run and is exploratory.
 9. The software has not been tested with real field volumes, with very large data sets, or with several simultaneous reviewers.
-10. Species classification is not included. An adapter interface exists, and nothing is bundled.
+10. No species classifier is bundled or evaluated. An adapter reads the output of an external classifier and stores it only as a suggestion that a reviewer must decide and an approver must approve. The adapter was tested on synthetic fixtures only, its label parser is unverified against the classifier documentation, and accuracy on UAE species is unknown.
