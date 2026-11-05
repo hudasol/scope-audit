@@ -28,6 +28,7 @@ from scopeaudit.ingest import attach_metadata, scan_images, summary
 from scopeaudit.integrity import check_media, recording_gaps
 from scopeaudit.privacy import visible_deployments
 from scopeaudit.review import ReviewError, ReviewLog
+from scopeaudit.species import read_predictions, to_payload
 
 LABEL = "BORROWED benchmark data with SYNTHETIC deployment coordinates"
 CONTEXT_NOTE = ("This demo reads Caltech Camera Traps images from the southwestern United States. "
@@ -148,6 +149,19 @@ else:
     left.image(str(img), caption="Borrowed image from Caltech Camera Traps", use_container_width=True)
     state = L.current_state(row)
     right.write(f"Current state: **{state or 'not yet in the log'}**")
+    up = st.sidebar.file_uploader("Optional classifier predictions (JSON)", type="json")
+    sugg = None
+    if up is not None:
+        try:
+            preds = read_predictions(json.load(up)).set_index("image_file")
+            if r["image_file"] in preds.index:
+                sugg = to_payload(preds.loc[r["image_file"]].assign(image_file=r["image_file"]), spp)
+        except (ValueError, KeyError) as ex:
+            st.sidebar.error(f"Predictions could not be read: {ex}")
+    if sugg:
+        sg = sugg["suggestion"]
+        right.info(f"Suggestion only: {sg['scientific_name'] or sg['suggested_observation_type']} "
+                   f"(score {sg['score']}, {sg['candidate_list_check'].replace('_', ' ')}). You decide.")
     otype = right.selectbox("Observation type", ["animal", "blank", "unknown", "human", "vehicle"])
     sci = right.selectbox("Scientific name", [""] + spp) if otype == "animal" else ""
     payload = {"image_id": r["image_id"], "event_id": row, "observation_type": otype,
@@ -155,7 +169,8 @@ else:
     if right.button("Record review"):
         try:
             if state is None:
-                L.append(row, "ai_candidate", "detector", "admin", {"source": "detector", "image_id": r["image_id"]})
+                L.append(row, "ai_candidate", "detector", "admin",
+                         {**(sugg or {"source": "detector"}), "image_id": r["image_id"]})
             L.append(row, "human_review", f"user_{role}", role, payload)
             st.success("Review recorded.")
         except ReviewError as ex:
