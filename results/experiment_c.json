@@ -62,6 +62,10 @@
               "wilson_fpc": {
                 "coverage": 0.9808,
                 "width": 0.07705472812957789
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9808,
+                "width": 0.056128683124999974
               }
             }
           },
@@ -82,6 +86,10 @@
               "bootstrap": {
                 "coverage": 0.1798,
                 "width": 0.011896325708333334
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.09504960749999998
               }
             },
             "unresolved": [
@@ -127,6 +135,10 @@
               "bootstrap": {
                 "coverage": 0.2338,
                 "width": 0.012169669612847222
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.09034884437499997
               }
             },
             "yield_ratio_vs_M0": {
@@ -152,6 +164,10 @@
               "bootstrap": {
                 "coverage": 0.5158,
                 "width": 0.011889297637032083
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0006,
+                "width": 0.15498702499999994
               }
             },
             "unresolved": [
@@ -197,6 +213,10 @@
               "bootstrap": {
                 "coverage": 0.486,
                 "width": 0.011440753752705627
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.18313548062499996
               }
             },
             "unresolved": [
@@ -242,6 +262,10 @@
               "bootstrap": {
                 "coverage": 0.2332,
                 "width": 0.011488791566468254
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.09009415749999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -261,6 +285,10 @@
               "wilson_fpc": {
                 "coverage": 0.931,
                 "width": 0.04294249872491937
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.963,
+                "width": 0.03234372249999999
               }
             }
           },
@@ -281,6 +309,10 @@
               "bootstrap": {
                 "coverage": 0.348,
                 "width": 0.01220785949697606
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6436,
+                "width": 0.054383992499999985
               }
             },
             "unresolved": [
@@ -326,6 +358,10 @@
               "bootstrap": {
                 "coverage": 0.3874,
                 "width": 0.011767700123357963
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.601,
+                "width": 0.05199519999999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -351,6 +387,10 @@
               "bootstrap": {
                 "coverage": 0.7826,
                 "width": 0.010877292886679293
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.2756,
+                "width": 0.08831212937499998
               }
             },
             "unresolved": [
@@ -396,6 +436,10 @@
               "bootstrap": {
                 "coverage": 0.7794,
                 "width": 0.010476435223834324
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.107336850625
               }
             },
             "unresolved": [
@@ -441,6 +485,10 @@
               "bootstrap": {
                 "coverage": 0.437,
                 "width": 0.010962459907217292
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.561,
+                "width": 0.05004559874999999
               }
             },
             "yield_ratio_vs_M0": {
@@ -460,6 +508,10 @@
               "wilson_fpc": {
                 "coverage": 0.9374,
                 "width": 0.024706620962664357
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9576,
+                "width": 0.019881918125
               }
             }
           },
@@ -480,6 +532,10 @@
               "bootstrap": {
                 "coverage": 0.573,
                 "width": 0.011384399230569253
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7632,
+                "width": 0.031096514999999995
               }
             },
             "unresolved": [
@@ -525,6 +581,10 @@
               "bootstrap": {
                 "coverage": 0.6018,
                 "width": 0.011114551140004297
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7464,
+                "width": 0.03007379874999999
               }
             },
             "yield_ratio_vs_M0": {
@@ -550,6 +610,10 @@
               "bootstrap": {
                 "coverage": 0.844,
                 "width": 0.00912718231385099
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.567,
+                "width": 0.04631600687499999
               }
             },
             "unresolved": [
@@ -595,6 +659,10 @@
               "bootstrap": {
                 "coverage": 0.8454,
                 "width": 0.00920585816696571
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.05851394812499999
               }
             },
             "unresolved": [
@@ -640,6 +708,10 @@
               "bootstrap": {
                 "coverage": 0.7094,
                 "width": 0.010243542075372019
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6748,
+                "width": 0.027556469374999993
               }
             },
             "yield_ratio_vs_M0": {
@@ -659,6 +731,10 @@
               "wilson_fpc": {
                 "coverage": 0.9768,
                 "width": 0.014789967654902522
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9768,
+                "width": 0.012829362499999997
               }
             }
           },
@@ -679,6 +755,10 @@
               "bootstrap": {
                 "coverage": 0.8204,
                 "width": 0.010122514003968254
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7706,
+                "width": 0.018060689999999994
               }
             },
             "unresolved": [
@@ -724,6 +804,10 @@
               "bootstrap": {
                 "coverage": 0.8254,
                 "width": 0.00996449059481052
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7542,
+                "width": 0.017613839375
               }
             },
             "yield_ratio_vs_M0": {
@@ -749,6 +833,10 @@
               "bootstrap": {
                 "coverage": 0.8824,
                 "width": 0.007302974647392168
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.737,
+                "width": 0.024406134999999995
               }
             },
             "unresolved": [
@@ -794,6 +882,10 @@
               "bootstrap": {
                 "coverage": 0.8842,
                 "width": 0.007333531877065644
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0602,
+                "width": 0.03182245562499999
               }
             },
             "unresolved": [
@@ -839,6 +931,10 @@
               "bootstrap": {
                 "coverage": 0.9094,
                 "width": 0.008714086832384269
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8282,
+                "width": 0.015382063749999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -858,6 +954,10 @@
               "wilson_fpc": {
                 "coverage": 0.954,
                 "width": 0.009345658353739896
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9504,
+                "width": 0.00865416625
               }
             }
           },
@@ -878,6 +978,10 @@
               "bootstrap": {
                 "coverage": 0.879,
                 "width": 0.008265717109207168
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.883,
+                "width": 0.010734409999999996
               }
             },
             "unresolved": [
@@ -923,6 +1027,10 @@
               "bootstrap": {
                 "coverage": 0.8868,
                 "width": 0.008179307929001033
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8752,
+                "width": 0.010514091249999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -948,6 +1056,10 @@
               "bootstrap": {
                 "coverage": 0.9444,
                 "width": 0.005611153593643756
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.843,
+                "width": 0.012913057499999997
               }
             },
             "unresolved": [
@@ -993,6 +1105,10 @@
               "bootstrap": {
                 "coverage": 0.9368,
                 "width": 0.005708016202433946
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.315,
+                "width": 0.016979163749999995
               }
             },
             "unresolved": [
@@ -1038,6 +1154,10 @@
               "bootstrap": {
                 "coverage": 0.9086,
                 "width": 0.006631429749505054
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9032,
+                "width": 0.008781641249999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -1064,6 +1184,10 @@
               "wilson_fpc": {
                 "coverage": 0.9108,
                 "width": 0.08536962876975818
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9864,
+                "width": 0.06655494437499998
               }
             }
           },
@@ -1084,6 +1208,10 @@
               "bootstrap": {
                 "coverage": 0.3974,
                 "width": 0.02792985802083333
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.5996,
+                "width": 0.10028275874999996
               }
             },
             "unresolved": [
@@ -1129,6 +1257,10 @@
               "bootstrap": {
                 "coverage": 0.4532,
                 "width": 0.02659608204918982
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.5392,
+                "width": 0.09480627687499998
               }
             },
             "yield_ratio_vs_M0": {
@@ -1154,6 +1286,10 @@
               "bootstrap": {
                 "coverage": 0.8062,
                 "width": 0.024907892858044733
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.4432,
+                "width": 0.16659390374999994
               }
             },
             "unresolved": [
@@ -1199,6 +1335,10 @@
               "bootstrap": {
                 "coverage": 0.7664,
                 "width": 0.02428293436931818
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0,
+                "width": 0.19756076249999996
               }
             },
             "unresolved": [
@@ -1244,6 +1384,10 @@
               "bootstrap": {
                 "coverage": 0.4578,
                 "width": 0.025594931580383368
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.5336,
+                "width": 0.09479968124999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -1263,6 +1407,10 @@
               "wilson_fpc": {
                 "coverage": 0.9216,
                 "width": 0.0506276414949615
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9846,
+                "width": 0.04169486187499999
               }
             }
           },
@@ -1283,6 +1431,10 @@
               "bootstrap": {
                 "coverage": 0.6394,
                 "width": 0.02628117114555481
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7322,
+                "width": 0.059846107499999995
               }
             },
             "unresolved": [
@@ -1328,6 +1480,10 @@
               "bootstrap": {
                 "coverage": 0.6936,
                 "width": 0.025393200255482452
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6858,
+                "width": 0.057007026875
               }
             },
             "yield_ratio_vs_M0": {
@@ -1353,6 +1509,10 @@
               "bootstrap": {
                 "coverage": 0.8798,
                 "width": 0.021468201789725257
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6204,
+                "width": 0.08974957249999997
               }
             },
             "unresolved": [
@@ -1398,6 +1558,10 @@
               "bootstrap": {
                 "coverage": 0.8552,
                 "width": 0.02130343360825893
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0024,
+                "width": 0.10801614374999997
               }
             },
             "unresolved": [
@@ -1443,6 +1607,10 @@
               "bootstrap": {
                 "coverage": 0.7412,
                 "width": 0.023552504598310844
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7164,
+                "width": 0.05470241624999999
               }
             },
             "yield_ratio_vs_M0": {
@@ -1462,6 +1630,10 @@
               "wilson_fpc": {
                 "coverage": 0.9456,
                 "width": 0.03159346127116113
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9742,
+                "width": 0.027879465624999995
               }
             }
           },
@@ -1482,6 +1654,10 @@
               "bootstrap": {
                 "coverage": 0.857,
                 "width": 0.022847428088436005
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8416,
+                "width": 0.036520821249999995
               }
             },
             "unresolved": [
@@ -1527,6 +1703,10 @@
               "bootstrap": {
                 "coverage": 0.8884,
                 "width": 0.02231548872181229
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8262,
+                "width": 0.03491634812499999
               }
             },
             "yield_ratio_vs_M0": {
@@ -1552,6 +1732,10 @@
               "bootstrap": {
                 "coverage": 0.875,
                 "width": 0.0165825125381753
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7658,
+                "width": 0.049911175624999984
               }
             },
             "unresolved": [
@@ -1597,6 +1781,10 @@
               "bootstrap": {
                 "coverage": 0.8684,
                 "width": 0.01673314933536157
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.1416,
+                "width": 0.06185600187499999
               }
             },
             "unresolved": [
@@ -1642,6 +1830,10 @@
               "bootstrap": {
                 "coverage": 0.9078,
                 "width": 0.019650419793250832
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8454,
+                "width": 0.03186452812499999
               }
             },
             "yield_ratio_vs_M0": {
@@ -1661,6 +1853,10 @@
               "wilson_fpc": {
                 "coverage": 0.9334,
                 "width": 0.020644121239297306
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9584,
+                "width": 0.019295047499999995
               }
             }
           },
@@ -1681,6 +1877,10 @@
               "bootstrap": {
                 "coverage": 0.9148,
                 "width": 0.0182240306069452
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.884,
+                "width": 0.022724076249999996
               }
             },
             "unresolved": [
@@ -1726,6 +1926,10 @@
               "bootstrap": {
                 "coverage": 0.9242,
                 "width": 0.017691735501511416
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8708,
+                "width": 0.021854175624999996
               }
             },
             "yield_ratio_vs_M0": {
@@ -1751,6 +1955,10 @@
               "bootstrap": {
                 "coverage": 0.9014,
                 "width": 0.013021836612942969
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.851,
+                "width": 0.027526741249999993
               }
             },
             "unresolved": [
@@ -1796,6 +2004,10 @@
               "bootstrap": {
                 "coverage": 0.9032,
                 "width": 0.013173650554719222
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.4052,
+                "width": 0.034480336874999996
               }
             },
             "unresolved": [
@@ -1841,6 +2053,10 @@
               "bootstrap": {
                 "coverage": 0.92,
                 "width": 0.014967658126455811
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8984,
+                "width": 0.019239705624999996
               }
             },
             "yield_ratio_vs_M0": {
@@ -1860,6 +2076,10 @@
               "wilson_fpc": {
                 "coverage": 0.963,
                 "width": 0.013604146105444425
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9422,
+                "width": 0.013122679374999996
               }
             }
           },
@@ -1880,6 +2100,10 @@
               "bootstrap": {
                 "coverage": 0.9304,
                 "width": 0.013474122860567121
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9218,
+                "width": 0.014518192499999997
               }
             },
             "unresolved": [
@@ -1925,6 +2149,10 @@
               "bootstrap": {
                 "coverage": 0.9228,
                 "width": 0.01305669122731544
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9238,
+                "width": 0.014040822499999996
               }
             },
             "yield_ratio_vs_M0": {
@@ -1950,6 +2178,10 @@
               "bootstrap": {
                 "coverage": 0.9134,
                 "width": 0.009972595826372747
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9028,
+                "width": 0.015388760624999998
               }
             },
             "unresolved": [
@@ -1995,6 +2227,10 @@
               "bootstrap": {
                 "coverage": 0.9176,
                 "width": 0.009984363542112346
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6502,
+                "width": 0.018995099374999994
               }
             },
             "unresolved": [
@@ -2040,6 +2276,10 @@
               "bootstrap": {
                 "coverage": 0.941,
                 "width": 0.010727471602168484
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9278,
+                "width": 0.011788356249999996
               }
             },
             "yield_ratio_vs_M0": {
@@ -2066,6 +2306,10 @@
               "wilson_fpc": {
                 "coverage": 0.9232,
                 "width": 0.09754230327080547
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9826,
+                "width": 0.08164162187499999
               }
             }
           },
@@ -2086,6 +2330,10 @@
               "bootstrap": {
                 "coverage": 0.6322,
                 "width": 0.052754111322916665
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.73,
+                "width": 0.11024950187499999
               }
             },
             "unresolved": [
@@ -2131,6 +2379,10 @@
               "bootstrap": {
                 "coverage": 0.7152,
                 "width": 0.046343215665509266
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.653,
+                "width": 0.09838847312499997
               }
             },
             "yield_ratio_vs_M0": {
@@ -2156,6 +2408,10 @@
               "bootstrap": {
                 "coverage": 0.8884,
                 "width": 0.037755684166666664
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6022,
+                "width": 0.15894496437499997
               }
             },
             "unresolved": [
@@ -2201,6 +2457,10 @@
               "bootstrap": {
                 "coverage": 0.85,
                 "width": 0.03725138542897727
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.0188,
+                "width": 0.20204111562499996
               }
             },
             "unresolved": [
@@ -2246,6 +2506,10 @@
               "bootstrap": {
                 "coverage": 0.724,
                 "width": 0.044362549455990885
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6628,
+                "width": 0.09828214937499997
               }
             },
             "yield_ratio_vs_M0": {
@@ -2265,6 +2529,10 @@
               "wilson_fpc": {
                 "coverage": 0.9476,
                 "width": 0.062420484020468896
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9736,
+                "width": 0.05552380999999998
               }
             }
           },
@@ -2285,6 +2553,10 @@
               "bootstrap": {
                 "coverage": 0.8682,
                 "width": 0.04566864995480009
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8504,
+                "width": 0.069021443125
               }
             },
             "unresolved": [
@@ -2330,6 +2602,10 @@
               "bootstrap": {
                 "coverage": 0.9074,
                 "width": 0.04184914032957033
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8158,
+                "width": 0.06227749124999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -2355,6 +2631,10 @@
               "bootstrap": {
                 "coverage": 0.88,
                 "width": 0.02921600226879699
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7112,
+                "width": 0.09328133937499997
               }
             },
             "unresolved": [
@@ -2400,6 +2680,10 @@
               "bootstrap": {
                 "coverage": 0.8964,
                 "width": 0.028618093913003663
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.1368,
+                "width": 0.10923266374999999
               }
             },
             "unresolved": [
@@ -2445,6 +2729,10 @@
               "bootstrap": {
                 "coverage": 0.9008,
                 "width": 0.037708122424574636
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8092,
+                "width": 0.05929990687499999
               }
             },
             "yield_ratio_vs_M0": {
@@ -2464,6 +2752,10 @@
               "wilson_fpc": {
                 "coverage": 0.9386,
                 "width": 0.04099264537393166
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9636,
+                "width": 0.038275603124999995
               }
             }
           },
@@ -2484,6 +2776,10 @@
               "bootstrap": {
                 "coverage": 0.9126,
                 "width": 0.03603415021067539
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.894,
+                "width": 0.044347673124999994
               }
             },
             "unresolved": [
@@ -2529,6 +2825,10 @@
               "bootstrap": {
                 "coverage": 0.9268,
                 "width": 0.033425948175536874
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.878,
+                "width": 0.04058640687499999
               }
             },
             "yield_ratio_vs_M0": {
@@ -2554,6 +2854,10 @@
               "bootstrap": {
                 "coverage": 0.9154,
                 "width": 0.02220452392835968
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8082,
+                "width": 0.05153417124999998
               }
             },
             "unresolved": [
@@ -2599,6 +2903,10 @@
               "bootstrap": {
                 "coverage": 0.9122,
                 "width": 0.021821210593755344
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.3396,
+                "width": 0.062051748124999986
               }
             },
             "unresolved": [
@@ -2644,6 +2952,10 @@
               "bootstrap": {
                 "coverage": 0.9204,
                 "width": 0.0277762426847368
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8858,
+                "width": 0.03613566624999999
               }
             },
             "yield_ratio_vs_M0": {
@@ -2663,6 +2975,10 @@
               "wilson_fpc": {
                 "coverage": 0.9572,
                 "width": 0.027787860168984095
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9446,
+                "width": 0.026792554999999992
               }
             }
           },
@@ -2683,6 +2999,10 @@
               "bootstrap": {
                 "coverage": 0.9306,
                 "width": 0.026582879466510462
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.914,
+                "width": 0.029105147499999998
               }
             },
             "unresolved": [
@@ -2728,6 +3048,10 @@
               "bootstrap": {
                 "coverage": 0.9244,
                 "width": 0.024790893201721592
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.916,
+                "width": 0.026960296249999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -2753,6 +3077,10 @@
               "bootstrap": {
                 "coverage": 0.9376,
                 "width": 0.016346322952630714
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8596,
+                "width": 0.028695151874999995
               }
             },
             "unresolved": [
@@ -2798,6 +3126,10 @@
               "bootstrap": {
                 "coverage": 0.9374,
                 "width": 0.01605776817172181
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.5422,
+                "width": 0.03500551812499999
               }
             },
             "unresolved": [
@@ -2843,6 +3175,10 @@
               "bootstrap": {
                 "coverage": 0.94,
                 "width": 0.019495718252716253
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9134,
+                "width": 0.022416293124999997
               }
             },
             "yield_ratio_vs_M0": {
@@ -2862,6 +3198,10 @@
               "wilson_fpc": {
                 "coverage": 0.9536,
                 "width": 0.01870105210905456
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9444,
+                "width": 0.018329246874999996
               }
             }
           },
@@ -2882,6 +3222,10 @@
               "bootstrap": {
                 "coverage": 0.9454,
                 "width": 0.019058762494932324
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.937,
+                "width": 0.019208708124999998
               }
             },
             "unresolved": [
@@ -2927,6 +3271,10 @@
               "bootstrap": {
                 "coverage": 0.9428,
                 "width": 0.01789603316051232
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9304,
+                "width": 0.017954077499999995
               }
             },
             "yield_ratio_vs_M0": {
@@ -2952,6 +3300,10 @@
               "bootstrap": {
                 "coverage": 0.9644,
                 "width": 0.011926395901791145
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9074,
+                "width": 0.016104371874999995
               }
             },
             "unresolved": [
@@ -2997,6 +3349,10 @@
               "bootstrap": {
                 "coverage": 0.9578,
                 "width": 0.011801123471676158
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7138,
+                "width": 0.019456828124999995
               }
             },
             "unresolved": [
@@ -3042,6 +3398,10 @@
               "bootstrap": {
                 "coverage": 0.9512,
                 "width": 0.013379510884798884
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9436,
+                "width": 0.013753794374999998
               }
             },
             "yield_ratio_vs_M0": {
@@ -3068,6 +3428,10 @@
               "wilson_fpc": {
                 "coverage": 0.973,
                 "width": 0.12433205302034335
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9538,
+                "width": 0.11353384562499996
               }
             }
           },
@@ -3088,6 +3452,10 @@
               "bootstrap": {
                 "coverage": 0.8694,
                 "width": 0.09710384073958332
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8478,
+                "width": 0.13018095312499997
               }
             },
             "unresolved": [
@@ -3133,6 +3501,10 @@
               "bootstrap": {
                 "coverage": 0.911,
                 "width": 0.08005585302314815
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.847,
+                "width": 0.11024665999999997
               }
             },
             "yield_ratio_vs_M0": {
@@ -3158,6 +3530,10 @@
               "bootstrap": {
                 "coverage": 0.8884,
                 "width": 0.06256548778910426
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.781,
+                "width": 0.16635310374999995
               }
             },
             "unresolved": [
@@ -3203,6 +3579,10 @@
               "bootstrap": {
                 "coverage": 0.8674,
                 "width": 0.0612572602840909
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.3398,
+                "width": 0.19015508624999997
               }
             },
             "unresolved": [
@@ -3248,6 +3628,10 @@
               "bootstrap": {
                 "coverage": 0.8928,
                 "width": 0.07624260138184848
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8304,
+                "width": 0.10945911312499998
               }
             },
             "yield_ratio_vs_M0": {
@@ -3267,6 +3651,10 @@
               "wilson_fpc": {
                 "coverage": 0.9534,
                 "width": 0.08471938229001465
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9374,
+                "width": 0.08039283499999998
               }
             }
           },
@@ -3287,6 +3675,10 @@
               "bootstrap": {
                 "coverage": 0.9308,
                 "width": 0.07634871921490641
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9062,
+                "width": 0.08758410874999999
               }
             },
             "unresolved": [
@@ -3332,6 +3724,10 @@
               "bootstrap": {
                 "coverage": 0.9066,
                 "width": 0.06423383940784072
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.882,
+                "width": 0.07426363374999999
               }
             },
             "yield_ratio_vs_M0": {
@@ -3357,6 +3753,10 @@
               "bootstrap": {
                 "coverage": 0.8988,
                 "width": 0.04841589412260361
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8454,
+                "width": 0.10147898249999997
               }
             },
             "unresolved": [
@@ -3402,6 +3802,10 @@
               "bootstrap": {
                 "coverage": 0.8942,
                 "width": 0.04781086512582672
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.5036,
+                "width": 0.11568463687499998
               }
             },
             "unresolved": [
@@ -3447,6 +3851,10 @@
               "bootstrap": {
                 "coverage": 0.902,
                 "width": 0.05827024506536348
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.884,
+                "width": 0.070957769375
               }
             },
             "yield_ratio_vs_M0": {
@@ -3466,6 +3874,10 @@
               "wilson_fpc": {
                 "coverage": 0.9464,
                 "width": 0.058205177193446596
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.951,
+                "width": 0.05647302562499999
               }
             }
           },
@@ -3486,6 +3898,10 @@
               "bootstrap": {
                 "coverage": 0.9354,
                 "width": 0.05549155757107081
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.927,
+                "width": 0.05924666999999998
               }
             },
             "unresolved": [
@@ -3531,6 +3947,10 @@
               "bootstrap": {
                 "coverage": 0.934,
                 "width": 0.048903452822829124
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9166,
+                "width": 0.051701924375
               }
             },
             "yield_ratio_vs_M0": {
@@ -3556,6 +3976,10 @@
               "bootstrap": {
                 "coverage": 0.9128,
                 "width": 0.036782089367942576
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8874,
+                "width": 0.05941970812499998
               }
             },
             "unresolved": [
@@ -3601,6 +4025,10 @@
               "bootstrap": {
                 "coverage": 0.9036,
                 "width": 0.03611670649709782
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.6646,
+                "width": 0.06815256687499997
               }
             },
             "unresolved": [
@@ -3646,6 +4074,10 @@
               "bootstrap": {
                 "coverage": 0.9304,
                 "width": 0.041291144786577486
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.928,
+                "width": 0.046114379999999996
               }
             },
             "yield_ratio_vs_M0": {
@@ -3665,6 +4097,10 @@
               "wilson_fpc": {
                 "coverage": 0.9536,
                 "width": 0.040144111759836766
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9498,
+                "width": 0.03944929749999999
               }
             }
           },
@@ -3685,6 +4121,10 @@
               "bootstrap": {
                 "coverage": 0.9446,
                 "width": 0.039930097759610865
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9286,
+                "width": 0.04056327999999999
               }
             },
             "unresolved": [
@@ -3730,6 +4170,10 @@
               "bootstrap": {
                 "coverage": 0.9432,
                 "width": 0.03559473860412052
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9306,
+                "width": 0.035856626249999995
               }
             },
             "yield_ratio_vs_M0": {
@@ -3755,6 +4199,10 @@
               "bootstrap": {
                 "coverage": 0.9242,
                 "width": 0.027342594731639646
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.924,
+                "width": 0.035820616874999996
               }
             },
             "unresolved": [
@@ -3800,6 +4248,10 @@
               "bootstrap": {
                 "coverage": 0.9114,
                 "width": 0.0270354571886974
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.7798,
+                "width": 0.04087332562499999
               }
             },
             "unresolved": [
@@ -3845,6 +4297,10 @@
               "bootstrap": {
                 "coverage": 0.938,
                 "width": 0.02860198856987451
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9426,
+                "width": 0.030031305624999994
               }
             },
             "yield_ratio_vs_M0": {
@@ -3864,6 +4320,10 @@
               "wilson_fpc": {
                 "coverage": 0.9534,
                 "width": 0.02756123972199315
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9506,
+                "width": 0.027270225624999995
               }
             }
           },
@@ -3884,6 +4344,10 @@
               "bootstrap": {
                 "coverage": 0.9544,
                 "width": 0.028533448854132767
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.937,
+                "width": 0.02766708
               }
             },
             "unresolved": [
@@ -3929,6 +4393,10 @@
               "bootstrap": {
                 "coverage": 0.9552,
                 "width": 0.02562755476263045
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9448,
+                "width": 0.024677916249999994
               }
             },
             "yield_ratio_vs_M0": {
@@ -3954,6 +4422,10 @@
               "bootstrap": {
                 "coverage": 0.9332,
                 "width": 0.020024091873999884
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9388,
+                "width": 0.021952949374999996
               }
             },
             "unresolved": [
@@ -3999,6 +4471,10 @@
               "bootstrap": {
                 "coverage": 0.9378,
                 "width": 0.019990563937939815
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.859,
+                "width": 0.024429046249999996
               }
             },
             "unresolved": [
@@ -4044,6 +4520,10 @@
               "bootstrap": {
                 "coverage": 0.9568,
                 "width": 0.020021218417764778
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.9464,
+                "width": 0.019424589999999995
               }
             },
             "yield_ratio_vs_M0": {
@@ -4061,5 +4541,5 @@
     "identical": 1000,
     "rate": 1.0
   },
-  "runtime_seconds": 162.4
+  "runtime_seconds": 742.4
 }
