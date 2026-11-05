@@ -1,0 +1,4065 @@
+{
+  "header": {
+    "experiment": "C_calibration",
+    "data_label": "SYNTHETIC",
+    "predictions_commit": "57935c3e5ecd6a8204f11428c5c281240a2bb555",
+    "environment": {
+      "python": "3.13.18",
+      "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+      "machine": "x86_64",
+      "cpu_count": 2,
+      "device": "cpu",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "packages": {
+        "numpy": "2.5.3",
+        "pandas": "3.0.5",
+        "scipy": "1.18.1",
+        "statsmodels": "0.15.0",
+        "pydantic": "2.13.5",
+        "opencv-python-headless": "5.0.0.93",
+        "pillow": "12.3.0",
+        "matplotlib": "3.11.2",
+        "plotly": "7.1.0",
+        "streamlit": "1.67.0",
+        "pytest": "9.1.1",
+        "jsonschema": "4.26.0",
+        "requests": "2.34.2"
+      }
+    },
+    "seeds": 200,
+    "bootstrap_replicates": 200,
+    "budgets": [
+      50,
+      100,
+      200,
+      400,
+      800
+    ],
+    "scenarios": {
+      "rare": 0.2,
+      "low": 0.5,
+      "medium": 1.0,
+      "high": 2.5
+    }
+  },
+  "scenarios": {
+    "rare": {
+      "truth_for": 0.00425,
+      "pool_size": 8000,
+      "hidden_events": 34,
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.00425,
+            "bias": -0.0006500000000000003,
+            "mae": 0.006447500000000002,
+            "yield_mean": 0.36,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.985,
+                "width": 0.07622378351872
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.00425,
+            "bias": -0.0002496250000000005,
+            "mae": 0.006720375000000003,
+            "yield_mean": 0.39,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.18,
+                "width": 0.011141823262196173
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05790287731596657
+              },
+              "bootstrap": {
+                "coverage": 0.18,
+                "width": 0.011805068229166668
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0040003750000000005,
+                "mean_upper": 0.0040003750000000005
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0038862083333333335,
+                "mean_upper": 0.052439833333333345
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0035156875000000006,
+                "mean_upper": 0.10000777083333333
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0833333333333335,
+              "lo": 0.6842105263157895,
+              "hi": 1.7037037037037037
+            }
+          },
+          "M2p": {
+            "truth": 0.00425,
+            "bias": 0.0003781562499999995,
+            "mae": 0.006753156250000002,
+            "yield_mean": 0.58,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.25,
+                "width": 0.01199617677185119
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05639955092725101
+              },
+              "bootstrap": {
+                "coverage": 0.25,
+                "width": 0.012920375000000001
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6111111111111112,
+              "lo": 1.0638297872340425,
+              "hi": 2.500431034482756
+            }
+          },
+          "M2": {
+            "truth": 0.00425,
+            "bias": 0.0006193806818181816,
+            "mae": 0.004571880681818182,
+            "yield_mean": 1.58,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.53,
+                "width": 0.012250883792865515
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.09342119313118623
+              },
+              "bootstrap": {
+                "coverage": 0.515,
+                "width": 0.01296467541221034
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004869380681818181,
+                "mean_upper": 0.004869380681818181
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004650951537433156,
+                "mean_upper": 0.0526654710338681
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004432522393048129,
+                "mean_upper": 0.10982168270944742
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 4.388888888888889,
+              "lo": 3.133260869565217,
+              "hi": 6.586366538952745
+            }
+          },
+          "M3": {
+            "truth": 0.00425,
+            "bias": -0.0008625649350649354,
+            "mae": 0.0037861850649350648,
+            "yield_mean": 1.2,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.47,
+                "width": 0.008629544208912732
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.11288652379203751
+              },
+              "bootstrap": {
+                "coverage": 0.47,
+                "width": 0.009150791801948053
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003387435064935065,
+                "mean_upper": 0.003387435064935065
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0032834334415584414,
+                "mean_upper": 0.054073859848484854
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.002975625,
+                "mean_upper": 0.09756124242424243
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.3333333333333335,
+              "lo": 2.367309606769537,
+              "hi": 5.0
+            }
+          },
+          "M4": {
+            "truth": 0.00425,
+            "bias": 0.00047611631944444394,
+            "mae": 0.006808616319444445,
+            "yield_mean": 0.64,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.245,
+                "width": 0.011775539685745271
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05642126871899485
+              },
+              "bootstrap": {
+                "coverage": 0.24,
+                "width": 0.012355442708333336
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.777777777777778,
+              "lo": 1.1707187337830824,
+              "hi": 2.7201818181818176
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.00425,
+            "bias": 0.00029999999999999976,
+            "mae": 0.005527500000000001,
+            "yield_mean": 0.455,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.93,
+                "width": 0.04341626348324171
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.00425,
+            "bias": 0.000990266408836262,
+            "mae": 0.006047766408836264,
+            "yield_mean": 0.52,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.405,
+                "width": 0.0138798585082135
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03541631086594104
+              },
+              "bootstrap": {
+                "coverage": 0.4,
+                "width": 0.014716390524931566
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.005240266408836261,
+                "mean_upper": 0.005240266408836261
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004823303730583143,
+                "mean_upper": 0.055442603800611154
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004754330110453272,
+                "mean_upper": 0.10431014979628216
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1428571428571428,
+              "lo": 0.8760482000171836,
+              "hi": 1.5128289473684209
+            }
+          },
+          "M2p": {
+            "truth": 0.00425,
+            "bias": -0.00035404621647509583,
+            "mae": 0.004788453783524905,
+            "yield_mean": 0.45,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.395,
+                "width": 0.010545000217165125
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.032482953740138154
+              },
+              "bootstrap": {
+                "coverage": 0.395,
+                "width": 0.011242162420463877
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.989010989010989,
+              "lo": 0.7572815533980582,
+              "hi": 1.2839947089947086
+            }
+          },
+          "M2": {
+            "truth": 0.00425,
+            "bias": -9.13431186868688e-05,
+            "mae": 0.0026198058712121213,
+            "yield_mean": 1.61,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.8,
+                "width": 0.009513855330957142
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05239687353377288
+              },
+              "bootstrap": {
+                "coverage": 0.8,
+                "width": 0.010022079348169195
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004158656881313131,
+                "mean_upper": 0.004158656881313131
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003987037563131313,
+                "mean_upper": 0.04883796243686869
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003528940972222222,
+                "mean_upper": 0.10876058396464647
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.5384615384615388,
+              "lo": 2.9158680126961736,
+              "hi": 4.4401445783132525
+            }
+          },
+          "M3": {
+            "truth": 0.00425,
+            "bias": -0.00019881014384920656,
+            "mae": 0.003107274925595238,
+            "yield_mean": 1.35,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.755,
+                "width": 0.009697271798132703
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06541488479726235
+              },
+              "bootstrap": {
+                "coverage": 0.75,
+                "width": 0.010359858630952384
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004051189856150794,
+                "mean_upper": 0.004051189856150794
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003839032738095238,
+                "mean_upper": 0.05185725483630953
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0037304476686507936,
+                "mean_upper": 0.10450701376488095
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.967032967032967,
+              "lo": 2.3749684343434345,
+              "hi": 3.757293233082706
+            }
+          },
+          "M4": {
+            "truth": 0.00425,
+            "bias": 0.00013111794225994556,
+            "mae": 0.004636117942259947,
+            "yield_mean": 0.61,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.47,
+                "width": 0.011452388975598506
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03186922444408803
+              },
+              "bootstrap": {
+                "coverage": 0.46,
+                "width": 0.012093883018222588
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3406593406593406,
+              "lo": 1.0495049504950495,
+              "hi": 1.7500811688311684
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.00425,
+            "bias": 0.0007000000000000001,
+            "mae": 0.0037175000000000003,
+            "yield_mean": 0.495,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.935,
+                "width": 0.025548571889820283
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.00425,
+            "bias": -0.00029164703044596906,
+            "mae": 0.0036646029695540316,
+            "yield_mean": 0.3925,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.535,
+                "width": 0.010049372312891956
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.020332453844009234
+              },
+              "bootstrap": {
+                "coverage": 0.525,
+                "width": 0.01070381832051351
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003958352969554031,
+                "mean_upper": 0.003958352969554031
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0036350970733276156,
+                "mean_upper": 0.052197308292238426
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003682154561535163,
+                "mean_upper": 0.10288794299421099
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.7929292929292929,
+              "lo": 0.641410178013317,
+              "hi": 0.967032967032967
+            }
+          },
+          "M2p": {
+            "truth": 0.00425,
+            "bias": -0.00015910693396676854,
+            "mae": 0.003198393066033232,
+            "yield_mean": 0.4425,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.605,
+                "width": 0.010253212578389147
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.020194488685700264
+              },
+              "bootstrap": {
+                "coverage": 0.6,
+                "width": 0.011111906261190558
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.8939393939393939,
+              "lo": 0.7342896684704858,
+              "hi": 1.0919822350440322
+            }
+          },
+          "M2": {
+            "truth": 0.00425,
+            "bias": -0.00011313751099077232,
+            "mae": 0.0020494866076931294,
+            "yield_mean": 1.5525,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.845,
+                "width": 0.0082523416620622
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.028837303302397466
+              },
+              "bootstrap": {
+                "coverage": 0.83,
+                "width": 0.008642394853725154
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004136862489009228,
+                "mean_upper": 0.004136862489009228
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003836382452154192,
+                "mean_upper": 0.05828319172656808
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003790472680228115,
+                "mean_upper": 0.10629218280760806
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.1363636363636362,
+              "lo": 2.6932991071428574,
+              "hi": 3.6852343265052756
+            }
+          },
+          "M3": {
+            "truth": 0.00425,
+            "bias": 0.00019208622408293445,
+            "mae": 0.0023211813197767145,
+            "yield_mean": 1.4875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.85,
+                "width": 0.0091764621990768
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03659271074318768
+              },
+              "bootstrap": {
+                "coverage": 0.86,
+                "width": 0.009523382483552634
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004442086224082934,
+                "mean_upper": 0.004442086224082934
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004157286981658692,
+                "mean_upper": 0.05410474112838915
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003992550538277512,
+                "mean_upper": 0.10497698883572568
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.005050505050505,
+              "lo": 2.582547856386732,
+              "hi": 3.5
+            }
+          },
+          "M4": {
+            "truth": 0.00425,
+            "bias": 3.4017927207929294e-05,
+            "mae": 0.002978274312046227,
+            "yield_mean": 0.6375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.715,
+                "width": 0.010204223618163035
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.019016787780920637
+              },
+              "bootstrap": {
+                "coverage": 0.71,
+                "width": 0.010864499054033604
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2878787878787878,
+              "lo": 1.074368094286015,
+              "hi": 1.551728848690409
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.00425,
+            "bias": 9.999999999999977e-05,
+            "mae": 0.0026525000000000003,
+            "yield_mean": 0.435,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.975,
+                "width": 0.014895676227245096
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.00425,
+            "bias": -0.0003118402777777779,
+            "mae": 0.0023899135251322754,
+            "yield_mean": 0.3925,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.82,
+                "width": 0.009094927417705009
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.013216335850009656
+              },
+              "bootstrap": {
+                "coverage": 0.81,
+                "width": 0.00964010555348876
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003938159722222222,
+                "mean_upper": 0.003938159722222222
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003650269758597884,
+                "mean_upper": 0.05191389087301587
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003397468667328043,
+                "mean_upper": 0.10310689070767197
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9022988505747127,
+              "lo": 0.7820101389495235,
+              "hi": 1.0430802469135803
+            }
+          },
+          "M2p": {
+            "truth": 0.00425,
+            "bias": 2.1939164695598266e-05,
+            "mae": 0.0025897536732568905,
+            "yield_mean": 0.44,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.815,
+                "width": 0.009413347968613713
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.013494160013625673
+              },
+              "bootstrap": {
+                "coverage": 0.8,
+                "width": 0.00987296187798874
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0114942528735633,
+              "lo": 0.8666438356164384,
+              "hi": 1.1687136102536049
+            }
+          },
+          "M2": {
+            "truth": 0.00425,
+            "bias": 4.7306182485679844e-05,
+            "mae": 0.0017220983114212124,
+            "yield_mean": 1.50625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.865,
+                "width": 0.007003081505798936
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.017202193219598674
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.007343398786784493
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004297306182485681,
+                "mean_upper": 0.004297306182485681
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0041072277005727905,
+                "mean_upper": 0.05456078870612771
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003907934823453658,
+                "mean_upper": 0.1059145782253104
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.46264367816092,
+              "lo": 3.0949579817071875,
+              "hi": 3.8962970954109872
+            }
+          },
+          "M3": {
+            "truth": 0.00425,
+            "bias": 8.695687242757296e-05,
+            "mae": 0.0016439553428683812,
+            "yield_mean": 1.53125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.86,
+                "width": 0.007018967996570555
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.021342049533077338
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.007371434398501906
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004336956872427574,
+                "mean_upper": 0.004336956872427574
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004169042993060037,
+                "mean_upper": 0.053619785763113485
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003982271000775203,
+                "mean_upper": 0.104153125519961
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.5201149425287355,
+              "lo": 3.1493632778845515,
+              "hi": 3.9872631621381918
+            }
+          },
+          "M4": {
+            "truth": 0.00425,
+            "bias": -9.788915258354328e-05,
+            "mae": 0.002143070858559823,
+            "yield_mean": 0.67375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.008275442920036466
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.012127137219406512
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.00867902530836327
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5488505747126435,
+              "lo": 1.3504012669986445,
+              "hi": 1.780591295980318
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.00425,
+            "bias": -7.500000000000018e-05,
+            "mae": 0.0017225,
+            "yield_mean": 0.4175,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.965,
+                "width": 0.009274148268959132
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.00425,
+            "bias": 7.86233707147289e-05,
+            "mae": 0.0017634419231984417,
+            "yield_mean": 0.4325,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.89,
+                "width": 0.007943324950905132
+              },
+              "wald_smoothed": {
+                "coverage": 0.97,
+                "width": 0.009699542924068789
+              },
+              "bootstrap": {
+                "coverage": 0.9,
+                "width": 0.008291021240553566
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.97,
+                "mean_lower": 0.004328623370714729,
+                "mean_upper": 0.004328623370714729
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0041034672324879425,
+                "mean_upper": 0.054224285082690574
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0038656279019745167,
+                "mean_upper": 0.10455884966392516
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.035928143712575,
+              "lo": 0.9419427380430013,
+              "hi": 1.1391619221805953
+            }
+          },
+          "M2p": {
+            "truth": 0.00425,
+            "bias": -0.00016531300803643116,
+            "mae": 0.0016496508103038144,
+            "yield_mean": 0.416875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.00756227780499641
+              },
+              "wald_smoothed": {
+                "coverage": 0.975,
+                "width": 0.009298858752025406
+              },
+              "bootstrap": {
+                "coverage": 0.92,
+                "width": 0.00785614638318508
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9985029940119761,
+              "lo": 0.9085681585939097,
+              "hi": 1.103020630381296
+            }
+          },
+          "M2": {
+            "truth": 0.00425,
+            "bias": 0.0001466454077272863,
+            "mae": 0.0011982553587034628,
+            "yield_mean": 1.52875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.0053362589794158114
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.011242651943890056
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.005882301445998192
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004396645407727286,
+                "mean_upper": 0.004396645407727286
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004226364767837375,
+                "mean_upper": 0.05390481737397936
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003867607381456399,
+                "mean_upper": 0.10287691530947157
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.6616766467065873,
+              "lo": 3.3971810488524166,
+              "hi": 3.948791666666666
+            }
+          },
+          "M3": {
+            "truth": 0.00425,
+            "bias": 9.11583679151955e-05,
+            "mae": 0.0011068874843384823,
+            "yield_mean": 1.53375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.885,
+                "width": 0.005028055563295992
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.01321284118145729
+              },
+              "bootstrap": {
+                "coverage": 0.96,
+                "width": 0.005663717693228423
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004341158367915195,
+                "mean_upper": 0.004341158367915195
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.004144159380740813,
+                "mean_upper": 0.054135253257618636
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.003942153749052137,
+                "mean_upper": 0.10367712335140115
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.6736526946107784,
+              "lo": 3.437496300952467,
+              "hi": 3.9680363344051446
+            }
+          },
+          "M4": {
+            "truth": 0.00425,
+            "bias": 3.0514555252725717e-06,
+            "mae": 0.0014445772298316997,
+            "yield_mean": 0.720625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.885,
+                "width": 0.0063352861862017796
+              },
+              "wald_smoothed": {
+                "coverage": 0.975,
+                "width": 0.008471638894354533
+              },
+              "bootstrap": {
+                "coverage": 0.925,
+                "width": 0.006743114561183809
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.7260479041916168,
+              "lo": 1.5805979535765826,
+              "hi": 1.8878764278296987
+            }
+          }
+        }
+      }
+    },
+    "low": {
+      "truth_for": 0.010125,
+      "pool_size": 8000,
+      "hidden_events": 81,
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.010125,
+            "bias": 0.00027499999999999985,
+            "mae": 0.01121,
+            "yield_mean": 1.04,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.94,
+                "width": 0.08608461303189699
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.010125,
+            "bias": -0.0001064322916666665,
+            "mae": 0.012246067708333332,
+            "yield_mean": 1.03,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.385,
+                "width": 0.025632017770628655
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06643069955574869
+              },
+              "bootstrap": {
+                "coverage": 0.38,
+                "width": 0.027302857421875004
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010018567708333332,
+                "mean_upper": 0.010018567708333332
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009626953124999999,
+                "mean_upper": 0.060354453125000006
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009148307291666666,
+                "mean_upper": 0.10415091145833336
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9903846153846154,
+              "lo": 0.7566431475723511,
+              "hi": 1.303955108359133
+            }
+          },
+          "M2p": {
+            "truth": 0.010125,
+            "bias": 0.0007123645833333325,
+            "mae": 0.010634864583333332,
+            "yield_mean": 1.31,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.51,
+                "width": 0.027115056115010132
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06556554371921809
+              },
+              "bootstrap": {
+                "coverage": 0.5,
+                "width": 0.02855381854745371
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2596153846153846,
+              "lo": 1.0087681488203266,
+              "hi": 1.5652173913043477
+            }
+          },
+          "M2": {
+            "truth": 0.010125,
+            "bias": 0.00103249549062049,
+            "mae": 0.008458290945165946,
+            "yield_mean": 3.23,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.82,
+                "width": 0.02601866891047032
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.10724005042042371
+              },
+              "bootstrap": {
+                "coverage": 0.81,
+                "width": 0.027729681570165955
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01115749549062049,
+                "mean_upper": 0.01115749549062049
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010704825036075036,
+                "mean_upper": 0.0584466351010101
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010325846410533907,
+                "mean_upper": 0.10773958829365078
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.105769230769231,
+              "lo": 2.5737704918032787,
+              "hi": 3.8372468117029253
+            }
+          },
+          "M3": {
+            "truth": 0.010125,
+            "bias": -0.0002878115530303031,
+            "mae": 0.006916639204545454,
+            "yield_mean": 2.97,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.73,
+                "width": 0.022385480834296558
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.12872127905882383
+              },
+              "bootstrap": {
+                "coverage": 0.775,
+                "width": 0.02339417057291667
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009837188446969698,
+                "mean_upper": 0.009837188446969698
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009239357007575756,
+                "mean_upper": 0.06239771543560606
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.008948312026515151,
+                "mean_upper": 0.10483116856060606
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.855769230769231,
+              "lo": 2.38135593220339,
+              "hi": 3.4617021276595734
+            }
+          },
+          "M4": {
+            "truth": 0.010125,
+            "bias": -0.00011449942129629707,
+            "mae": 0.010111750578703702,
+            "yield_mean": 1.28,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.495,
+                "width": 0.02513521822228074
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06435964254641942
+              },
+              "bootstrap": {
+                "coverage": 0.475,
+                "width": 0.02674957916666667
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2307692307692308,
+              "lo": 0.9743478260869565,
+              "hi": 1.554406656207978
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.010125,
+            "bias": -0.0011250000000000003,
+            "mae": 0.00687,
+            "yield_mean": 0.9,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.945,
+                "width": 0.04936798592723116
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.010125,
+            "bias": 0.0010028169165393424,
+            "mae": 0.007456518215240642,
+            "yield_mean": 1.12,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.7,
+                "width": 0.027378607920487172
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0441007085072793
+              },
+              "bootstrap": {
+                "coverage": 0.695,
+                "width": 0.029079080595874718
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.011127816916539343,
+                "mean_upper": 0.011127816916539343
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010494919666730329,
+                "mean_upper": 0.06051222521963331
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010214584606569902,
+                "mean_upper": 0.11229101305863255
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2444444444444445,
+              "lo": 1.03013227904227,
+              "hi": 1.5105248917748917
+            }
+          },
+          "M2p": {
+            "truth": 0.010125,
+            "bias": -0.0002571538742690063,
+            "mae": 0.006890068347953217,
+            "yield_mean": 1.12,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.7,
+                "width": 0.023455461951528624
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.041030472738043715
+              },
+              "bootstrap": {
+                "coverage": 0.7,
+                "width": 0.024613349853801175
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2444444444444445,
+              "lo": 1.0298326329517462,
+              "hi": 1.503470647518266
+            }
+          },
+          "M2": {
+            "truth": 0.010125,
+            "bias": -0.00027204728203083497,
+            "mae": 0.005228964622731071,
+            "yield_mean": 3.225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.73,
+                "width": 0.019681186496215763
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05863558380354995
+              },
+              "bootstrap": {
+                "coverage": 0.87,
+                "width": 0.020192638349543372
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009852952717969165,
+                "mean_upper": 0.009852952717969165
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009411514225905674,
+                "mean_upper": 0.05849735056153642
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.00908159359098504,
+                "mean_upper": 0.10862011123927243
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.5833333333333335,
+              "lo": 3.079582383648262,
+              "hi": 4.230817610062893
+            }
+          },
+          "M3": {
+            "truth": 0.010125,
+            "bias": 0.0013647912946428576,
+            "mae": 0.006468791294642857,
+            "yield_mean": 3.36,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.825,
+                "width": 0.023176795432926056
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.07363035100194854
+              },
+              "bootstrap": {
+                "coverage": 0.85,
+                "width": 0.02362372388392858
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.011489791294642858,
+                "mean_upper": 0.011489791294642858
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010948635044642859,
+                "mean_upper": 0.05881379687500001
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010040939732142857,
+                "mean_upper": 0.11039091741071429
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.733333333333333,
+              "lo": 3.2009798994974874,
+              "hi": 4.382251987843969
+            }
+          },
+          "M4": {
+            "truth": 0.010125,
+            "bias": -0.0003048702579672535,
+            "mae": 0.006734891010176367,
+            "yield_mean": 1.395,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.765,
+                "width": 0.02244655964501259
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.039337754800736806
+              },
+              "bootstrap": {
+                "coverage": 0.76,
+                "width": 0.023350945092086697
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.55,
+              "lo": 1.286333195249931,
+              "hi": 1.8608030063291137
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.010125,
+            "bias": -0.00037500000000000017,
+            "mae": 0.0056412499999999996,
+            "yield_mean": 0.975,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.945,
+                "width": 0.031156705459576085
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.010125,
+            "bias": -0.00031976029319580627,
+            "mae": 0.004842008113460223,
+            "yield_mean": 0.9825,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.86,
+                "width": 0.02160671113216975
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.028864398411906515
+              },
+              "bootstrap": {
+                "coverage": 0.86,
+                "width": 0.022184378121972593
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.995,
+                "mean_lower": 0.009805239706804194,
+                "mean_upper": 0.009805239706804194
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.009455043138819239,
+                "mean_upper": 0.059599695748803284
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009001756916742647,
+                "mean_upper": 0.10896428665659905
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0076923076923077,
+              "lo": 0.8886176941774391,
+              "hi": 1.1507118461595576
+            }
+          },
+          "M2p": {
+            "truth": 0.010125,
+            "bias": -0.00011590919053185298,
+            "mae": 0.005178699469121372,
+            "yield_mean": 1.065,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.885,
+                "width": 0.02107140251757091
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.028461423853414297
+              },
+              "bootstrap": {
+                "coverage": 0.885,
+                "width": 0.021697054629663454
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0923076923076922,
+              "lo": 0.9554938271604939,
+              "hi": 1.247839232493411
+            }
+          },
+          "M2": {
+            "truth": 0.010125,
+            "bias": -0.0006201165480680014,
+            "mae": 0.003471141646837868,
+            "yield_mean": 3.2425,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.83,
+                "width": 0.015426200942739016
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03576138602175062
+              },
+              "bootstrap": {
+                "coverage": 0.87,
+                "width": 0.015567175860420224
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009504883451931997,
+                "mean_upper": 0.009504883451931997
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.008875962548262548,
+                "mean_upper": 0.06177570683382719
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.008635617516686121,
+                "mean_upper": 0.11070124395895065
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.325641025641026,
+              "lo": 2.9904767437857194,
+              "hi": 3.729178779069767
+            }
+          },
+          "M3": {
+            "truth": 0.010125,
+            "bias": -0.0001524895860340502,
+            "mae": 0.004023609697735718,
+            "yield_mean": 3.265,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.87,
+                "width": 0.016021178307975645
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04367021862713219
+              },
+              "bootstrap": {
+                "coverage": 0.88,
+                "width": 0.016151076769104877
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009972510413965949,
+                "mean_upper": 0.009972510413965949
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.00944734573772794,
+                "mean_upper": 0.057775003103124195
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009021964680019014,
+                "mean_upper": 0.11109969831637283
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.348717948717949,
+              "lo": 3.0181883268354657,
+              "hi": 3.760697565543071
+            }
+          },
+          "M4": {
+            "truth": 0.010125,
+            "bias": -0.00014865248867591943,
+            "mae": 0.004561348362714811,
+            "yield_mean": 1.4975,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.855,
+                "width": 0.019450719921368206
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.026778633220424442
+              },
+              "bootstrap": {
+                "coverage": 0.935,
+                "width": 0.01971098651102967
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.535897435897436,
+              "lo": 1.356766428389369,
+              "hi": 1.734463276836158
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.010125,
+            "bias": 0.00047499999999999973,
+            "mae": 0.0039175,
+            "yield_mean": 1.06,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.915,
+                "width": 0.02095130155701659
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.010125,
+            "bias": 0.00015014513383777262,
+            "mae": 0.004250202792658758,
+            "yield_mean": 1.02875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.017815803773896174
+              },
+              "wald_smoothed": {
+                "coverage": 0.985,
+                "width": 0.0212168815859876
+              },
+              "bootstrap": {
+                "coverage": 0.895,
+                "width": 0.01805645448968178
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.985,
+                "mean_lower": 0.010275145133837774,
+                "mean_upper": 0.010275145133837774
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009750358041709144,
+                "mean_upper": 0.059995348114325026
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009264307772855916,
+                "mean_upper": 0.11103502709388206
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9705188679245284,
+              "lo": 0.8801680105347955,
+              "hi": 1.070580260382892
+            }
+          },
+          "M2p": {
+            "truth": 0.010125,
+            "bias": 0.00028516971749514825,
+            "mae": 0.004134185615390357,
+            "yield_mean": 1.08,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.9,
+                "width": 0.01734826699964602
+              },
+              "wald_smoothed": {
+                "coverage": 0.98,
+                "width": 0.020875273987680184
+              },
+              "bootstrap": {
+                "coverage": 0.9,
+                "width": 0.017664942596842814
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0188679245283019,
+              "lo": 0.9201271542059469,
+              "hi": 1.1228113762667538
+            }
+          },
+          "M2": {
+            "truth": 0.010125,
+            "bias": -2.8500759567571497e-05,
+            "mae": 0.002995448802382189,
+            "yield_mean": 3.425,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.865,
+                "width": 0.012410611565323713
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.024361068417523814
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.012571149852002687
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010096499240432428,
+                "mean_upper": 0.010096499240432428
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009633447314907697,
+                "mean_upper": 0.05741411251178955
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009242698548327141,
+                "mean_upper": 0.10778807956628629
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.231132075471698,
+              "lo": 3.015654343917184,
+              "hi": 3.4926763206453053
+            }
+          },
+          "M3": {
+            "truth": 0.010125,
+            "bias": 0.0005020752256644283,
+            "mae": 0.0031749537429804453,
+            "yield_mean": 3.40375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.865,
+                "width": 0.013311261200266959
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.029000444702607008
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.013567628188572831
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010627075225664428,
+                "mean_upper": 0.010627075225664428
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010067606698480829,
+                "mean_upper": 0.060019760957582796
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009572739749817392,
+                "mean_upper": 0.11309731803062134
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.2110849056603774,
+              "lo": 2.988788291878313,
+              "hi": 3.470891844461416
+            }
+          },
+          "M4": {
+            "truth": 0.010125,
+            "bias": -0.0006946722137742067,
+            "mae": 0.0032554433482711006,
+            "yield_mean": 1.525,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.89,
+                "width": 0.014186485461176502
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.018259297160998035
+              },
+              "bootstrap": {
+                "coverage": 0.915,
+                "width": 0.014350712560601457
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4386792452830186,
+              "lo": 1.3180130432339694,
+              "hi": 1.5780696106650507
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.010125,
+            "bias": 0.0001375,
+            "mae": 0.0025175,
+            "yield_mean": 1.02625,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.98,
+                "width": 0.013737638592249747
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.010125,
+            "bias": -2.011713910851308e-05,
+            "mae": 0.002654870746697572,
+            "yield_mean": 1.01125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.012863407541995477
+              },
+              "wald_smoothed": {
+                "coverage": 0.95,
+                "width": 0.01462442220527934
+              },
+              "bootstrap": {
+                "coverage": 0.935,
+                "width": 0.013133693280872584
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.95,
+                "mean_lower": 0.010104882860891486,
+                "mean_upper": 0.010104882860891486
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.99,
+                "mean_lower": 0.009604847269989905,
+                "mean_upper": 0.05966365151085934
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.99,
+                "mean_lower": 0.009100087397089047,
+                "mean_upper": 0.10898571764492854
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9853836784409256,
+              "lo": 0.927050454123186,
+              "hi": 1.0464205695507975
+            }
+          },
+          "M2p": {
+            "truth": 0.010125,
+            "bias": -0.0002634244746347844,
+            "mae": 0.0023375067438326787,
+            "yield_mean": 0.999375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.95,
+                "width": 0.01248604650385416
+              },
+              "wald_smoothed": {
+                "coverage": 0.99,
+                "width": 0.014265301433168166
+              },
+              "bootstrap": {
+                "coverage": 0.955,
+                "width": 0.012630984499254476
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9738124238733251,
+              "lo": 0.9183977188874017,
+              "hi": 1.0357752813659113
+            }
+          },
+          "M2": {
+            "truth": 0.010125,
+            "bias": -0.00014583696765729944,
+            "mae": 0.0021315918119293557,
+            "yield_mean": 3.33125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.84,
+                "width": 0.009208402221665142
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.01586677619331495
+              },
+              "bootstrap": {
+                "coverage": 0.895,
+                "width": 0.009824687447736189
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0099791630323427,
+                "mean_upper": 0.0099791630323427
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009447391641588997,
+                "mean_upper": 0.058367066879202296
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.00890131021832822,
+                "mean_upper": 0.10996330168270224
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.2460414129110835,
+              "lo": 3.0972848710747383,
+              "hi": 3.396633060450071
+            }
+          },
+          "M3": {
+            "truth": 0.010125,
+            "bias": 0.0002375486710406556,
+            "mae": 0.0020039792194614828,
+            "yield_mean": 3.4325,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.89,
+                "width": 0.009148867074673273
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.019280462356454368
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.00990761122741983
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.010362548671040655,
+                "mean_upper": 0.010362548671040655
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009863255167872715,
+                "mean_upper": 0.058778603913631926
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.009355468748527706,
+                "mean_upper": 0.10992036428546402
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.3447015834348353,
+              "lo": 3.196814772673086,
+              "hi": 3.5109409811053034
+            }
+          },
+          "M4": {
+            "truth": 0.010125,
+            "bias": 0.00017276475589355722,
+            "mae": 0.002255668188024127,
+            "yield_mean": 1.6825,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.935,
+                "width": 0.010472234830056142
+              },
+              "wald_smoothed": {
+                "coverage": 0.975,
+                "width": 0.012404796190065537
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.01108121170348807
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6394640682095005,
+              "lo": 1.5486252984214148,
+              "hi": 1.7352865727869753
+            }
+          }
+        }
+      }
+    },
+    "medium": {
+      "truth_for": 0.020125,
+      "pool_size": 8000,
+      "hidden_events": 161,
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.020125,
+            "bias": -0.0025250000000000008,
+            "mae": 0.0132725,
+            "yield_mean": 1.76,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.95,
+                "width": 0.09496044955541262
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.020125,
+            "bias": -0.0006077500000000007,
+            "mae": 0.015341,
+            "yield_mean": 1.96,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.625,
+                "width": 0.04764943113500999
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08079519764493667
+              },
+              "bootstrap": {
+                "coverage": 0.615,
+                "width": 0.050394642057291675
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01951725,
+                "mean_upper": 0.01951725
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0183354375,
+                "mean_upper": 0.07151870312500001
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01692453125,
+                "mean_upper": 0.11744040625
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1136363636363635,
+              "lo": 0.9120836417468542,
+              "hi": 1.3435630751533743
+            }
+          },
+          "M2p": {
+            "truth": 0.020125,
+            "bias": 0.0011353761574074079,
+            "mae": 0.013504626157407409,
+            "yield_mean": 2.59,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.75,
+                "width": 0.04657187852803604
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.07774661479934453
+              },
+              "bootstrap": {
+                "coverage": 0.75,
+                "width": 0.047442899247685195
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.471590909090909,
+              "lo": 1.236431924277203,
+              "hi": 1.7744054878048783
+            }
+          },
+          "M2": {
+            "truth": 0.020125,
+            "bias": 0.0005366111111111113,
+            "mae": 0.008961138888888888,
+            "yield_mean": 7.02,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.955,
+                "width": 0.038942192401262954
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.11053803230372995
+              },
+              "bootstrap": {
+                "coverage": 0.925,
+                "width": 0.038605118402777784
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.020661611111111117,
+                "mean_upper": 0.020661611111111117
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01992777777777778,
+                "mean_upper": 0.06763736111111111
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017979861111111113,
+                "mean_upper": 0.11532254166666667
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.9886363636363633,
+              "lo": 3.4228661966549168,
+              "hi": 4.677677968960863
+            }
+          },
+          "M3": {
+            "truth": 0.020125,
+            "bias": -0.000516479031385282,
+            "mae": 0.007996994994588745,
+            "yield_mean": 6.83,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.86,
+                "width": 0.03556386212359759
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.14037048366247926
+              },
+              "bootstrap": {
+                "coverage": 0.845,
+                "width": 0.03557448295454546
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019608520968614717,
+                "mean_upper": 0.019608520968614717
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.018727660037878787,
+                "mean_upper": 0.06239827976190476
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017783009063852814,
+                "mean_upper": 0.1056973777056277
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.8806818181818183,
+              "lo": 3.3165841584158415,
+              "hi": 4.537986854917234
+            }
+          },
+          "M4": {
+            "truth": 0.020125,
+            "bias": -0.0006681942027879522,
+            "mae": 0.013885201630545383,
+            "yield_mean": 2.58,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.72,
+                "width": 0.042670578676470144
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.07541567127717685
+              },
+              "bootstrap": {
+                "coverage": 0.71,
+                "width": 0.04349715767768113
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.465909090909091,
+              "lo": 1.2241051349325336,
+              "hi": 1.7702025103519667
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.020125,
+            "bias": -0.00027500000000000083,
+            "mae": 0.010602499999999999,
+            "yield_mean": 1.985,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.94,
+                "width": 0.06192875350125231
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.020125,
+            "bias": -0.000259368745225364,
+            "mae": 0.010900987745098036,
+            "yield_mean": 1.975,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.85,
+                "width": 0.04320248005565113
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05669794946715836
+              },
+              "bootstrap": {
+                "coverage": 0.85,
+                "width": 0.04431291569303859
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019865631254774637,
+                "mean_upper": 0.019865631254774637
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019312942075693913,
+                "mean_upper": 0.06999707806531705
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017714545056659026,
+                "mean_upper": 0.11471959026451489
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9949622166246851,
+              "lo": 0.8663265087706153,
+              "hi": 1.1380277593085109
+            }
+          },
+          "M2p": {
+            "truth": 0.020125,
+            "bias": -0.0005588539956212371,
+            "mae": 0.01019082950191571,
+            "yield_mean": 2.19,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.86,
+                "width": 0.03915140776982513
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.053305916749370075
+              },
+              "bootstrap": {
+                "coverage": 0.86,
+                "width": 0.039692813225232625
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1032745591939546,
+              "lo": 0.9694726693494299,
+              "hi": 1.2527610252544286
+            }
+          },
+          "M2": {
+            "truth": 0.020125,
+            "bias": -0.0007785802005012535,
+            "mae": 0.0062089887218045115,
+            "yield_mean": 7.105,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.88,
+                "width": 0.028024426470121225
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06965168577248577
+              },
+              "bootstrap": {
+                "coverage": 0.9,
+                "width": 0.027803952380952388
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01934641979949875,
+                "mean_upper": 0.01934641979949875
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01845648558897243,
+                "mean_upper": 0.06827623026315789
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017497820175438595,
+                "mean_upper": 0.11965441228070177
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.579345088161209,
+              "lo": 3.2248827735848073,
+              "hi": 4.00590336728919
+            }
+          },
+          "M3": {
+            "truth": 0.020125,
+            "bias": -0.0009007684294871796,
+            "mae": 0.006223555288461539,
+            "yield_mean": 7.05,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.87,
+                "width": 0.02649720048785644
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08051621722072101
+              },
+              "bootstrap": {
+                "coverage": 0.88,
+                "width": 0.02627806682692308
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01922423157051282,
+                "mean_upper": 0.01922423157051282
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.018273460737179486,
+                "mean_upper": 0.06770944047619047
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01718394951923077,
+                "mean_upper": 0.1155171594551282
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.551637279596977,
+              "lo": 3.1937649521531104,
+              "hi": 3.952668881379667
+            }
+          },
+          "M4": {
+            "truth": 0.020125,
+            "bias": -0.000515679094264504,
+            "mae": 0.008988036351266855,
+            "yield_mean": 2.925,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.87,
+                "width": 0.036193800838137766
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0510927140905075
+              },
+              "bootstrap": {
+                "coverage": 0.87,
+                "width": 0.0364628490694171
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4735516372795967,
+              "lo": 1.2963446889547185,
+              "hi": 1.6759424603174595
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.020125,
+            "bias": -0.0001000000000000003,
+            "mae": 0.00771125,
+            "yield_mean": 2.0025,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.945,
+                "width": 0.04099990869774791
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.020125,
+            "bias": 0.00026188269105491854,
+            "mae": 0.008458728790767447,
+            "yield_mean": 2.045,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.905,
+                "width": 0.035494022647933464
+              },
+              "wald_smoothed": {
+                "coverage": 0.97,
+                "width": 0.04186886706873791
+              },
+              "bootstrap": {
+                "coverage": 0.92,
+                "width": 0.03574532534603522
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.97,
+                "mean_lower": 0.02038688269105492,
+                "mean_upper": 0.02038688269105492
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01950924266454898,
+                "mean_upper": 0.06929948694550196
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.995,
+                "mean_lower": 0.018336718601520433,
+                "mean_upper": 0.1206005828100129
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.021223470661673,
+              "lo": 0.9288299059693762,
+              "hi": 1.1337048963182321
+            }
+          },
+          "M2p": {
+            "truth": 0.020125,
+            "bias": 0.0015072784197012132,
+            "mae": 0.00695338404528478,
+            "yield_mean": 2.275,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.965,
+                "width": 0.03466332993311238
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.04136088822140239
+              },
+              "bootstrap": {
+                "coverage": 0.955,
+                "width": 0.03418910487861812
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1360799001248438,
+              "lo": 1.0403788499956326,
+              "hi": 1.2392991846745327
+            }
+          },
+          "M2": {
+            "truth": 0.020125,
+            "bias": -0.00013391396103896132,
+            "mae": 0.004599838015245623,
+            "yield_mean": 7.23,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.0220018329378843
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0469410479002722
+              },
+              "bootstrap": {
+                "coverage": 0.905,
+                "width": 0.022078548877458592
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019991086038961037,
+                "mean_upper": 0.019991086038961037
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01887970108695652,
+                "mean_upper": 0.07002211018962921
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017879609295595712,
+                "mean_upper": 0.11851676242236024
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.610486891385768,
+              "lo": 3.3516490088858513,
+              "hi": 3.880495507954829
+            }
+          },
+          "M3": {
+            "truth": 0.020125,
+            "bias": 0.0005782313948114024,
+            "mae": 0.005236610541206803,
+            "yield_mean": 7.43,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.915,
+                "width": 0.02233540038864839
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05446696228088152
+              },
+              "bootstrap": {
+                "coverage": 0.925,
+                "width": 0.02244815917907355
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.020703231394811405,
+                "mean_upper": 0.020703231394811405
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01933572647939999,
+                "mean_upper": 0.06852746072415657
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01834933420179929,
+                "mean_upper": 0.11574161290068054
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.710362047440699,
+              "lo": 3.443231367711361,
+              "hi": 4.015145846038888
+            }
+          },
+          "M4": {
+            "truth": 0.020125,
+            "bias": -0.0005055173729690385,
+            "mae": 0.00650829154962128,
+            "yield_mean": 3.21,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.027404307156549866
+              },
+              "wald_smoothed": {
+                "coverage": 0.98,
+                "width": 0.03562397530512685
+              },
+              "bootstrap": {
+                "coverage": 0.915,
+                "width": 0.02702539149924334
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6029962546816479,
+              "lo": 1.4631152632297364,
+              "hi": 1.7577138889749229
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.020125,
+            "bias": 0.00023749999999999995,
+            "mae": 0.0048575,
+            "yield_mean": 2.03625,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.97,
+                "width": 0.027952928100650566
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.020125,
+            "bias": 5.540951184561448e-05,
+            "mae": 0.00569460088600142,
+            "yield_mean": 2.01875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.026226861424230422
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.029604433908564536
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.02578209827410526
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.955,
+                "mean_lower": 0.020180409511845614,
+                "mean_upper": 0.020180409511845614
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.019192705819568116,
+                "mean_upper": 0.07017037538781885
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01830616082854777,
+                "mean_upper": 0.11619194280780853
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9914057704112952,
+              "lo": 0.9287904003509079,
+              "hi": 1.057163022251894
+            }
+          },
+          "M2p": {
+            "truth": 0.020125,
+            "bias": 0.00012856346515879044,
+            "mae": 0.005183781652433701,
+            "yield_mean": 2.09375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.024532740554427505
+              },
+              "wald_smoothed": {
+                "coverage": 0.965,
+                "width": 0.027866634736815454
+              },
+              "bootstrap": {
+                "coverage": 0.915,
+                "width": 0.024381848460861617
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0282381829343157,
+              "lo": 0.9701321714240461,
+              "hi": 1.0916616031921618
+            }
+          },
+          "M2": {
+            "truth": 0.020125,
+            "bias": 5.830409523011382e-05,
+            "mae": 0.0034134637472795575,
+            "yield_mean": 7.5375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.94,
+                "width": 0.01525751487199299
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.029367629928906604
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.015852558161268685
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.020183304095230118,
+                "mean_upper": 0.020183304095230118
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019143472680507,
+                "mean_upper": 0.0710044638889554
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01809633943969531,
+                "mean_upper": 0.11835481885279812
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.701657458563536,
+              "lo": 3.534192661116425,
+              "hi": 3.8884343394194585
+            }
+          },
+          "M3": {
+            "truth": 0.020125,
+            "bias": -0.0004824284891758435,
+            "mae": 0.0031212055118383566,
+            "yield_mean": 7.3125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.905,
+                "width": 0.014864616702888588
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03600841013465915
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.015569518936143965
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01964257151082416,
+                "mean_upper": 0.01964257151082416
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.018786485231484837,
+                "mean_upper": 0.0684074510445342
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01761524363786463,
+                "mean_upper": 0.1175083094536306
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.5911602209944755,
+              "lo": 3.4315730400706723,
+              "hi": 3.76493743274858
+            }
+          },
+          "M4": {
+            "truth": 0.020125,
+            "bias": -0.00021271270602322756,
+            "mae": 0.004034265769276283,
+            "yield_mean": 3.72,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.89,
+                "width": 0.01881738934418445
+              },
+              "wald_smoothed": {
+                "coverage": 0.945,
+                "width": 0.022999576688200532
+              },
+              "bootstrap": {
+                "coverage": 0.9,
+                "width": 0.019263217687258048
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.826887661141805,
+              "lo": 1.7254387309550356,
+              "hi": 1.9385076226458766
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.020125,
+            "bias": -0.00016250000000000024,
+            "mae": 0.00353125,
+            "yield_mean": 1.99625,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.955,
+                "width": 0.018692755846731655
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.020125,
+            "bias": -9.464791776988643e-05,
+            "mae": 0.0038128989898399946,
+            "yield_mean": 2.003125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.97,
+                "width": 0.01822710368147515
+              },
+              "wald_smoothed": {
+                "coverage": 0.98,
+                "width": 0.019513312729054908
+              },
+              "bootstrap": {
+                "coverage": 0.96,
+                "width": 0.018658791047581873
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.98,
+                "mean_lower": 0.02003035208223012,
+                "mean_upper": 0.02003035208223012
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01906167234240829,
+                "mean_upper": 0.06884810011395612
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01806095478226334,
+                "mean_upper": 0.11825144403235939
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0034439574201626,
+              "lo": 0.96027961091124,
+              "hi": 1.0488043128482774
+            }
+          },
+          "M2p": {
+            "truth": 0.020125,
+            "bias": -1.7687024723330413e-06,
+            "mae": 0.003890759712295062,
+            "yield_mean": 2.0525,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.955,
+                "width": 0.017145985576490774
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.018387229884753276
+              },
+              "bootstrap": {
+                "coverage": 0.955,
+                "width": 0.017646741318651266
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0281778334376956,
+              "lo": 0.985932228615614,
+              "hi": 1.0772242958380847
+            }
+          },
+          "M2": {
+            "truth": 0.020125,
+            "bias": 0.00020873012750785035,
+            "mae": 0.00235652494378175,
+            "yield_mean": 7.538125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.905,
+                "width": 0.010898169574986287
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.016754630227026602
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.012112689454755982
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.995,
+                "mean_lower": 0.02033373012750785,
+                "mean_upper": 0.02033373012750785
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019236664363502867,
+                "mean_upper": 0.0697567232830629
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01829729055629741,
+                "mean_upper": 0.11913833956732839
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.7761427676894175,
+              "lo": 3.6527158084042872,
+              "hi": 3.913377143524425
+            }
+          },
+          "M3": {
+            "truth": 0.020125,
+            "bias": 0.00020709612314905062,
+            "mae": 0.002362733086815882,
+            "yield_mean": 7.563125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.01064216406329456
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.020266394603158166
+              },
+              "bootstrap": {
+                "coverage": 0.95,
+                "width": 0.011844419086929889
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.020332096123149054,
+                "mean_upper": 0.020332096123149054
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.019318574906194014,
+                "mean_upper": 0.06994824477373189
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.018379639055733074,
+                "mean_upper": 0.11755776047682222
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.7886662492172825,
+              "lo": 3.662287497610132,
+              "hi": 3.915037302441248
+            }
+          },
+          "M4": {
+            "truth": 0.020125,
+            "bias": -3.339897426417415e-05,
+            "mae": 0.002725296287752473,
+            "yield_mean": 4.17,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.012346121222964019
+              },
+              "wald_smoothed": {
+                "coverage": 0.965,
+                "width": 0.014102807335490965
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.013351365656666267
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 2.0889167188478397,
+              "lo": 2.0027725077556457,
+              "hi": 2.1790513558834514
+            }
+          }
+        }
+      }
+    },
+    "high": {
+      "truth_for": 0.0455,
+      "pool_size": 8000,
+      "hidden_events": 364,
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.0455,
+            "bias": -0.004199999999999999,
+            "mae": 0.02255,
+            "yield_mean": 4.13,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.99,
+                "width": 0.12067994724410275
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.0455,
+            "bias": -0.004616770833333336,
+            "mae": 0.022990145833333333,
+            "yield_mean": 4.13,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.84,
+                "width": 0.08619363972977037
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.11045825014418012
+              },
+              "bootstrap": {
+                "coverage": 0.835,
+                "width": 0.08809503151041667
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04088322916666666,
+                "mean_upper": 0.04088322916666666
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.038066572916666666,
+                "mean_upper": 0.08674534374999998
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.03558786458333333,
+                "mean_upper": 0.13695347916666667
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0,
+              "lo": 0.8798886037017174,
+              "hi": 1.146989257156809
+            }
+          },
+          "M2p": {
+            "truth": 0.0455,
+            "bias": -0.0021543009259259267,
+            "mae": 0.019968532407407407,
+            "yield_mean": 5.24,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.785,
+                "width": 0.075915154482897
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.10308043582589249
+              },
+              "bootstrap": {
+                "coverage": 0.895,
+                "width": 0.0754625560763889
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.268765133171913,
+              "lo": 1.1276007571677165,
+              "hi": 1.4376884807803683
+            }
+          },
+          "M2": {
+            "truth": 0.0455,
+            "bias": 0.0005729606729055282,
+            "mae": 0.014546836564171124,
+            "yield_mean": 14.94,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.0626998458143543
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.13904659598950012
+              },
+              "bootstrap": {
+                "coverage": 0.895,
+                "width": 0.06091015645889039
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.046072960672905526,
+                "mean_upper": 0.046072960672905526
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.044402616421568626,
+                "mean_upper": 0.09859106305704099
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.042114831773618536,
+                "mean_upper": 0.14332407531194297
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.6174334140435835,
+              "lo": 3.2847456402590933,
+              "hi": 3.9923463111921933
+            }
+          },
+          "M3": {
+            "truth": 0.0455,
+            "bias": -0.0004654356060606024,
+            "mae": 0.014713649891774892,
+            "yield_mean": 13.75,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.875,
+                "width": 0.06022579250755131
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.15699770253414388
+              },
+              "bootstrap": {
+                "coverage": 0.88,
+                "width": 0.058394493743235944
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0450345643939394,
+                "mean_upper": 0.0450345643939394
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04287658143939394,
+                "mean_upper": 0.09650510890151516
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.040146181682900434,
+                "mean_upper": 0.1278930965909091
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.3292978208232444,
+              "lo": 3.029139903353783,
+              "hi": 3.6815505874673624
+            }
+          },
+          "M4": {
+            "truth": 0.0455,
+            "bias": -0.004118105088908537,
+            "mae": 0.01933283628548973,
+            "yield_mean": 5.5,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.825,
+                "width": 0.07281708500359713
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.10089684554785279
+              },
+              "bootstrap": {
+                "coverage": 0.875,
+                "width": 0.07258940694836973
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.331719128329298,
+              "lo": 1.178065620857269,
+              "hi": 1.4988160958925838
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.0455,
+            "bias": -0.001149999999999998,
+            "mae": 0.016935000000000002,
+            "yield_mean": 4.435,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.965,
+                "width": 0.08361573524000729
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.0455,
+            "bias": 0.0010699942306468017,
+            "mae": 0.015656583516361088,
+            "yield_mean": 4.68,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.925,
+                "width": 0.07701094949470262
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.08837917066469383
+              },
+              "bootstrap": {
+                "coverage": 0.935,
+                "width": 0.07621524978673289
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.955,
+                "mean_lower": 0.046569994230646804,
+                "mean_upper": 0.046569994230646804
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.04388674230487649,
+                "mean_upper": 0.09571138657849503
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.995,
+                "mean_lower": 0.041432506517379675,
+                "mean_upper": 0.13855992452890245
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0552423900789176,
+              "lo": 0.9659751621452909,
+              "hi": 1.1581530233972306
+            }
+          },
+          "M2p": {
+            "truth": 0.0455,
+            "bias": 0.0005529361658456495,
+            "mae": 0.014288535509031199,
+            "yield_mean": 5.185,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.06468039907691853
+              },
+              "wald_smoothed": {
+                "coverage": 0.985,
+                "width": 0.07775527271012306
+              },
+              "bootstrap": {
+                "coverage": 0.92,
+                "width": 0.06300482340414615
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.169109357384442,
+              "lo": 1.0764219262636285,
+              "hi": 1.264928494495773
+            }
+          },
+          "M2": {
+            "truth": 0.0455,
+            "bias": -0.0001325795939480145,
+            "mae": 0.011511994269688347,
+            "yield_mean": 15.515,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.885,
+                "width": 0.048460697970949956
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0984964494880205
+              },
+              "bootstrap": {
+                "coverage": 0.885,
+                "width": 0.047810905022104944
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.045367420406051975,
+                "mean_upper": 0.045367420406051975
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04293804714373465,
+                "mean_upper": 0.09262758461302212
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04053862632548817,
+                "mean_upper": 0.14366914942858527
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.498308906426156,
+              "lo": 3.256766586360267,
+              "hi": 3.765568109759613
+            }
+          },
+          "M3": {
+            "truth": 0.0455,
+            "bias": 0.0012620285218253996,
+            "mae": 0.01200201281415344,
+            "yield_mean": 15.075,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.87,
+                "width": 0.04976570664288273
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.111450028863086
+              },
+              "bootstrap": {
+                "coverage": 0.86,
+                "width": 0.0486385900669643
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0467620285218254,
+                "mean_upper": 0.0467620285218254
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.044895399470899475,
+                "mean_upper": 0.09457117162698413
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.041985297784391536,
+                "mean_upper": 0.14042806679894182
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.3990980834272833,
+              "lo": 3.1745393792697527,
+              "hi": 3.635628870599739
+            }
+          },
+          "M4": {
+            "truth": 0.0455,
+            "bias": -0.0004170745915704273,
+            "mae": 0.01290286210464878,
+            "yield_mean": 6.64,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.89,
+                "width": 0.058478685455080864
+              },
+              "wald_smoothed": {
+                "coverage": 0.96,
+                "width": 0.07386511890376399
+              },
+              "bootstrap": {
+                "coverage": 0.885,
+                "width": 0.05776382645444073
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4971815107102593,
+              "lo": 1.3800563482104211,
+              "hi": 1.6251591078374574
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.0455,
+            "bias": -0.0008749999999999977,
+            "mae": 0.01275,
+            "yield_mean": 4.4625,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.925,
+                "width": 0.05760275671177226
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.0455,
+            "bias": -5.9941120200556825e-05,
+            "mae": 0.011193329677398074,
+            "yield_mean": 4.5575,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.94,
+                "width": 0.055575466298011286
+              },
+              "wald_smoothed": {
+                "coverage": 0.965,
+                "width": 0.06130590221868852
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.05418152875441185
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.965,
+                "mean_lower": 0.04544005887979944,
+                "mean_upper": 0.04544005887979944
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.043198165971214314,
+                "mean_upper": 0.09290846211571445
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04095312405165588,
+                "mean_upper": 0.14012724695705236
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0212885154061624,
+              "lo": 0.955640137136341,
+              "hi": 1.0898483268240722
+            }
+          },
+          "M2p": {
+            "truth": 0.0455,
+            "bias": -0.0005101698179271697,
+            "mae": 0.010726032913165267,
+            "yield_mean": 4.77,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.048240330844533934
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.05406494043472906
+              },
+              "bootstrap": {
+                "coverage": 0.91,
+                "width": 0.04729804679621848
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0689075630252098,
+              "lo": 1.003809822042518,
+              "hi": 1.1376792666454791
+            }
+          },
+          "M2": {
+            "truth": 0.0455,
+            "bias": 0.0011440779904306224,
+            "mae": 0.00853151889952153,
+            "yield_mean": 15.93,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.935,
+                "width": 0.03834848308542139
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06309452963300421
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.03773386015251196
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04664407799043062,
+                "mean_upper": 0.04664407799043062
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04446067051435407,
+                "mean_upper": 0.09479438995215311
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.042181242344497605,
+                "mean_upper": 0.1426403807416268
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.5697478991596636,
+              "lo": 3.3952463919559177,
+              "hi": 3.7649981596414626
+            }
+          },
+          "M3": {
+            "truth": 0.0455,
+            "bias": -0.0006334146021159259,
+            "mae": 0.007993281217172236,
+            "yield_mean": 15.3625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.03543256531509608
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.07265325923239008
+              },
+              "bootstrap": {
+                "coverage": 0.91,
+                "width": 0.035360062335346186
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04486658539788407,
+                "mean_upper": 0.04486658539788407
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04241755877110731,
+                "mean_upper": 0.09352305288380208
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.040455140777141754,
+                "mean_upper": 0.14129353248212395
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.4425770308123247,
+              "lo": 3.268323780713196,
+              "hi": 3.6207110650193886
+            }
+          },
+          "M4": {
+            "truth": 0.0455,
+            "bias": -0.0015928386993381083,
+            "mae": 0.008425162412857954,
+            "yield_mean": 7.225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.925,
+                "width": 0.04059495439535217
+              },
+              "wald_smoothed": {
+                "coverage": 0.97,
+                "width": 0.04770211947297261
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.04022888290452757
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6190476190476188,
+              "lo": 1.523185335941397,
+              "hi": 1.7188298197891871
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.0455,
+            "bias": 0.0006375000000000017,
+            "mae": 0.0082625,
+            "yield_mean": 4.61375,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.95,
+                "width": 0.040472708289205565
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.0455,
+            "bias": 0.0006087480430815063,
+            "mae": 0.008374774786936575,
+            "yield_mean": 4.61375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.95,
+                "width": 0.03955992878790262
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.041755334542782345
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.03932072495379788
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.955,
+                "mean_lower": 0.04610874804308151,
+                "mean_upper": 0.04610874804308151
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.04355678113070122,
+                "mean_upper": 0.09429579969945079
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.041494479103877845,
+                "mean_upper": 0.14095444789783002
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0,
+              "lo": 0.9612082236886162,
+              "hi": 1.0423048115698854
+            }
+          },
+          "M2p": {
+            "truth": 0.0455,
+            "bias": 0.0003973550756406669,
+            "mae": 0.007581251653439154,
+            "yield_mean": 4.7575,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.93,
+                "width": 0.034923928537636824
+              },
+              "wald_smoothed": {
+                "coverage": 0.945,
+                "width": 0.037017548193047006
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.03474945305668081
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0311568680574372,
+              "lo": 0.990080284667794,
+              "hi": 1.077487133499688
+            }
+          },
+          "M2": {
+            "truth": 0.0455,
+            "bias": 0.0005154069828579665,
+            "mae": 0.006479406964377776,
+            "yield_mean": 15.85,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.905,
+                "width": 0.027335803460965088
+              },
+              "wald_smoothed": {
+                "coverage": 0.99,
+                "width": 0.03739001320640114
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.027870083422892357
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.99,
+                "mean_lower": 0.04601540698285796,
+                "mean_upper": 0.04601540698285796
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04340833106287624,
+                "mean_upper": 0.09395034630671048
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.040820313161685544,
+                "mean_upper": 0.1411729409694423
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.4353833649417505,
+              "lo": 3.321179235807152,
+              "hi": 3.5496277229118935
+            }
+          },
+          "M3": {
+            "truth": 0.0455,
+            "bias": -9.939220453737755e-06,
+            "mae": 0.005311514627946659,
+            "yield_mean": 15.71,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.026014802687958857
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04263140868687703
+              },
+              "bootstrap": {
+                "coverage": 0.91,
+                "width": 0.02629206445493017
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04549006077954626,
+                "mean_upper": 0.04549006077954626
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04336782658359436,
+                "mean_upper": 0.09438766509549605
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.040658534451326084,
+                "mean_upper": 0.14068153977916387
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.4050392847466817,
+              "lo": 3.2971876507198274,
+              "hi": 3.5286607948112754
+            }
+          },
+          "M4": {
+            "truth": 0.0455,
+            "bias": -3.486486117491907e-05,
+            "mae": 0.006142622938161893,
+            "yield_mean": 8.37875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.027887056763859653
+              },
+              "wald_smoothed": {
+                "coverage": 0.93,
+                "width": 0.03084285562131198
+              },
+              "bootstrap": {
+                "coverage": 0.91,
+                "width": 0.028336011314887295
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.8160390138173939,
+              "lo": 1.7451846710924612,
+              "hi": 1.8935530256713853
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.0455,
+            "bias": 0.00023750000000000146,
+            "mae": 0.005575,
+            "yield_mean": 4.57375,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.98,
+                "width": 0.027604828258815325
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.0455,
+            "bias": 0.0011646031175761061,
+            "mae": 0.005994450442860157,
+            "yield_mean": 4.669375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.945,
+                "width": 0.027546405924640114
+              },
+              "wald_smoothed": {
+                "coverage": 0.96,
+                "width": 0.02831341070208894
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.028333880143396658
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.96,
+                "mean_lower": 0.04666460311757611,
+                "mean_upper": 0.04666460311757611
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.99,
+                "mean_lower": 0.0442649687997221,
+                "mean_upper": 0.09319794580168755
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.995,
+                "mean_lower": 0.04242075085458126,
+                "mean_upper": 0.14190128485592793
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0209073517354466,
+              "lo": 0.9908982991346473,
+              "hi": 1.0521740012024061
+            }
+          },
+          "M2p": {
+            "truth": 0.0455,
+            "bias": -7.872006736543328e-05,
+            "mae": 0.004771248320249593,
+            "yield_mean": 4.630625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.96,
+                "width": 0.02433514130755676
+              },
+              "wald_smoothed": {
+                "coverage": 0.975,
+                "width": 0.025070991528051038
+              },
+              "bootstrap": {
+                "coverage": 0.97,
+                "width": 0.02510196641869322
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0124350915550697,
+              "lo": 0.985779540440315,
+              "hi": 1.0402394715082144
+            }
+          },
+          "M2": {
+            "truth": 0.0455,
+            "bias": 0.0004424607063417642,
+            "mae": 0.004105429168161763,
+            "yield_mean": 15.9475,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.88,
+                "width": 0.018878258998033547
+              },
+              "wald_smoothed": {
+                "coverage": 0.98,
+                "width": 0.022724029829215252
+              },
+              "bootstrap": {
+                "coverage": 0.925,
+                "width": 0.020027938367125523
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.98,
+                "mean_lower": 0.04594246070634176,
+                "mean_upper": 0.04594246070634176
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.043761042416198805,
+                "mean_upper": 0.09392512334433924
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04127309841425996,
+                "mean_upper": 0.1427994915512053
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.486745012298442,
+              "lo": 3.4162320287342363,
+              "hi": 3.5646646664862107
+            }
+          },
+          "M3": {
+            "truth": 0.0455,
+            "bias": 0.0003416748984179002,
+            "mae": 0.0036683085082375626,
+            "yield_mean": 15.88375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.018721448221528415
+              },
+              "wald_smoothed": {
+                "coverage": 0.995,
+                "width": 0.025331603778761886
+              },
+              "bootstrap": {
+                "coverage": 0.95,
+                "width": 0.020107533263084933
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.995,
+                "mean_lower": 0.0458416748984179,
+                "mean_upper": 0.0458416748984179
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04350809393738892,
+                "mean_upper": 0.0936126332716822
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.04127391947382289,
+                "mean_upper": 0.14148370926717554
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.472806777808144,
+              "lo": 3.3988822799929324,
+              "hi": 3.5501032899694636
+            }
+          },
+          "M4": {
+            "truth": 0.0455,
+            "bias": -0.0006091157831148483,
+            "mae": 0.003293683021617941,
+            "yield_mean": 9.16625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.965,
+                "width": 0.018393061070590647
+              },
+              "wald_smoothed": {
+                "coverage": 0.97,
+                "width": 0.0196507811935214
+              },
+              "bootstrap": {
+                "coverage": 0.965,
+                "width": 0.019663505500123545
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 2.00409948073244,
+              "lo": 1.9494470331052607,
+              "hi": 2.0596738931731586
+            }
+          }
+        }
+      }
+    }
+  },
+  "reproducibility": {
+    "runs": 1000,
+    "identical": 1000,
+    "rate": 1.0
+  },
+  "runtime_seconds": 5.5
+}
