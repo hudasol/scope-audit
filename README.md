@@ -23,6 +23,14 @@ It makes no statement about how many animals exist, where a species lives, or wh
 
 The detector saw this benchmark during training, so absolute error rates are likely optimistic. No data from the United Arab Emirates were used. See docs/LIMITATIONS.md and docs/DATA_LABELS.md.
 
+![Yield ratio](figures/fig1_yield_ratio.png)
+
+Figure 1. Hidden events found per review relative to simple random sampling. Data label: BORROWED with PUBLISHED detector output.
+
+![Coverage](figures/fig2_coverage_benchmark.png)
+
+Figure 2. Interval coverage by budget for design M2. Data label: BORROWED with PUBLISHED detector output. The shaded band is the 93 to 97 percent target, which no interval met everywhere.
+
 ## Run it 🌿
 
 ```
