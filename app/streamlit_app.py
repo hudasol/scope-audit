@@ -56,7 +56,7 @@ def load_demo() -> tuple[pd.DataFrame, pd.DataFrame]:
 def load_species() -> list[str]:
     d = json.load(open(ROOT / "data" / "reference" / "uae_mammals_gbif.json", encoding="utf8"))
     items = d.get("species", d) if isinstance(d, dict) else d
-    names = [s["scientificName"] if isinstance(s, dict) else s for s in items]
+    names = [s.get("canonicalName") or s["scientificName"] if isinstance(s, dict) else s for s in items]
     return sorted(set(names))
 
 
