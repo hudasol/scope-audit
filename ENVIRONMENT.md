@@ -6,7 +6,7 @@ Written by scripts/env_report.py. Every results file repeats these values.
 - Platform: Linux-6.18.44-fc-v236-x86_64-with-glibc2.39 (x86_64)
 - CPU count: 2
 - Device: cpu
-- Thread variables: {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}
+- Thread variables: {"OMP_NUM_THREADS": "unset", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "unset"}
 
 | Package | Version |
 |---|---|
