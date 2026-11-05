@@ -233,6 +233,43 @@ def main(push_status: str) -> None:
           "## Licence", "", "MIT. Data licences and attribution are in data/demo/ATTRIBUTION.md.", ""]
     (ROOT / "README.md").write_text("\n".join(RM), encoding="utf8")
 
+    # PITCH.md
+    uae = {f["id"]: f for f in json.load(open(ROOT / "data" / "reference" / "uae_context_figures.json", encoding="utf8"))["figures"]}
+    r200, m1_200 = P["P2"]["observed"]["200"]["ratio"], P["P3"]["observed"]["200"]["ratio"]
+    held = [k for k in P if P[k]["held"]]
+    missed = [k for k in P if not P[k]["held"]]
+    smooth = stress["results"]["800"]["M2"]["ci"]["wald_smoothed"]["coverage"]
+    PT = [MARK, "", "# Pitch: three minutes and two minutes of questions 🌷", "",
+          "Judging format: a 3 minute pitch, then 2 minutes of questions. The script below is about 400 words, which fits in 3 minutes at a steady pace. Figures come from results/RESULTS.md and are BORROWED benchmark results unless stated.", "",
+          "| Time | Question the pitch answers | Slide or screen |", "|---|---|---|",
+          "| 0:00 to 0:25 | The problem | One slide, the cost of filtering |",
+          "| 0:25 to 0:55 | The solution | One slide, the audit idea |",
+          "| 0:55 to 1:35 | The validation | Figure 1 and the scorecard |",
+          "| 1:35 to 2:10 | The value, as a live demo | Screens 2 and 3 of the app |",
+          "| 2:10 to 2:40 | The business model | The canvas, one slide |",
+          "| 2:40 to 3:00 | The impact and the ask | The ninety day plan, one slide |", "",
+          "## Script", "",
+          f"**Problem (0:25).** A camera trap programme drowns in images. One public volunteer programme in the UAE reported {uae['ewwf_images_2024']['value']:,} images from {uae['ewwf_cameras_2024']['value']} cameras in a single year, and volunteers classified {uae['ewwf_classified_2024']['value']:,} of them (Emirates Nature-WWF, 2024). A detector can throw away the empty images. Then one question matters and nobody can answer it: how many animals did the filter hide?", "",
+          "**Solution (0:30).** Scope Audit answers it. We take the events the detector called empty, draw a small, seeded sample, and have a person review it. We weight the sample towards images where the detector was least sure. The result is a rate with an interval, and a full trail from machine suggestion to approved record. Only what a person approved is exported, in the Camtrap DP standard that biodiversity systems read.", "",
+          f"**Validation (0:40).** We tested it on the Caltech Camera Traps benchmark, which is US data, so it proves the method and not UAE performance. At threshold 0.2 the detector hid animals in {pct(row02['event_for'])} percent of its empty events, and in {pct(row02['image_for'])} percent of its empty images, so the unit of analysis changes the answer. In the stress setting, weighting by detector confidence found {r200:.1f} times as many hidden animal events per review as random sampling at a budget of 200, while sorting by image condition alone found {m1_200:.1f} times. We wrote {len(P)} predictions before running anything. {len(held)} held and {len(missed)} missed: {', '.join(missed)}. The interval claims are weaker than we predicted, and the results file says exactly where.", "",
+          "**Value, live (0:35).** On the demo, I move the budget and the estimate and its interval update. I raise the share of unresolved reviews, and the system shows bounds instead of a guess. A reviewer records a species and tries to export, and the system refuses. An approver approves, an administrator exports, and the package validates against the Camtrap DP schemas.", "",
+          "**Business model (0:30).** The users are monitoring teams that must defend filtered data. We start with a funded ninety day pilot, then support, hosting and reviewer training. The core stays open source and free, so a public body pays for delivery and trust, not licences.", "",
+          "**Impact and ask (0:20).** Our pilot plan has weekly milestones and numeric exit targets, and it reports every miss. We ask for ninety days, Ministry camera data, and two validators. We make no claim about how many animals exist or where. We make one claim: we can tell you what your filter hid.", "",
+          "## Questions the judges may ask", "",
+          "**Why not simply classify species?** Challenge 34 needs that, and our adapter takes any classifier output as a suggestion that a person must decide. A classifier cannot report what the detector removed before it ran. We audit that step, which every classifier sits behind.", "",
+          "**Why not review everything the filter removed?** That brings back the burden the filter removed. The audit gives a number from a small sample, aimed where hidden animals are likely.", "",
+          f"**Is this new?** We do not claim a new statistical method. Stratified and importance sampling for evaluation under a labelling budget is established (docs/PRIOR_ART.md). The contribution is a tested workflow for camera trap events, with the audit trail and export.", "",
+          "**Your data are from the United States.** Yes, and the repository labels it everywhere. The detector also saw this benchmark in training, so absolute rates are probably optimistic. The pilot replaces borrowed evidence with local evidence.", "",
+          f"**How good are your intervals?** Not as good as we predicted. The smoothed Wald interval covered {pct(smooth, 1)} percent at a budget of 800 in the stress setting but over covers at smaller budgets, and the plug in interval undercovers. We report this in results/RESULTS.md and chose the conservative interval as the default.", "",
+          "**What about reviewer mistakes?** The benchmark reviewer is an oracle. Real reviewers disagree, so the plan measures agreement on a shared subset and the system keeps an unresolved category with bounds.", "",
+          "**Who sees sensitive locations?** Exact coordinates are visible only to the approver and administrator roles. Others see a coarse grid.", "",
+          "**What does the Ministry pay for?** Delivery and support around open source software. We have not set prices, and they must be checked with procurement.", "",
+          "## Disclosures to make when presenting", "",
+          "- Data are borrowed from another country, and detector results are published by their authors.",
+          "- Deployment coordinates in the demo are synthetic placeholders.",
+          "- The reviewer in the audit screen is a stand in that reads benchmark labels.", ""]
+    (ROOT / "docs" / "PITCH.md").write_text("\n".join(PT), encoding="utf8")
+
     # STATUS.md
     lint = S["S5"]
     ST = [MARK, "", "# Status 🌸", "", f"Repository: {REPO_URL}. Push status: {push_status}.", "",
