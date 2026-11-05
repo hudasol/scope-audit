@@ -1,0 +1,5757 @@
+{
+  "header": {
+    "experiment": "B_sampling_comparison",
+    "data_label": "BORROWED: Caltech Camera Traps (LILA BC, Southwestern United States, CDLA permissive)",
+    "predictions_commit": "57935c3e5ecd6a8204f11428c5c281240a2bb555",
+    "environment": {
+      "python": "3.13.18",
+      "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+      "machine": "x86_64",
+      "cpu_count": 2,
+      "device": "cpu",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "packages": {
+        "numpy": "2.5.3",
+        "pandas": "3.0.5",
+        "scipy": "1.18.1",
+        "statsmodels": "0.15.0",
+        "pydantic": "2.13.5",
+        "opencv-python-headless": "5.0.0.93",
+        "pillow": "12.3.0",
+        "matplotlib": "3.11.2",
+        "plotly": "7.1.0",
+        "streamlit": "1.67.0",
+        "pytest": "9.1.1",
+        "jsonschema": "4.26.0",
+        "requests": "2.34.2"
+      }
+    },
+    "seeds": 1000,
+    "bootstrap_replicates": 1000,
+    "budgets": [
+      50,
+      100,
+      200,
+      400,
+      800
+    ],
+    "sweep": [
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "stress_threshold": 0.6,
+    "working_set_events": 8000,
+    "reviewer": "ORACLE (benchmark labels), not a human",
+    "note": "Benchmark overlaps detector training data; absolute error rates are optimistic."
+  },
+  "regimes": {
+    "0.1": {
+      "threshold": 0.1,
+      "pool_size": 4924,
+      "hidden_events": 73,
+      "truth_for": 0.014825345247766044,
+      "underpowered": false,
+      "is_stress": false,
+      "is_headline": false,
+      "strata_counts": {
+        "none": 3009,
+        "(0,0.05]": 1483,
+        "(0.05,0.1]": 432
+      },
+      "condition_counts": {
+        "normal": 2597,
+        "night": 1327,
+        "low_light": 540,
+        "high_blur": 459,
+        "low_resolution": 1
+      },
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.014825345247766044,
+            "bias": -0.00012534524776604432,
+            "mae": 0.013751177904142974,
+            "yield_mean": 1.47,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.964,
+                "width": 0.09095715948322508
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.965,
+                "width": 0.0735076868399675
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0005142304047157824,
+            "mae": 0.014171419681726345,
+            "yield_mean": 3.498,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.533,
+                "width": 0.03836139980817704
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0728478253816042
+              },
+              "bootstrap": {
+                "coverage": 0.529,
+                "width": 0.040557404405944714
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.826,
+                "width": 0.1026332148659626
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015339575652481827,
+                "mean_upper": 0.015339575652481827
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014632305921806327,
+                "mean_upper": 0.063928039534254
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013789985992209795,
+                "mean_upper": 0.1137653408735862
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.379591836734694,
+              "lo": 2.2083306555269924,
+              "hi": 2.5580029368575623
+            }
+          },
+          "M2p": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00011378983538287624,
+            "mae": 0.013338810144074998,
+            "yield_mean": 1.544,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.554,
+                "width": 0.03814791224622131
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06645352240103665
+              },
+              "bootstrap": {
+                "coverage": 0.552,
+                "width": 0.0402383631194151
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.858,
+                "width": 0.09339521730300566
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0503401360544218,
+              "lo": 0.9521121818664511,
+              "hi": 1.1553023981912631
+            }
+          },
+          "M2": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00042003486736587624,
+            "mae": 0.014573193650094116,
+            "yield_mean": 1.83,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.599,
+                "width": 0.0389147653646279
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0744951268153663
+              },
+              "bootstrap": {
+                "coverage": 0.597,
+                "width": 0.0412776972293298
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.898,
+                "width": 0.10787084179528836
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015245380115131919,
+                "mean_upper": 0.015245380115131919
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014601146057044127,
+                "mean_upper": 0.06395618735412549
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014089836499954505,
+                "mean_upper": 0.11686951733830608
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2448979591836735,
+              "lo": 1.1305379477686612,
+              "hi": 1.3644134192863007
+            }
+          },
+          "M3": {
+            "truth": 0.014825345247766044,
+            "bias": -0.000983290620607843,
+            "mae": 0.013643200940002324,
+            "yield_mean": 2.074,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.496,
+                "width": 0.03386972848409827
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08548504748755953
+              },
+              "bootstrap": {
+                "coverage": 0.494,
+                "width": 0.035969898839342124
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.59,
+                "width": 0.12503026502843215
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013842054627158202,
+                "mean_upper": 0.013842054627158202
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013238376497363091,
+                "mean_upper": 0.061644433967738194
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01264001569894137,
+                "mean_upper": 0.11481625678568204
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4108843537414966,
+              "lo": 1.2864158094339806,
+              "hi": 1.5466472800180204
+            }
+          },
+          "M4": {
+            "truth": 0.014825345247766044,
+            "bias": -0.0012103385080370138,
+            "mae": 0.013047872006063024,
+            "yield_mean": 1.47,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.524,
+                "width": 0.034778082633208765
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06409190450751918
+              },
+              "bootstrap": {
+                "coverage": 0.521,
+                "width": 0.036594004893610116
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.885,
+                "width": 0.09147389317627944
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0,
+              "lo": 0.902602598873424,
+              "hi": 1.1058963585434172
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0004146547522339558,
+            "mae": 0.010003931762794476,
+            "yield_mean": 1.524,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.932,
+                "width": 0.05651231757239995
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.979,
+                "width": 0.048851482534524766
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.014825345247766044,
+            "bias": -8.099843547853291e-05,
+            "mae": 0.00950464948701748,
+            "yield_mean": 2.453,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.783,
+                "width": 0.03389581023738785
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.047985732444468715
+              },
+              "bootstrap": {
+                "coverage": 0.782,
+                "width": 0.03532683079850769
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.839,
+                "width": 0.0618324837530463
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01474434681228751,
+                "mean_upper": 0.01474434681228751
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013907309323946203,
+                "mean_upper": 0.06380142296236123
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013043630893281585,
+                "mean_upper": 0.11424172473448266
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6095800524934383,
+              "lo": 1.5232980946372139,
+              "hi": 1.7088110775055076
+            }
+          },
+          "M2p": {
+            "truth": 0.014825345247766044,
+            "bias": -0.0003890806932033589,
+            "mae": 0.009523767939344707,
+            "yield_mean": 1.464,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.78,
+                "width": 0.033528159097892404
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0449792534357781
+              },
+              "bootstrap": {
+                "coverage": 0.778,
+                "width": 0.03520425120159761
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.944,
+                "width": 0.057144506498781465
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9606299212598425,
+              "lo": 0.8981136914526358,
+              "hi": 1.0298563573111885
+            }
+          },
+          "M2": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0006557554833468719,
+            "mae": 0.010369060488658377,
+            "yield_mean": 1.888,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.743,
+                "width": 0.036005677886260176
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04988954551327968
+              },
+              "bootstrap": {
+                "coverage": 0.739,
+                "width": 0.03822290558150555
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.918,
+                "width": 0.0647169780666125
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015481100731112916,
+                "mean_upper": 0.015481100731112916
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014711351777791662,
+                "mean_upper": 0.06454389900851924
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013951504197129705,
+                "mean_upper": 0.11281451785081964
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2388451443569553,
+              "lo": 1.1583785437824605,
+              "hi": 1.3218803056027164
+            }
+          },
+          "M3": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0006860454344634939,
+            "mae": 0.01002764689953967,
+            "yield_mean": 2.025,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.755,
+                "width": 0.03491166485677509
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0561994418142716
+              },
+              "bootstrap": {
+                "coverage": 0.752,
+                "width": 0.036951116305563865
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.727,
+                "width": 0.07485482331437854
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015511390682229538,
+                "mean_upper": 0.015511390682229538
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014718099676486098,
+                "mean_upper": 0.06418111113486397
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014080707989510739,
+                "mean_upper": 0.11223285501018998
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3287401574803148,
+              "lo": 1.246702642446353,
+              "hi": 1.4157804650785935
+            }
+          },
+          "M4": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00021384600988365424,
+            "mae": 0.009750486846127128,
+            "yield_mean": 1.651,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.784,
+                "width": 0.03410014797299847
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04523979014833095
+              },
+              "bootstrap": {
+                "coverage": 0.791,
+                "width": 0.03589350328740561
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.914,
+                "width": 0.056956249999999986
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0833333333333333,
+              "lo": 1.0085139586690681,
+              "hi": 1.1604953223119314
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0007696547522339562,
+            "mae": 0.0066848212835093415,
+            "yield_mean": 1.5595,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.967,
+                "width": 0.03672241037752055
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.926,
+                "width": 0.03377357331437855
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.014825345247766044,
+            "bias": 9.5189003438372e-05,
+            "mae": 0.006478367668324697,
+            "yield_mean": 1.9615,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.923,
+                "width": 0.02887118785879477
+              },
+              "wald_smoothed": {
+                "coverage": 0.946,
+                "width": 0.034640757602403024
+              },
+              "bootstrap": {
+                "coverage": 0.91,
+                "width": 0.029761416753706242
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.917,
+                "width": 0.038722562956945566
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.946,
+                "mean_lower": 0.014920534251204416,
+                "mean_upper": 0.014920534251204416
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01410837815774954,
+                "mean_upper": 0.06438843046521985
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013367926586474293,
+                "mean_upper": 0.11307689488377402
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.257774927861494,
+              "lo": 1.2028615180855902,
+              "hi": 1.3095648216142324
+            }
+          },
+          "M2p": {
+            "truth": 0.014825345247766044,
+            "bias": -7.350627611317444e-05,
+            "mae": 0.006603024075266951,
+            "yield_mean": 1.4865,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.795,
+                "width": 0.028733524698519267
+              },
+              "wald_smoothed": {
+                "coverage": 0.952,
+                "width": 0.03321384190702923
+              },
+              "bootstrap": {
+                "coverage": 0.917,
+                "width": 0.029594717441628626
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.921,
+                "width": 0.03670924553208772
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9531901250400768,
+              "lo": 0.9059474320602965,
+              "hi": 1.0006581753710975
+            }
+          },
+          "M2": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00033697304732441095,
+            "mae": 0.006953855372085389,
+            "yield_mean": 1.815,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.838,
+                "width": 0.030530411888047358
+              },
+              "wald_smoothed": {
+                "coverage": 0.978,
+                "width": 0.0358824857896234
+              },
+              "bootstrap": {
+                "coverage": 0.888,
+                "width": 0.03174667899305296
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.948,
+                "width": 0.04037416734362306
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.978,
+                "mean_lower": 0.015162318295090458,
+                "mean_upper": 0.015162318295090458
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014466069859907274,
+                "mean_upper": 0.06411709862597262
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01361416035143813,
+                "mean_upper": 0.1125720138453586
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1638345623597306,
+              "lo": 1.1119473561375561,
+              "hi": 1.2202538955946536
+            }
+          },
+          "M3": {
+            "truth": 0.014825345247766044,
+            "bias": -0.000824437140426931,
+            "mae": 0.007040374543116965,
+            "yield_mean": 1.82,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.769,
+                "width": 0.027764840547146855
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.03729718625313109
+              },
+              "bootstrap": {
+                "coverage": 0.818,
+                "width": 0.02886748489330649
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.864,
+                "width": 0.0444587682778229
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014000908107339114,
+                "mean_upper": 0.014000908107339114
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01337864577350966,
+                "mean_upper": 0.06230989945190038
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.012631402942532037,
+                "mean_upper": 0.11213494364044356
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1670407181789035,
+              "lo": 1.115620685923829,
+              "hi": 1.2211436736567949
+            }
+          },
+          "M4": {
+            "truth": 0.014825345247766044,
+            "bias": -0.0009391312599046497,
+            "mae": 0.006634367722430784,
+            "yield_mean": 1.538,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.826,
+                "width": 0.027212358692748646
+              },
+              "wald_smoothed": {
+                "coverage": 0.96,
+                "width": 0.03171621015432133
+              },
+              "bootstrap": {
+                "coverage": 0.84,
+                "width": 0.028370410632521038
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.939,
+                "width": 0.03526726746547521
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9862135299775568,
+              "lo": 0.9407906563387557,
+              "hi": 1.0349741319817543
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00016465475223395628,
+            "mae": 0.0047027051177904134,
+            "yield_mean": 1.499,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.948,
+                "width": 0.023858369522667924
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.946,
+                "width": 0.02282141043866775
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00023602559223708625,
+            "mae": 0.004550933471659227,
+            "yield_mean": 1.73225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.956,
+                "width": 0.022017088685346194
+              },
+              "wald_smoothed": {
+                "coverage": 0.956,
+                "width": 0.024961752698420665
+              },
+              "bootstrap": {
+                "coverage": 0.949,
+                "width": 0.022659483005814912
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.935,
+                "width": 0.024904538992688866
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.956,
+                "mean_lower": 0.01506137084000313,
+                "mean_upper": 0.01506137084000313
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.997,
+                "mean_lower": 0.014301864882884109,
+                "mean_upper": 0.0642249702578401
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013499407401561974,
+                "mean_upper": 0.11414582097194395
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1556037358238826,
+              "lo": 1.1210870737401977,
+              "hi": 1.1929405324177156
+            }
+          },
+          "M2p": {
+            "truth": 0.014825345247766044,
+            "bias": -2.8522554148431944e-05,
+            "mae": 0.004645892579969334,
+            "yield_mean": 1.4845,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.924,
+                "width": 0.021867539958750314
+              },
+              "wald_smoothed": {
+                "coverage": 0.924,
+                "width": 0.0241397277465537
+              },
+              "bootstrap": {
+                "coverage": 0.915,
+                "width": 0.022519704236565987
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.934,
+                "width": 0.02407648253452477
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9903268845897264,
+              "lo": 0.9566991145196805,
+              "hi": 1.0239137503973235
+            }
+          },
+          "M2": {
+            "truth": 0.014825345247766044,
+            "bias": -1.685947227067258e-05,
+            "mae": 0.005049420057602106,
+            "yield_mean": 1.799,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.874,
+                "width": 0.023026085752753944
+              },
+              "wald_smoothed": {
+                "coverage": 0.925,
+                "width": 0.025845706759133676
+              },
+              "bootstrap": {
+                "coverage": 0.896,
+                "width": 0.02366187450905116
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.946,
+                "width": 0.025902848294069854
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.925,
+                "mean_lower": 0.01480848577549537,
+                "mean_upper": 0.01480848577549537
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.998,
+                "mean_lower": 0.014075818817935652,
+                "mean_upper": 0.06404546517781763
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.013293010793008602,
+                "mean_upper": 0.11245628700947989
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.200133422281521,
+              "lo": 1.1594359281825253,
+              "hi": 1.23903665300839
+            }
+          },
+          "M3": {
+            "truth": 0.014825345247766044,
+            "bias": 5.965395118310432e-05,
+            "mae": 0.004924421609493794,
+            "yield_mean": 1.8545,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.883,
+                "width": 0.022821568050522323
+              },
+              "wald_smoothed": {
+                "coverage": 0.974,
+                "width": 0.027720273124068197
+              },
+              "bootstrap": {
+                "coverage": 0.898,
+                "width": 0.023442517215847978
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.904,
+                "width": 0.02805212225832656
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.974,
+                "mean_lower": 0.014884999198949148,
+                "mean_upper": 0.014884999198949148
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01414183893711899,
+                "mean_upper": 0.0641283405201067
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013451416490038785,
+                "mean_upper": 0.1134295995027193
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2371581054036023,
+              "lo": 1.1992814588895113,
+              "hi": 1.277749022576283
+            }
+          },
+          "M4": {
+            "truth": 0.014825345247766044,
+            "bias": -0.00047700100862609654,
+            "mae": 0.004594264220682294,
+            "yield_mean": 1.5845,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.892,
+                "width": 0.02126587700504939
+              },
+              "wald_smoothed": {
+                "coverage": 0.936,
+                "width": 0.023548845656772344
+              },
+              "bootstrap": {
+                "coverage": 0.92,
+                "width": 0.022000159587948664
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.946,
+                "width": 0.023431041835905764
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0570380253502334,
+              "lo": 1.0234904841083825,
+              "hi": 1.0918789147135002
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.014825345247766044,
+            "bias": 0.0001959047522339563,
+            "mae": 0.003096160641754671,
+            "yield_mean": 1.502125,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.942,
+                "width": 0.0157536630004983
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.954,
+                "width": 0.015401299756295693
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.014825345247766044,
+            "bias": 0.00013779958743277346,
+            "mae": 0.0031126720108229943,
+            "yield_mean": 1.59925,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.948,
+                "width": 0.015044562260662267
+              },
+              "wald_smoothed": {
+                "coverage": 0.954,
+                "width": 0.016241002405594326
+              },
+              "bootstrap": {
+                "coverage": 0.953,
+                "width": 0.016252930227027243
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.927,
+                "width": 0.015992445166531272
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.954,
+                "mean_lower": 0.014963144835198817,
+                "mean_upper": 0.014963144835198817
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.01419177641259052,
+                "mean_upper": 0.06368709609379551
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.013497452364323358,
+                "mean_upper": 0.11378084017515161
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0646584005991513,
+              "lo": 1.0398864968500345,
+              "hi": 1.0874684680251285
+            }
+          },
+          "M2p": {
+            "truth": 0.014825345247766044,
+            "bias": -0.00013909781884435633,
+            "mae": 0.0030887402808649185,
+            "yield_mean": 1.472375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.015062103181870566
+              },
+              "wald_smoothed": {
+                "coverage": 0.958,
+                "width": 0.015957493226680136
+              },
+              "bootstrap": {
+                "coverage": 0.956,
+                "width": 0.016269202463599548
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.015711520105605194
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 0.9801947241408006,
+              "lo": 0.957564086069777,
+              "hi": 1.0030217469028395
+            }
+          },
+          "M2": {
+            "truth": 0.014825345247766044,
+            "bias": -8.909186740120111e-05,
+            "mae": 0.003329069126849924,
+            "yield_mean": 1.80525,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.924,
+                "width": 0.01606132632493943
+              },
+              "wald_smoothed": {
+                "coverage": 0.942,
+                "width": 0.017184349964455357
+              },
+              "bootstrap": {
+                "coverage": 0.948,
+                "width": 0.017253295886439302
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.95,
+                "width": 0.01691008834281072
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.942,
+                "mean_lower": 0.014736253380364843,
+                "mean_upper": 0.014736253380364843
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.013973127752230972,
+                "mean_upper": 0.06342077445215315
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.013210082012123578,
+                "mean_upper": 0.11298304844818387
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2017974536073897,
+              "lo": 1.176619027443628,
+              "hi": 1.2259935379818312
+            }
+          },
+          "M3": {
+            "truth": 0.014825345247766044,
+            "bias": -8.023132523045927e-05,
+            "mae": 0.0033651225299198605,
+            "yield_mean": 1.828125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.912,
+                "width": 0.01587375704177363
+              },
+              "wald_smoothed": {
+                "coverage": 0.945,
+                "width": 0.018003462059989053
+              },
+              "bootstrap": {
+                "coverage": 0.937,
+                "width": 0.01699490827522291
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.923,
+                "width": 0.017613439277010555
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.945,
+                "mean_lower": 0.014745113922535585,
+                "mean_upper": 0.014745113922535585
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.996,
+                "mean_lower": 0.013995664818731818,
+                "mean_upper": 0.06452209873654795
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.996,
+                "mean_lower": 0.013256953872123929,
+                "mean_upper": 0.11387589478577718
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2170258800033287,
+              "lo": 1.1923492309057573,
+              "hi": 1.2427174331244066
+            }
+          },
+          "M4": {
+            "truth": 0.014825345247766044,
+            "bias": -0.00032650506677539006,
+            "mae": 0.0030830853022378265,
+            "yield_mean": 1.583625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.919,
+                "width": 0.014878360126229164
+              },
+              "wald_smoothed": {
+                "coverage": 0.937,
+                "width": 0.0158000086049642
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.016158921347476592
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.95,
+                "width": 0.015568932778229079
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0542564700008323,
+              "lo": 1.0310376503492527,
+              "hi": 1.0774955642712603
+            }
+          }
+        }
+      }
+    },
+    "0.2": {
+      "threshold": 0.2,
+      "pool_size": 5226,
+      "hidden_events": 82,
+      "truth_for": 0.015690776884806735,
+      "underpowered": false,
+      "is_stress": false,
+      "is_headline": true,
+      "strata_counts": {
+        "none": 3009,
+        "(0,0.05]": 1483,
+        "(0.05,0.1]": 434,
+        "(0.1,0.2]": 300
+      },
+      "condition_counts": {
+        "normal": 2757,
+        "night": 1407,
+        "low_light": 573,
+        "high_blur": 487,
+        "low_resolution": 2
+      },
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0007707768848067344,
+            "mae": 0.013915790279372372,
+            "yield_mean": 1.492,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.963,
+                "width": 0.09122461816407286
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.964,
+                "width": 0.07385574531190202
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.015690776884806735,
+            "bias": 0.000734559984572464,
+            "mae": 0.014052585242896229,
+            "yield_mean": 5.576,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.565,
+                "width": 0.04087255741975344
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0750746695246499
+              },
+              "bootstrap": {
+                "coverage": 0.562,
+                "width": 0.043028189984922305
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.813,
+                "width": 0.10494384328358206
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016425336869379203,
+                "mean_upper": 0.016425336869379203
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015527852867554861,
+                "mean_upper": 0.06646959322673143
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014790291638454672,
+                "mean_upper": 0.11585391902506163
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.7372654155495977,
+              "lo": 3.4776947276008388,
+              "hi": 4.028818443804035
+            }
+          },
+          "M2p": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00044891665930701615,
+            "mae": 0.01456704397146418,
+            "yield_mean": 1.71,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.561,
+                "width": 0.0397828284469182
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0710337282680577
+              },
+              "bootstrap": {
+                "coverage": 0.557,
+                "width": 0.04219178254613099
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.772,
+                "width": 0.09909091083046306
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.146112600536193,
+              "lo": 1.0423336453268397,
+              "hi": 1.2616389334402567
+            }
+          },
+          "M2": {
+            "truth": 0.015690776884806735,
+            "bias": -0.00024547773950758876,
+            "mae": 0.015368222987625975,
+            "yield_mean": 2.07,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.516,
+                "width": 0.03913176877873208
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08730377143528856
+              },
+              "bootstrap": {
+                "coverage": 0.514,
+                "width": 0.041739235479407694
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.873,
+                "width": 0.12875057883658628
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015445299145299145,
+                "mean_upper": 0.015445299145299145
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014598005043814458,
+                "mean_upper": 0.06281999273847724
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014222106430372791,
+                "mean_upper": 0.11156115772223694
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3873994638069704,
+              "lo": 1.2684999575230027,
+              "hi": 1.5182510103509421
+            }
+          },
+          "M3": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0004067878707804069,
+            "mae": 0.014147166259666258,
+            "yield_mean": 2.36,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.584,
+                "width": 0.03647045577358637
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.09983442281349934
+              },
+              "bootstrap": {
+                "coverage": 0.684,
+                "width": 0.03883893043558155
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.325,
+                "width": 0.14515285591274393
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015283989014026328,
+                "mean_upper": 0.015283989014026328
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014530072850035537,
+                "mean_upper": 0.06283265426530352
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01354862105832255,
+                "mean_upper": 0.1143259916078946
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.581769436997319,
+              "lo": 1.447899654522613,
+              "hi": 1.7327848101265824
+            }
+          },
+          "M4": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0012272138287851356,
+            "mae": 0.013696628498042266,
+            "yield_mean": 1.622,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.545,
+                "width": 0.03601244286131404
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06839822156451415
+              },
+              "bootstrap": {
+                "coverage": 0.542,
+                "width": 0.038248083190658165
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.798,
+                "width": 0.09715941924990429
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0871313672922254,
+              "lo": 0.9857867312158779,
+              "hi": 1.2031303347875568
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.015690776884806735,
+            "bias": -4.0776884806734774e-05,
+            "mae": 0.0098911174894757,
+            "yield_mean": 1.565,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.935,
+                "width": 0.05712113500923654
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.974,
+                "width": 0.049584337925755825
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00010271939120963325,
+            "mae": 0.00989682990373576,
+            "yield_mean": 3.507,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.787,
+                "width": 0.035698389735923444
+              },
+              "wald_smoothed": {
+                "coverage": 0.998,
+                "width": 0.04968794735229495
+              },
+              "bootstrap": {
+                "coverage": 0.784,
+                "width": 0.03724703894359563
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.845,
+                "width": 0.06324859835438193
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.998,
+                "mean_lower": 0.01579349627601637,
+                "mean_upper": 0.01579349627601637
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.998,
+                "mean_lower": 0.01507970222850246,
+                "mean_upper": 0.06448922561747475
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014350405516794727,
+                "mean_upper": 0.1156801435132032
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.240894568690096,
+              "lo": 2.1332454019993823,
+              "hi": 2.3637098909244942
+            }
+          },
+          "M2p": {
+            "truth": 0.015690776884806735,
+            "bias": 0.0002429763023046614,
+            "mae": 0.009893966357026057,
+            "yield_mean": 1.642,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.812,
+                "width": 0.035992781692130854
+              },
+              "wald_smoothed": {
+                "coverage": 0.998,
+                "width": 0.0485903420187705
+              },
+              "bootstrap": {
+                "coverage": 0.804,
+                "width": 0.03783492765008623
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.871,
+                "width": 0.0608236892460773
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0492012779552715,
+              "lo": 0.9799749687108886,
+              "hi": 1.123998910969765
+            }
+          },
+          "M2": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00016849210985110568,
+            "mae": 0.011350278857623712,
+            "yield_mean": 2.141,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.688,
+                "width": 0.03670734441317329
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05585827135197815
+              },
+              "bootstrap": {
+                "coverage": 0.692,
+                "width": 0.039051096180702426
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.889,
+                "width": 0.07462491867585148
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01585926899465784,
+                "mean_upper": 0.01585926899465784
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015170004229862833,
+                "mean_upper": 0.06547927098649801
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014194076513518776,
+                "mean_upper": 0.11300907037014656
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3680511182108628,
+              "lo": 1.2870844514357977,
+              "hi": 1.4548026883266245
+            }
+          },
+          "M3": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0002944694247216954,
+            "mae": 0.010708567231462266,
+            "yield_mean": 2.254,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.691,
+                "width": 0.03470083557205817
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06364440395902037
+              },
+              "bootstrap": {
+                "coverage": 0.686,
+                "width": 0.03656087028802442
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.629,
+                "width": 0.08746013681592038
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015396307460085041,
+                "mean_upper": 0.015396307460085041
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014520907838376203,
+                "mean_upper": 0.0642840469310294
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.013740696468551757,
+                "mean_upper": 0.11496729306201645
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4402555910543131,
+              "lo": 1.3502368487926935,
+              "hi": 1.5349236591001194
+            }
+          },
+          "M4": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0007109351983750298,
+            "mae": 0.00962733964810471,
+            "yield_mean": 1.69,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.8,
+                "width": 0.03397703860411991
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04662295443136942
+              },
+              "bootstrap": {
+                "coverage": 0.797,
+                "width": 0.03576066999026372
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.892,
+                "width": 0.05934753635667813
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0798722044728435,
+              "lo": 1.0088627803787642,
+              "hi": 1.1514345363595022
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.015690776884806735,
+            "bias": 8.422311519326554e-05,
+            "mae": 0.007134207807118255,
+            "yield_mean": 1.5775,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.956,
+                "width": 0.03686705075043313
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.917,
+                "width": 0.033918594527363184
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.015690776884806735,
+            "bias": 1.1241429905548135e-05,
+            "mae": 0.006444235013060858,
+            "yield_mean": 2.5215,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.825,
+                "width": 0.029885026660412
+              },
+              "wald_smoothed": {
+                "coverage": 0.949,
+                "width": 0.035699466526404995
+              },
+              "bootstrap": {
+                "coverage": 0.864,
+                "width": 0.030521912679481646
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.929,
+                "width": 0.039300373134328354
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.949,
+                "mean_lower": 0.015702018314712282,
+                "mean_upper": 0.015702018314712282
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014984966977997219,
+                "mean_upper": 0.06568188713327043
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014232921226591,
+                "mean_upper": 0.11411614883167524
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5984152139461174,
+              "lo": 1.5352814665728425,
+              "hi": 1.6658105586653496
+            }
+          },
+          "M2p": {
+            "truth": 0.015690776884806735,
+            "bias": -6.181498589078583e-05,
+            "mae": 0.006624196652795786,
+            "yield_mean": 1.5845,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.829,
+                "width": 0.029857255024493184
+              },
+              "wald_smoothed": {
+                "coverage": 0.953,
+                "width": 0.035260173854051516
+              },
+              "bootstrap": {
+                "coverage": 0.835,
+                "width": 0.030780723680158415
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.912,
+                "width": 0.03875944795254496
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0044374009508716,
+              "lo": 0.9584846746784926,
+              "hi": 1.0526850970297497
+            }
+          },
+          "M2": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00021805204901342463,
+            "mae": 0.007745229531322862,
+            "yield_mean": 2.079,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.81,
+                "width": 0.03222054967274808
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.03963110183798672
+              },
+              "bootstrap": {
+                "coverage": 0.842,
+                "width": 0.03344361340470556
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.934,
+                "width": 0.04574121220818981
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01590882893382016,
+                "mean_upper": 0.01590882893382016
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015000036072206853,
+                "mean_upper": 0.06505266854463174
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014323062746588594,
+                "mean_upper": 0.11303602823262991
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.317908082408875,
+              "lo": 1.2560580463474729,
+              "hi": 1.3780329862795184
+            }
+          },
+          "M3": {
+            "truth": 0.015690776884806735,
+            "bias": 0.0005940381092141625,
+            "mae": 0.007810481817871137,
+            "yield_mean": 2.2365,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.81,
+                "width": 0.031761689976561966
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04387566907430193
+              },
+              "bootstrap": {
+                "coverage": 0.831,
+                "width": 0.0326539983674253
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.762,
+                "width": 0.052314796211251416
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0162848149940209,
+                "mean_upper": 0.0162848149940209
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015655198614136275,
+                "mean_upper": 0.06461193173092257
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014706712423937672,
+                "mean_upper": 0.11461575723093843
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4177496038034865,
+              "lo": 1.355263313848061,
+              "hi": 1.4835978004713273
+            }
+          },
+          "M4": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0010777464157627325,
+            "mae": 0.006723847891576768,
+            "yield_mean": 1.658,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.849,
+                "width": 0.028171917596755358
+              },
+              "wald_smoothed": {
+                "coverage": 0.974,
+                "width": 0.03337611145386265
+              },
+              "bootstrap": {
+                "coverage": 0.875,
+                "width": 0.02916746973793167
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.924,
+                "width": 0.037093073096058166
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0510301109350237,
+              "lo": 1.0006223845155517,
+              "hi": 1.1029425072101893
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00011172311519326545,
+            "mae": 0.00475519613471106,
+            "yield_mean": 1.58025,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.945,
+                "width": 0.024519625205304423
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.944,
+                "width": 0.023437012055109067
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00018498625188993731,
+            "mae": 0.0046432950433378615,
+            "yield_mean": 2.0435,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.944,
+                "width": 0.022561253951694702
+              },
+              "wald_smoothed": {
+                "coverage": 0.948,
+                "width": 0.0255706245339944
+              },
+              "bootstrap": {
+                "coverage": 0.939,
+                "width": 0.02307529197681808
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.925,
+                "width": 0.02544739762724837
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.948,
+                "mean_lower": 0.015875763136696672,
+                "mean_upper": 0.015875763136696672
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.015050656975896607,
+                "mean_upper": 0.06548433884200168
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.014286456002490452,
+                "mean_upper": 0.11331234121021058
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2931498180667615,
+              "lo": 1.2548592532165481,
+              "hi": 1.3315591500582806
+            }
+          },
+          "M2p": {
+            "truth": 0.015690776884806735,
+            "bias": 0.00013159435704569923,
+            "mae": 0.004604349468308202,
+            "yield_mean": 1.594,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.913,
+                "width": 0.02274662010848994
+              },
+              "wald_smoothed": {
+                "coverage": 0.961,
+                "width": 0.025581155218933192
+              },
+              "bootstrap": {
+                "coverage": 0.953,
+                "width": 0.023343677190723142
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.933,
+                "width": 0.025340776884806734
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.008701154880557,
+              "lo": 0.9779118956311909,
+              "hi": 1.0423786977939244
+            }
+          },
+          "M2": {
+            "truth": 0.015690776884806735,
+            "bias": -0.00017112376373732728,
+            "mae": 0.005333624211244905,
+            "yield_mean": 2.09575,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.865,
+                "width": 0.024556257938273134
+              },
+              "wald_smoothed": {
+                "coverage": 0.941,
+                "width": 0.02851957800780486
+              },
+              "bootstrap": {
+                "coverage": 0.885,
+                "width": 0.02513166068386557
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.957,
+                "width": 0.028723866245694597
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.941,
+                "mean_lower": 0.015519653121069408,
+                "mean_upper": 0.015519653121069408
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014798077234123887,
+                "mean_upper": 0.06529125747612857
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01393499730518146,
+                "mean_upper": 0.11352287228880954
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3262142066128777,
+              "lo": 1.2860898998124,
+              "hi": 1.3660780668503012
+            }
+          },
+          "M3": {
+            "truth": 0.015690776884806735,
+            "bias": -7.00036129140179e-05,
+            "mae": 0.005315463774589642,
+            "yield_mean": 2.13225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.858,
+                "width": 0.02427820410496571
+              },
+              "wald_smoothed": {
+                "coverage": 0.984,
+                "width": 0.030841565832830035
+              },
+              "bootstrap": {
+                "coverage": 0.883,
+                "width": 0.024791852457267723
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.881,
+                "width": 0.03168763394565633
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.984,
+                "mean_lower": 0.015620773271892718,
+                "mean_upper": 0.015620773271892718
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014789518417928771,
+                "mean_upper": 0.06504979419014269
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014035687114893725,
+                "mean_upper": 0.11349388920004103
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.349311817750356,
+              "lo": 1.3092652768585398,
+              "hi": 1.3900707228312308
+            }
+          },
+          "M4": {
+            "truth": 0.015690776884806735,
+            "bias": -0.00034132166099713296,
+            "mae": 0.004960598383721188,
+            "yield_mean": 1.731,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.897,
+                "width": 0.022019368930245347
+              },
+              "wald_smoothed": {
+                "coverage": 0.941,
+                "width": 0.02473730868163194
+              },
+              "bootstrap": {
+                "coverage": 0.916,
+                "width": 0.02271203289477178
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.926,
+                "width": 0.024611280137772668
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0953962980541054,
+              "lo": 1.0602731125412022,
+              "hi": 1.1299808550120307
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.015690776884806735,
+            "bias": -9.577688480673455e-05,
+            "mae": 0.00321677573670111,
+            "yield_mean": 1.5595,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.935,
+                "width": 0.016122526826722095
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.951,
+                "width": 0.01574718235744355
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.015690776884806735,
+            "bias": -0.00017551432348557824,
+            "mae": 0.0031392426290160103,
+            "yield_mean": 1.76125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.925,
+                "width": 0.015348709245275375
+              },
+              "wald_smoothed": {
+                "coverage": 0.957,
+                "width": 0.01654257620014598
+              },
+              "bootstrap": {
+                "coverage": 0.937,
+                "width": 0.016463730011474345
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.948,
+                "width": 0.016268326636050514
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.957,
+                "mean_lower": 0.015515262561321156,
+                "mean_upper": 0.015515262561321156
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.997,
+                "mean_lower": 0.014744373414545084,
+                "mean_upper": 0.0646133636821869
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.997,
+                "mean_lower": 0.014025919595362422,
+                "mean_upper": 0.11378175627429231
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1293683873036229,
+              "lo": 1.1056814476251173,
+              "hi": 1.1520952179544133
+            }
+          },
+          "M2p": {
+            "truth": 0.015690776884806735,
+            "bias": -0.00011695506408644879,
+            "mae": 0.0031248355852153795,
+            "yield_mean": 1.563125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.945,
+                "width": 0.015572233017026196
+              },
+              "wald_smoothed": {
+                "coverage": 0.949,
+                "width": 0.01670313119729527
+              },
+              "bootstrap": {
+                "coverage": 0.957,
+                "width": 0.016751780952240794
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.958,
+                "width": 0.016423756218905468
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0023244629689003,
+              "lo": 0.9809942522278209,
+              "hi": 1.0258590258960387
+            }
+          },
+          "M2": {
+            "truth": 0.015690776884806735,
+            "bias": 7.639601765437108e-05,
+            "mae": 0.0038228022274403805,
+            "yield_mean": 2.075875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.901,
+                "width": 0.017812107867305294
+              },
+              "wald_smoothed": {
+                "coverage": 0.933,
+                "width": 0.019408435143041605
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.01883763985375267
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.943,
+                "width": 0.019010318599311134
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.933,
+                "mean_lower": 0.015767172902461105,
+                "mean_upper": 0.015767172902461105
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.996,
+                "mean_lower": 0.015037802709376368,
+                "mean_upper": 0.06479673464317298
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.014130215820605314,
+                "mean_upper": 0.11495493320595417
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.331115742225072,
+              "lo": 1.3031477888658967,
+              "hi": 1.3572983081369918
+            }
+          },
+          "M3": {
+            "truth": 0.015690776884806735,
+            "bias": -8.288559118838773e-05,
+            "mae": 0.003664605177110919,
+            "yield_mean": 2.108375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.898,
+                "width": 0.017342263835893927
+              },
+              "wald_smoothed": {
+                "coverage": 0.959,
+                "width": 0.02036521007451705
+              },
+              "bootstrap": {
+                "coverage": 0.937,
+                "width": 0.01833375398607648
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.925,
+                "width": 0.01991087351703023
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.959,
+                "mean_lower": 0.015607891293618347,
+                "mean_upper": 0.015607891293618347
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.996,
+                "mean_lower": 0.014851891546926708,
+                "mean_upper": 0.06456389530661746
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.014030610607587127,
+                "mean_upper": 0.11439452441174928
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3519557550496955,
+              "lo": 1.3236768103100063,
+              "hi": 1.3801489126199058
+            }
+          },
+          "M4": {
+            "truth": 0.015690776884806735,
+            "bias": -0.0006225315909566575,
+            "mae": 0.0031880457521061443,
+            "yield_mean": 1.692,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.907,
+                "width": 0.015140248584352856
+              },
+              "wald_smoothed": {
+                "coverage": 0.941,
+                "width": 0.016246107453069116
+              },
+              "bootstrap": {
+                "coverage": 0.942,
+                "width": 0.016334748168779813
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.951,
+                "width": 0.01599807213930348
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0849631292080795,
+              "lo": 1.0627419053921967,
+              "hi": 1.1076597798934356
+            }
+          }
+        }
+      }
+    },
+    "0.4": {
+      "threshold": 0.4,
+      "pool_size": 5483,
+      "hidden_events": 95,
+      "truth_for": 0.017326281232901697,
+      "underpowered": false,
+      "is_stress": false,
+      "is_headline": false,
+      "strata_counts": {
+        "none": 3009,
+        "(0,0.05]": 1483,
+        "(0.05,0.1]": 434,
+        "(0.1,0.2]": 301,
+        "(0.2,0.4]": 256
+      },
+      "condition_counts": {
+        "normal": 2886,
+        "night": 1485,
+        "low_light": 600,
+        "high_blur": 510,
+        "low_resolution": 2
+      },
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00013371876709830378,
+            "mae": 0.01510362575232537,
+            "yield_mean": 1.746,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.937,
+                "width": 0.0941813745716093
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.966,
+                "width": 0.07754229436439904
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0005057206311755953,
+            "mae": 0.014513064705319025,
+            "yield_mean": 5.624,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.561,
+                "width": 0.041221907056165914
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.07553470792229058
+              },
+              "bootstrap": {
+                "coverage": 0.556,
+                "width": 0.043403471676211725
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.812,
+                "width": 0.10481452671894945
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016820560601726105,
+                "mean_upper": 0.016820560601726105
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0159042433987204,
+                "mean_upper": 0.06844431648567753
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015401750134346543,
+                "mean_upper": 0.1131144419022128
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.2210767468499424,
+              "lo": 3.009541402188586,
+              "hi": 3.4666105468406747
+            }
+          },
+          "M2p": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00028148718416363895,
+            "mae": 0.01435341860856634,
+            "yield_mean": 1.972,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.638,
+                "width": 0.04261745808683008
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.07540048073787668
+              },
+              "bootstrap": {
+                "coverage": 0.636,
+                "width": 0.04546358045497271
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.748,
+                "width": 0.10304680375706728
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.129438717067583,
+              "lo": 1.0310746970071727,
+              "hi": 1.2407425223535666
+            }
+          },
+          "M2": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0012998631356282275,
+            "mae": 0.01586232426256136,
+            "yield_mean": 2.816,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.47,
+                "width": 0.039629215294219214
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.10178004356896883
+              },
+              "bootstrap": {
+                "coverage": 0.609,
+                "width": 0.042335265792934035
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.807,
+                "width": 0.1507923673171621
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01602641809727347,
+                "mean_upper": 0.01602641809727347
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015391408862683715,
+                "mean_upper": 0.06682170463738948
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.014508799919961695,
+                "mean_upper": 0.11545300905348325
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6128293241695302,
+              "lo": 1.4891185867895544,
+              "hi": 1.7564241686044364
+            }
+          },
+          "M3": {
+            "truth": 0.017326281232901697,
+            "bias": 0.0009844697463154506,
+            "mae": 0.015633901322703075,
+            "yield_mean": 3.64,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.605,
+                "width": 0.04181523986920142
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.12674411355775336
+              },
+              "bootstrap": {
+                "coverage": 0.678,
+                "width": 0.044451903963983914
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.014,
+                "width": 0.17985703994163776
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.018310750979217146,
+                "mean_upper": 0.018310750979217146
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01754417528638302,
+                "mean_upper": 0.06879606141927863
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016497788836490276,
+                "mean_upper": 0.11616182942080717
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.084765177548683,
+              "lo": 1.9215881223282414,
+              "hi": 2.26353585511903
+            }
+          },
+          "M4": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0003001321377636709,
+            "mae": 0.01449516240901729,
+            "yield_mean": 1.964,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.616,
+                "width": 0.041063402822024274
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.07461073814907175
+              },
+              "bootstrap": {
+                "coverage": 0.61,
+                "width": 0.043592242287770984
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.747,
+                "width": 0.10313118274667152
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.124856815578465,
+              "lo": 1.0249943693693695,
+              "hi": 1.2313304784593837
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00019371876709830337,
+            "mae": 0.010440423126025899,
+            "yield_mean": 1.752,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.971,
+                "width": 0.05918323478945137
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.972,
+                "width": 0.05186293543680466
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0004967404144278122,
+            "mae": 0.009986594088020315,
+            "yield_mean": 3.611,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.833,
+                "width": 0.038015856035849754
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05130774445517644
+              },
+              "bootstrap": {
+                "coverage": 0.831,
+                "width": 0.039672302017424485
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.896,
+                "width": 0.0642896999817618
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016829540818473886,
+                "mean_upper": 0.016829540818473886
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015918856044557304,
+                "mean_upper": 0.06559528388445406
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015124184402138077,
+                "mean_upper": 0.11637529735265648
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.061073059360731,
+              "lo": 1.9579004920721705,
+              "hi": 2.168570786733919
+            }
+          },
+          "M2p": {
+            "truth": 0.017326281232901697,
+            "bias": 0.000173426488400043,
+            "mae": 0.010433750161727547,
+            "yield_mean": 1.852,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.848,
+                "width": 0.03819457885186976
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.05191983741287255
+              },
+              "bootstrap": {
+                "coverage": 0.837,
+                "width": 0.04001521674998559
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.8,
+                "width": 0.06379667153018419
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0570776255707763,
+              "lo": 0.9907428477714313,
+              "hi": 1.1250182748538011
+            }
+          },
+          "M2": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00018636734071393097,
+            "mae": 0.012334289579483815,
+            "yield_mean": 2.922,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.657,
+                "width": 0.04005586674944775
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.06641007539361593
+              },
+              "bootstrap": {
+                "coverage": 0.671,
+                "width": 0.042138787615681475
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.87,
+                "width": 0.0902774712748495
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017512648573615626,
+                "mean_upper": 0.017512648573615626
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01662766075570841,
+                "mean_upper": 0.06716794257422617
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01596317032169185,
+                "mean_upper": 0.11613619996946216
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6678082191780823,
+              "lo": 1.5771096486697156,
+              "hi": 1.7689145165975002
+            }
+          },
+          "M3": {
+            "truth": 0.017326281232901697,
+            "bias": 5.528429177756977e-05,
+            "mae": 0.011613366790385864,
+            "yield_mean": 3.21,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.65,
+                "width": 0.037702047571061464
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.07655322720293141
+              },
+              "bootstrap": {
+                "coverage": 0.685,
+                "width": 0.039243830875554386
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.442,
+                "width": 0.1051630904614262
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017381565524679267,
+                "mean_upper": 0.017381565524679267
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016593530890285563,
+                "mean_upper": 0.06604769032137611
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01562767650623805,
+                "mean_upper": 0.11577961568157709
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.8321917808219177,
+              "lo": 1.7311095142217816,
+              "hi": 1.9419791924651448
+            }
+          },
+          "M4": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0006735916608500134,
+            "mae": 0.009788050805893143,
+            "yield_mean": 1.929,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.835,
+                "width": 0.03666066068262866
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05017040003149087
+              },
+              "bootstrap": {
+                "coverage": 0.833,
+                "width": 0.03855086585165424
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.844,
+                "width": 0.0626347711107058
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.101027397260274,
+              "lo": 1.032145166825045,
+              "hi": 1.1695392464096912
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.017326281232901697,
+            "bias": -0.00023128123290169634,
+            "mae": 0.007331797373700529,
+            "yield_mean": 1.7095,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.98,
+                "width": 0.03815540698506981
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.951,
+                "width": 0.03533839139157395
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0003560802874324095,
+            "mae": 0.007486686063530704,
+            "yield_mean": 2.6445,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.822,
+                "width": 0.031316434716299836
+              },
+              "wald_smoothed": {
+                "coverage": 0.964,
+                "width": 0.03706847143941987
+              },
+              "bootstrap": {
+                "coverage": 0.827,
+                "width": 0.0318771190239925
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.897,
+                "width": 0.040294204814882356
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.964,
+                "mean_lower": 0.016970200945469287,
+                "mean_upper": 0.016970200945469287
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.998,
+                "mean_lower": 0.016100888596725017,
+                "mean_upper": 0.06599491751797365
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.015384724957689255,
+                "mean_upper": 0.11518911656405899
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.546943550745832,
+              "lo": 1.4843524320228367,
+              "hi": 1.6091695684033653
+            }
+          },
+          "M2p": {
+            "truth": 0.017326281232901697,
+            "bias": -0.00014100199968668809,
+            "mae": 0.007145368217716246,
+            "yield_mean": 1.776,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.874,
+                "width": 0.03146408219875037
+              },
+              "wald_smoothed": {
+                "coverage": 0.972,
+                "width": 0.03761262974298051
+              },
+              "bootstrap": {
+                "coverage": 0.87,
+                "width": 0.03240388578331649
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.867,
+                "width": 0.0405565794273208
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.038900263234864,
+              "lo": 0.992464480720068,
+              "hi": 1.0863496687518672
+            }
+          },
+          "M2": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00023419704838957968,
+            "mae": 0.008764236098129631,
+            "yield_mean": 2.9035,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.767,
+                "width": 0.03495138085959547
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.046099207483127944
+              },
+              "bootstrap": {
+                "coverage": 0.786,
+                "width": 0.03584501038870681
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.903,
+                "width": 0.054197998358562816
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.017560478281291276,
+                "mean_upper": 0.017560478281291276
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016624173898277278,
+                "mean_upper": 0.0672281779225635
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015688615031563557,
+                "mean_upper": 0.11489356826716636
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.69844983913425,
+              "lo": 1.630578014595158,
+              "hi": 1.768906167627303
+            }
+          },
+          "M3": {
+            "truth": 0.017326281232901697,
+            "bias": -8.539692844485281e-05,
+            "mae": 0.008699275354400392,
+            "yield_mean": 2.998,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.749,
+                "width": 0.033167185481588486
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05091887479539812
+              },
+              "bootstrap": {
+                "coverage": 0.773,
+                "width": 0.03377717072602862
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.686,
+                "width": 0.06251387014408169
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01724088430445684,
+                "mean_upper": 0.01724088430445684
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016297565449851555,
+                "mean_upper": 0.06609867172063093
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015606618041534091,
+                "mean_upper": 0.11509878468781602
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.7537291605732672,
+              "lo": 1.6859859336255805,
+              "hi": 1.823112142520633
+            }
+          },
+          "M4": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0005473940932492313,
+            "mae": 0.006916880994710761,
+            "yield_mean": 1.999,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.875,
+                "width": 0.030350124027968464
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.03649528457482952
+              },
+              "bootstrap": {
+                "coverage": 0.887,
+                "width": 0.03112978481951697
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.903,
+                "width": 0.03929626117089184
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1693477625036561,
+              "lo": 1.1193766912395353,
+              "hi": 1.223666399675614
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.017326281232901697,
+            "bias": 0.0003037187670983036,
+            "mae": 0.004939109064380814,
+            "yield_mean": 1.763,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.942,
+                "width": 0.025801499345668246
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.957,
+                "width": 0.024814927959146443
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0002514049736700914,
+            "mae": 0.005034029667735222,
+            "yield_mean": 2.168,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.889,
+                "width": 0.02343563597728573
+              },
+              "wald_smoothed": {
+                "coverage": 0.961,
+                "width": 0.026394172141253336
+              },
+              "bootstrap": {
+                "coverage": 0.945,
+                "width": 0.024014888951711638
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.928,
+                "width": 0.026136134415465983
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.961,
+                "mean_lower": 0.0170748762592316,
+                "mean_upper": 0.0170748762592316
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.997,
+                "mean_lower": 0.01621207224938938,
+                "mean_upper": 0.06658673866508964
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.997,
+                "mean_lower": 0.015396527586202576,
+                "mean_upper": 0.11559344046983583
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.2297220646625073,
+              "lo": 1.194812491382876,
+              "hi": 1.265385472314751
+            }
+          },
+          "M2p": {
+            "truth": 0.017326281232901697,
+            "bias": 0.00016593615917692662,
+            "mae": 0.004671429615174709,
+            "yield_mean": 1.77225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.942,
+                "width": 0.023897385788918486
+              },
+              "wald_smoothed": {
+                "coverage": 0.974,
+                "width": 0.027268786109691596
+              },
+              "bootstrap": {
+                "coverage": 0.955,
+                "width": 0.02446392362081458
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.916,
+                "width": 0.026735062921758156
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0052467385138968,
+              "lo": 0.9743933083357091,
+              "hi": 1.0361543234833819
+            }
+          },
+          "M2": {
+            "truth": 0.017326281232901697,
+            "bias": 6.496465071491141e-05,
+            "mae": 0.005898555979802179,
+            "yield_mean": 2.8725,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.848,
+                "width": 0.027735832396595165
+              },
+              "wald_smoothed": {
+                "coverage": 0.957,
+                "width": 0.03361753117341514
+              },
+              "bootstrap": {
+                "coverage": 0.87,
+                "width": 0.028044107606752126
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.03399126390662045
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.957,
+                "mean_lower": 0.01739124588361661,
+                "mean_upper": 0.01739124588361661
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.016537945422730686,
+                "mean_upper": 0.06644756204575995
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.015567202563545152,
+                "mean_upper": 0.1154186602707977
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6293250141803746,
+              "lo": 1.5874636279780212,
+              "hi": 1.6724534489512075
+            }
+          },
+          "M3": {
+            "truth": 0.017326281232901697,
+            "bias": -5.546840938896891e-05,
+            "mae": 0.005869202098215993,
+            "yield_mean": 2.926,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.835,
+                "width": 0.02687950318346854
+              },
+              "wald_smoothed": {
+                "coverage": 0.996,
+                "width": 0.03617071401646075
+              },
+              "bootstrap": {
+                "coverage": 0.854,
+                "width": 0.02715135154915707
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.846,
+                "width": 0.037708471639613335
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.996,
+                "mean_lower": 0.017270812823512727,
+                "mean_upper": 0.017270812823512727
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01642015119304878,
+                "mean_upper": 0.06566133147010686
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01562130777006166,
+                "mean_upper": 0.11440425704785168
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6596710153148044,
+              "lo": 1.6157039378453382,
+              "hi": 1.7080755693581777
+            }
+          },
+          "M4": {
+            "truth": 0.017326281232901697,
+            "bias": -0.000973811663860142,
+            "mae": 0.0050007037841091045,
+            "yield_mean": 1.9725,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.875,
+                "width": 0.02220747924623524
+              },
+              "wald_smoothed": {
+                "coverage": 0.922,
+                "width": 0.025462995262040516
+              },
+              "bootstrap": {
+                "coverage": 0.893,
+                "width": 0.022932175539056677
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.94,
+                "width": 0.025174785701258428
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1188315371525808,
+              "lo": 1.0852649704237904,
+              "hi": 1.1561960486144753
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.017326281232901697,
+            "bias": -4.878123290169656e-05,
+            "mae": 0.0033859743753419666,
+            "yield_mean": 1.72775,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.95,
+                "width": 0.016994427105718267
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.01663752507751231
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.017326281232901697,
+            "bias": -0.00013884346309209886,
+            "mae": 0.0034130952391340963,
+            "yield_mean": 1.930375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.92,
+                "width": 0.01623003287800092
+              },
+              "wald_smoothed": {
+                "coverage": 0.964,
+                "width": 0.01736061884683135
+              },
+              "bootstrap": {
+                "coverage": 0.956,
+                "width": 0.01735646377515714
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.947,
+                "width": 0.017091441728980486
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.964,
+                "mean_lower": 0.017187437769809598,
+                "mean_upper": 0.017187437769809598
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.994,
+                "mean_lower": 0.016307856078858794,
+                "mean_upper": 0.06596013973595638
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.996,
+                "mean_lower": 0.015441866966796893,
+                "mean_upper": 0.11551833930801336
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1172768050933295,
+              "lo": 1.0949923565140924,
+              "hi": 1.138445099294001
+            }
+          },
+          "M2p": {
+            "truth": 0.017326281232901697,
+            "bias": -0.00012411319261333798,
+            "mae": 0.003326699256182473,
+            "yield_mean": 1.731375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.941,
+                "width": 0.01636395413249372
+              },
+              "wald_smoothed": {
+                "coverage": 0.941,
+                "width": 0.017672698797908514
+              },
+              "bootstrap": {
+                "coverage": 0.955,
+                "width": 0.017514640455611755
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.939,
+                "width": 0.017330817982856097
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.002098104471133,
+              "lo": 0.9806870269997694,
+              "hi": 1.0242343552821875
+            }
+          },
+          "M2": {
+            "truth": 0.017326281232901697,
+            "bias": 3.952452728033268e-05,
+            "mae": 0.0041109870849776456,
+            "yield_mean": 2.89925,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.907,
+                "width": 0.01990326145212516
+              },
+              "wald_smoothed": {
+                "coverage": 0.949,
+                "width": 0.022416231275206696
+              },
+              "bootstrap": {
+                "coverage": 0.926,
+                "width": 0.020778937683824945
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.021903985044683563
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.949,
+                "mean_lower": 0.017365805760182026,
+                "mean_upper": 0.017365805760182026
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.01654734106391043,
+                "mean_upper": 0.0665260247386774
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01560921530368775,
+                "mean_upper": 0.11502060069698247
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6780494863261468,
+              "lo": 1.648344116901508,
+              "hi": 1.7078482142506506
+            }
+          },
+          "M3": {
+            "truth": 0.017326281232901697,
+            "bias": 5.236190335981303e-05,
+            "mae": 0.004105275704764539,
+            "yield_mean": 2.9355,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.891,
+                "width": 0.019573835108822088
+              },
+              "wald_smoothed": {
+                "coverage": 0.963,
+                "width": 0.0241580514723429
+              },
+              "bootstrap": {
+                "coverage": 0.908,
+                "width": 0.020467281830187343
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.907,
+                "width": 0.023481451759985405
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.963,
+                "mean_lower": 0.017378643136261508,
+                "mean_upper": 0.017378643136261508
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.016506473728885585,
+                "mean_upper": 0.0665198854379608
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.01566484609627408,
+                "mean_upper": 0.11584557105431462
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6990305310374767,
+              "lo": 1.6689162511771505,
+              "hi": 1.7285108702017022
+            }
+          },
+          "M4": {
+            "truth": 0.017326281232901697,
+            "bias": -0.0008216069687696339,
+            "mae": 0.0033465353321596785,
+            "yield_mean": 1.949625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.915,
+                "width": 0.015647864079064572
+              },
+              "wald_smoothed": {
+                "coverage": 0.934,
+                "width": 0.016897618856985753
+              },
+              "bootstrap": {
+                "coverage": 0.94,
+                "width": 0.016863094460012593
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.016613984132774026
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.128418463319346,
+              "lo": 1.1058172007646034,
+              "hi": 1.1537455455109031
+            }
+          }
+        }
+      }
+    },
+    "0.6": {
+      "threshold": 0.6,
+      "pool_size": 5628,
+      "hidden_events": 139,
+      "truth_for": 0.024697938877043354,
+      "underpowered": false,
+      "is_stress": true,
+      "is_headline": false,
+      "strata_counts": {
+        "none": 3009,
+        "(0,0.05]": 1483,
+        "(0.05,0.1]": 434,
+        "(0.1,0.2]": 301,
+        "(0.2,0.4]": 257,
+        "(0.4,0.6]": 144
+      },
+      "condition_counts": {
+        "normal": 2949,
+        "night": 1543,
+        "low_light": 613,
+        "high_blur": 521,
+        "low_resolution": 2
+      },
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.024697938877043354,
+            "bias": -0.000337938877043354,
+            "mae": 0.01745877754086709,
+            "yield_mean": 2.436,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.964,
+                "width": 0.10250011901204838
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.964,
+                "width": 0.0878045042643923
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.024697938877043354,
+            "bias": 0.00014461763090900087,
+            "mae": 0.016467713689079688,
+            "yield_mean": 6.38,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.723,
+                "width": 0.05875643041683198
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08751457871695544
+              },
+              "bootstrap": {
+                "coverage": 0.723,
+                "width": 0.06170236714579673
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.887,
+                "width": 0.11274868958777538
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.024842556507952352,
+                "mean_upper": 0.024842556507952352
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0236204766104182,
+                "mean_upper": 0.07374439912240043
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022309749231228786,
+                "mean_upper": 0.12348284933035096
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 2.619047619047619,
+              "lo": 2.4685679150916924,
+              "hi": 2.779039594934716
+            }
+          },
+          "M2p": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0012108082423380926,
+            "mae": 0.015008274913312228,
+            "yield_mean": 3.592,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.67,
+                "width": 0.049658952060779186
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08323413428308886
+              },
+              "bootstrap": {
+                "coverage": 0.825,
+                "width": 0.05175337621955158
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.704,
+                "width": 0.10659215529495378
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4745484400656814,
+              "lo": 1.3751950455851842,
+              "hi": 1.5762863427288942
+            }
+          },
+          "M2": {
+            "truth": 0.024697938877043354,
+            "bias": 2.1523829266367506e-05,
+            "mae": 0.01805197869778094,
+            "yield_mean": 8.362,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.553,
+                "width": 0.05164189595769469
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.1265779995550025
+              },
+              "bootstrap": {
+                "coverage": 0.574,
+                "width": 0.0532412292086196
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.744,
+                "width": 0.17613234719260834
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.02471946270630972,
+                "mean_upper": 0.02471946270630972
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.023584726170733632,
+                "mean_upper": 0.07073197307115217
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022173390981599938,
+                "mean_upper": 0.12053298734502092
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.4326765188834156,
+              "lo": 3.233869093725794,
+              "hi": 3.648095022965138
+            }
+          },
+          "M3": {
+            "truth": 0.024697938877043354,
+            "bias": 0.00028807746979388774,
+            "mae": 0.01608760957119166,
+            "yield_mean": 8.45,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.601,
+                "width": 0.04797978074851464
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.14992112799550597
+              },
+              "bootstrap": {
+                "coverage": 0.61,
+                "width": 0.0492605190565032
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.008,
+                "width": 0.200780277185501
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.024986016346837246,
+                "mean_upper": 0.024986016346837246
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.023615950011845535,
+                "mean_upper": 0.0716460495143331
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022277792584695567,
+                "mean_upper": 0.1186730632551528
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.4688013136288998,
+              "lo": 3.261644483735295,
+              "hi": 3.693913043478261
+            }
+          },
+          "M4": {
+            "truth": 0.024697938877043354,
+            "bias": -0.00048472378367900694,
+            "mae": 0.014820123685837973,
+            "yield_mean": 3.644,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.712,
+                "width": 0.05165943209185944
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08445613764027746
+              },
+              "bootstrap": {
+                "coverage": 0.851,
+                "width": 0.053841984834735554
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.715,
+                "width": 0.10733441275764036
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4958949096880132,
+              "lo": 1.3948876163645272,
+              "hi": 1.6025575628956483
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.024697938877043354,
+            "bias": 0.0005520611229566461,
+            "mae": 0.01239550106609808,
+            "yield_mean": 2.525,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.963,
+                "width": 0.06715686061082071
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.918,
+                "width": 0.061092008706467645
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0005473259176528532,
+            "mae": 0.012025015914918441,
+            "yield_mean": 4.351,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.923,
+                "width": 0.04967030399149137
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.06118392155847161
+              },
+              "bootstrap": {
+                "coverage": 0.92,
+                "width": 0.051061965435516776
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.915,
+                "width": 0.070211473880597
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.999,
+                "mean_lower": 0.0241506129593905,
+                "mean_upper": 0.0241506129593905
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.023091608305250554,
+                "mean_upper": 0.07412165313965749
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.021909342198144357,
+                "mean_upper": 0.12187441525097759
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.7231683168316831,
+              "lo": 1.6542995125012767,
+              "hi": 1.7963156459365477
+            }
+          },
+          "M2p": {
+            "truth": 0.024697938877043354,
+            "bias": 8.745813369176236e-05,
+            "mae": 0.011216521901345235,
+            "yield_mean": 3.009,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.855,
+                "width": 0.045955546833754655
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.06030217251729159
+              },
+              "bootstrap": {
+                "coverage": 0.855,
+                "width": 0.047204141918767026
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.814,
+                "width": 0.06661101634683722
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1916831683168316,
+              "lo": 1.1331909238033364,
+              "hi": 1.2534127234525876
+            }
+          },
+          "M2": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0002684948515715958,
+            "mae": 0.013382540311555363,
+            "yield_mean": 8.07,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.634,
+                "width": 0.04483095962738055
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.0810377576781803
+              },
+              "bootstrap": {
+                "coverage": 0.651,
+                "width": 0.04503834565522169
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.845,
+                "width": 0.10373867714996445
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.02442944402547176,
+                "mean_upper": 0.02442944402547176
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.023221506972017223,
+                "mean_upper": 0.07537110920402464
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.02216234905850269,
+                "mean_upper": 0.12358715953923247
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.196039603960396,
+              "lo": 3.063290285714785,
+              "hi": 3.3326524263790955
+            }
+          },
+          "M3": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0005421692804155483,
+            "mae": 0.01248093432568379,
+            "yield_mean": 8.41,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.637,
+                "width": 0.04123362109124719
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.09344271142975959
+              },
+              "bootstrap": {
+                "coverage": 0.656,
+                "width": 0.041254792503531174
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.345,
+                "width": 0.12120967928216059
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.024155769596627807,
+                "mean_upper": 0.024155769596627807
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022960707583895217,
+                "mean_upper": 0.07384782809585581
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.021689014488827922,
+                "mean_upper": 0.12310384747724833
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.330693069306931,
+              "lo": 3.201970243902652,
+              "hi": 3.4733262131024842
+            }
+          },
+          "M4": {
+            "truth": 0.024697938877043354,
+            "bias": -0.001141403914266888,
+            "mae": 0.010423936193308383,
+            "yield_mean": 3.275,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.839,
+                "width": 0.04390161909609398
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05837632846183837
+              },
+              "bootstrap": {
+                "coverage": 0.838,
+                "width": 0.04487650096107032
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.839,
+                "width": 0.06555914623312009
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.297029702970297,
+              "lo": 1.2332696220333723,
+              "hi": 1.3643643329358432
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.024697938877043354,
+            "bias": 0.0007020611229566467,
+            "mae": 0.008626517412935325,
+            "yield_mean": 2.54,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.964,
+                "width": 0.04495040531108105
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.928,
+                "width": 0.042632116204690824
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.024697938877043354,
+            "bias": -0.00045645419105788806,
+            "mae": 0.00844633501156683,
+            "yield_mean": 3.373,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.851,
+                "width": 0.03933698819696591
+              },
+              "wald_smoothed": {
+                "coverage": 0.96,
+                "width": 0.04492429302327315
+              },
+              "bootstrap": {
+                "coverage": 0.944,
+                "width": 0.03964939304795216
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.928,
+                "width": 0.04563604299928926
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.96,
+                "mean_lower": 0.024241484685985467,
+                "mean_upper": 0.024241484685985467
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.998,
+                "mean_lower": 0.02309573275068512,
+                "mean_upper": 0.0733932248302058
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.02181435304875677,
+                "mean_upper": 0.12143933172784332
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.327952755905512,
+              "lo": 1.284033348085275,
+              "hi": 1.372508050943657
+            }
+          },
+          "M2p": {
+            "truth": 0.024697938877043354,
+            "bias": -0.00034883424588914814,
+            "mae": 0.008015197762732412,
+            "yield_mean": 2.755,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.895,
+                "width": 0.03614178768568761
+              },
+              "wald_smoothed": {
+                "coverage": 0.967,
+                "width": 0.04368989811193242
+              },
+              "bootstrap": {
+                "coverage": 0.902,
+                "width": 0.0366352109032063
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.884,
+                "width": 0.04315174573560767
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0846456692913384,
+              "lo": 1.045722220844825,
+              "hi": 1.1248544781317285
+            }
+          },
+          "M2": {
+            "truth": 0.024697938877043354,
+            "bias": -0.00037167530097744075,
+            "mae": 0.009342031228706181,
+            "yield_mean": 8.2795,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.735,
+                "width": 0.037973543238132956
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.05675066767592796
+              },
+              "bootstrap": {
+                "coverage": 0.757,
+                "width": 0.03751402690727783
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.913,
+                "width": 0.061795242537313416
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.02432626357606591,
+                "mean_upper": 0.02432626357606591
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.023133600394166114,
+                "mean_upper": 0.07416468918588257
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.021874655213164416,
+                "mean_upper": 0.12343880631838715
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.2596456692913387,
+              "lo": 3.163131519858628,
+              "hi": 3.3622134596475273
+            }
+          },
+          "M3": {
+            "truth": 0.024697938877043354,
+            "bias": 0.00017097105977273013,
+            "mae": 0.009233205809946984,
+            "yield_mean": 8.3885,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.749,
+                "width": 0.0375945837325592
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.06420153648033462
+              },
+              "bootstrap": {
+                "coverage": 0.758,
+                "width": 0.03712703717012548
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.62,
+                "width": 0.07233041488983652
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.999,
+                "mean_lower": 0.02486890993681608,
+                "mean_upper": 0.02486890993681608
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.023718770382621702,
+                "mean_upper": 0.07408052384576
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.022353739582811605,
+                "mean_upper": 0.12314093317632836
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.3025590551181105,
+              "lo": 3.2088936765178,
+              "hi": 3.40192037680663
+            }
+          },
+          "M4": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0009992185201962653,
+            "mae": 0.007418782515751179,
+            "yield_mean": 3.4415,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.887,
+                "width": 0.03407490185787401
+              },
+              "wald_smoothed": {
+                "coverage": 0.963,
+                "width": 0.042065607090512824
+              },
+              "bootstrap": {
+                "coverage": 0.899,
+                "width": 0.03452396598294979
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.905,
+                "width": 0.041673391968727776
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3549212598425198,
+              "lo": 1.3092964004199437,
+              "hi": 1.399842328684051
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.024697938877043354,
+            "bias": 2.70611229566467e-05,
+            "mae": 0.006077352523098792,
+            "yield_mean": 2.4725,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.931,
+                "width": 0.030055555778854413
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.951,
+                "width": 0.029138259594882726
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.024697938877043354,
+            "bias": 5.073033386715889e-05,
+            "mae": 0.006264080106770823,
+            "yield_mean": 2.93125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.911,
+                "width": 0.028463753976823818
+              },
+              "wald_smoothed": {
+                "coverage": 0.95,
+                "width": 0.031066060534582586
+              },
+              "bootstrap": {
+                "coverage": 0.938,
+                "width": 0.029141941440152357
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.93,
+                "width": 0.030449888948116552
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.95,
+                "mean_lower": 0.024748669210910512,
+                "mean_upper": 0.024748669210910512
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.02357324411308135,
+                "mean_upper": 0.07319880398358783
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.022308542748726786,
+                "mean_upper": 0.12221994378229574
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.185540950455005,
+              "lo": 1.156612397130635,
+              "hi": 1.2172778573740044
+            }
+          },
+          "M2p": {
+            "truth": 0.024697938877043354,
+            "bias": 0.00018510513481247742,
+            "mae": 0.0053493770994992,
+            "yield_mean": 2.64175,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.94,
+                "width": 0.026827988242984463
+              },
+              "wald_smoothed": {
+                "coverage": 0.967,
+                "width": 0.03016534381962892
+              },
+              "bootstrap": {
+                "coverage": 0.954,
+                "width": 0.02765476475142804
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.916,
+                "width": 0.02907707889125799
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0684529828109202,
+              "lo": 1.0410715401250723,
+              "hi": 1.095258907424832
+            }
+          },
+          "M2": {
+            "truth": 0.024697938877043354,
+            "bias": -0.00012288806262361108,
+            "mae": 0.0067381328755451685,
+            "yield_mean": 8.346,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.808,
+                "width": 0.02948913044991223
+              },
+              "wald_smoothed": {
+                "coverage": 0.987,
+                "width": 0.039422107747695806
+              },
+              "bootstrap": {
+                "coverage": 0.844,
+                "width": 0.02980498718906639
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.931,
+                "width": 0.03812159737029139
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.987,
+                "mean_lower": 0.024575050814419745,
+                "mean_upper": 0.024575050814419745
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.02336304985841713,
+                "mean_upper": 0.07280774390542316
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022146603163183492,
+                "mean_upper": 0.12277367918724554
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.375530839231547,
+              "lo": 3.3071451540490657,
+              "hi": 3.444247638034151
+            }
+          },
+          "M3": {
+            "truth": 0.024697938877043354,
+            "bias": 6.595518304024281e-05,
+            "mae": 0.007014427309122155,
+            "yield_mean": 8.35125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.795,
+                "width": 0.029024525839268088
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.04462741538396901
+              },
+              "bootstrap": {
+                "coverage": 0.832,
+                "width": 0.029363015871155668
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.777,
+                "width": 0.043343634506041215
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.024763894060083596,
+                "mean_upper": 0.024763894060083596
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.023503628466709378,
+                "mean_upper": 0.07338957490337633
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022294955238084807,
+                "mean_upper": 0.12294544512309845
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.377654196157735,
+              "lo": 3.3107460716465313,
+              "hi": 3.445971813200542
+            }
+          },
+          "M4": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0008272091578705812,
+            "mae": 0.005212204506198324,
+            "yield_mean": 3.59275,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.024640802586697628
+              },
+              "wald_smoothed": {
+                "coverage": 0.954,
+                "width": 0.028096816377011113
+              },
+              "bootstrap": {
+                "coverage": 0.934,
+                "width": 0.025472120756358727
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.926,
+                "width": 0.027379331023454148
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4530839231547017,
+              "lo": 1.4197770416539577,
+              "hi": 1.490766611043389
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.024697938877043354,
+            "bias": 3.206112295664655e-05,
+            "mae": 0.00412612473347548,
+            "yield_mean": 2.473,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.949,
+                "width": 0.020163918745847654
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.947,
+                "width": 0.019806378820184788
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.024697938877043354,
+            "bias": -9.66151779043424e-05,
+            "mae": 0.0039022384687046182,
+            "yield_mean": 2.67225,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.942,
+                "width": 0.019474934121038245
+              },
+              "wald_smoothed": {
+                "coverage": 0.96,
+                "width": 0.02039911372057598
+              },
+              "bootstrap": {
+                "coverage": 0.959,
+                "width": 0.020851550177883788
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.948,
+                "width": 0.02010861762615494
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.96,
+                "mean_lower": 0.024601323699139012,
+                "mean_upper": 0.024601323699139012
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.995,
+                "mean_lower": 0.023329377388078255,
+                "mean_upper": 0.07316394818538904
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.022181949709971078,
+                "mean_upper": 0.12232927738306469
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0805701577031945,
+              "lo": 1.0617764313298224,
+              "hi": 1.0988266255303427
+            }
+          },
+          "M2p": {
+            "truth": 0.024697938877043354,
+            "bias": -3.656134262126749e-05,
+            "mae": 0.0038633836174748436,
+            "yield_mean": 2.53425,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.938,
+                "width": 0.01854297758355394
+              },
+              "wald_smoothed": {
+                "coverage": 0.947,
+                "width": 0.019742061307572254
+              },
+              "bootstrap": {
+                "coverage": 0.95,
+                "width": 0.01990281137565748
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.929,
+                "width": 0.019270891080312717
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.024767488879903,
+              "lo": 1.007293423833153,
+              "hi": 1.042014345296284
+            }
+          },
+          "M2": {
+            "truth": 0.024697938877043354,
+            "bias": 0.0002702534552363894,
+            "mae": 0.004817508228582808,
+            "yield_mean": 7.853625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.872,
+                "width": 0.021680620011944488
+              },
+              "wald_smoothed": {
+                "coverage": 0.945,
+                "width": 0.025060081269015513
+              },
+              "bootstrap": {
+                "coverage": 0.905,
+                "width": 0.022760469433227407
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.938,
+                "width": 0.024414290156361044
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.945,
+                "mean_lower": 0.024968192332279742,
+                "mean_upper": 0.024968192332279742
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.997,
+                "mean_lower": 0.023658048377900722,
+                "mean_upper": 0.07379530524487286
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.022535292880273474,
+                "mean_upper": 0.1229033060302913
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.1757480792559645,
+              "lo": 3.1341727291820525,
+              "hi": 3.2178019195313223
+            }
+          },
+          "M3": {
+            "truth": 0.024697938877043354,
+            "bias": 0.00020248531902935878,
+            "mae": 0.004588810232247008,
+            "yield_mean": 7.8545,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.882,
+                "width": 0.021279300825419754
+              },
+              "wald_smoothed": {
+                "coverage": 0.975,
+                "width": 0.027250042426253975
+              },
+              "bootstrap": {
+                "coverage": 0.9,
+                "width": 0.022363022062583504
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.884,
+                "width": 0.026354522032693666
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.975,
+                "mean_lower": 0.024900424196072714,
+                "mean_upper": 0.024900424196072714
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.02363412601019283,
+                "mean_upper": 0.07369851332213301
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.022505881405237523,
+                "mean_upper": 0.12178003089834505
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.176101900525677,
+              "lo": 3.133984895576263,
+              "hi": 3.2201451750274392
+            }
+          },
+          "M4": {
+            "truth": 0.024697938877043354,
+            "bias": -0.0009253673760583665,
+            "mae": 0.0036048701169470593,
+            "yield_mean": 3.755875,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.918,
+                "width": 0.01673919827575672
+              },
+              "wald_smoothed": {
+                "coverage": 0.946,
+                "width": 0.018025514244740266
+              },
+              "bootstrap": {
+                "coverage": 0.95,
+                "width": 0.018218930551995412
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.948,
+                "width": 0.017759315031982935
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5187525272947837,
+              "lo": 1.4943294267897733,
+              "hi": 1.544834248476283
+            }
+          }
+        }
+      }
+    },
+    "0.8": {
+      "threshold": 0.8,
+      "pool_size": 5938,
+      "hidden_events": 414,
+      "truth_for": 0.06972044459413944,
+      "underpowered": false,
+      "is_stress": false,
+      "is_headline": false,
+      "strata_counts": {
+        "none": 3009,
+        "(0,0.05]": 1483,
+        "(0.05,0.1]": 434,
+        "(0.6,0.8]": 310,
+        "(0.1,0.2]": 301,
+        "(0.2,0.4]": 257,
+        "(0.4,0.6]": 144
+      },
+      "condition_counts": {
+        "normal": 3013,
+        "night": 1764,
+        "low_light": 626,
+        "high_blur": 533,
+        "low_resolution": 2
+      },
+      "results": {
+        "50": {
+          "M0": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00010044459413943785,
+            "mae": 0.029075399124284276,
+            "yield_mean": 6.962,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.973,
+                "width": 0.1446383794536699
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.946,
+                "width": 0.13661806584708655
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0005257866642171155,
+            "mae": 0.028388213560325382,
+            "yield_mean": 10.662,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.855,
+                "width": 0.12510765531970658
+              },
+              "wald_smoothed": {
+                "coverage": 0.962,
+                "width": 0.1441888131858804
+              },
+              "bootstrap": {
+                "coverage": 0.853,
+                "width": 0.12638952337028075
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.918,
+                "width": 0.14598651060963283
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.962,
+                "mean_lower": 0.07024623125835656,
+                "mean_upper": 0.07024623125835656
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.989,
+                "mean_lower": 0.06635660154934321,
+                "mean_upper": 0.11592976923155435
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.994,
+                "mean_lower": 0.0631346208804107,
+                "mean_upper": 0.16311005899343722
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5314564780235567,
+              "lo": 1.4742091823443566,
+              "hi": 1.5928403052004552
+            }
+          },
+          "M2p": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0004858015146411867,
+            "mae": 0.016169376741480144,
+            "yield_mean": 10.526,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.823,
+                "width": 0.06258325059982485
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.12419043612293157
+              },
+              "bootstrap": {
+                "coverage": 0.746,
+                "width": 0.059653549264112996
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.822,
+                "width": 0.11363514651397774
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.511921861534042,
+              "lo": 1.4578535818160074,
+              "hi": 1.5690155031426112
+            }
+          },
+          "M2": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0002253027313990632,
+            "mae": 0.019535784054275127,
+            "yield_mean": 32.338,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.625,
+                "width": 0.0632212183835853
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.19594695677800622
+              },
+              "bootstrap": {
+                "coverage": 0.573,
+                "width": 0.059900655202970374
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.701,
+                "width": 0.21087174132704609
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06994574732553849,
+                "mean_upper": 0.06994574732553849
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06657040850695278,
+                "mean_upper": 0.11910362154966399
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06266851272674782,
+                "mean_upper": 0.16299382989302155
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 4.644929617925884,
+              "lo": 4.4933403621485954,
+              "hi": 4.803929505272819
+            }
+          },
+          "M3": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0001724135511395511,
+            "mae": 0.016821818513528684,
+            "yield_mean": 27.51,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.641,
+                "width": 0.05083498025881236
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.21030617080768294
+              },
+              "bootstrap": {
+                "coverage": 0.621,
+                "width": 0.04872772310401931
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.033,
+                "width": 0.22119529302795546
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06954803104299989,
+                "mean_upper": 0.06954803104299989
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06618519843942966,
+                "mean_upper": 0.11817329067025935
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06251767570450208,
+                "mean_upper": 0.15912937156169307
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 3.9514507325481185,
+              "lo": 3.8240733407016463,
+              "hi": 4.098404749590348
+            }
+          },
+          "M4": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0001428685302705548,
+            "mae": 0.0158979911974732,
+            "yield_mean": 10.66,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.857,
+                "width": 0.06249012634230147
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.12440566213157513
+              },
+              "bootstrap": {
+                "coverage": 0.778,
+                "width": 0.05956853586982204
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.815,
+                "width": 0.11338544964634555
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5311692042516518,
+              "lo": 1.4775502299837664,
+              "hi": 1.5870482001402162
+            }
+          }
+        },
+        "100": {
+          "M0": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0016304445941394377,
+            "mae": 0.020446214213539916,
+            "yield_mean": 6.809,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.922,
+                "width": 0.09939288403344894
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.942,
+                "width": 0.09616726591444928
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0010575522254871218,
+            "mae": 0.019199067075207302,
+            "yield_mean": 8.896,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.91,
+                "width": 0.09427602827073868
+              },
+              "wald_smoothed": {
+                "coverage": 0.956,
+                "width": 0.10417995080095466
+              },
+              "bootstrap": {
+                "coverage": 0.924,
+                "width": 0.09380226848273106
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.922,
+                "width": 0.10004276692489052
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.956,
+                "mean_lower": 0.07077799681962657,
+                "mean_upper": 0.07077799681962657
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.99,
+                "mean_lower": 0.06752869654841583,
+                "mean_upper": 0.11695149126088
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.996,
+                "mean_lower": 0.06391972873735673,
+                "mean_upper": 0.16371843664795713
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.306506094874431,
+              "lo": 1.2683520000981934,
+              "hi": 1.343738078925
+            }
+          },
+          "M2p": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00028426722439674716,
+            "mae": 0.011377735304146994,
+            "yield_mean": 9.033,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.873,
+                "width": 0.05190041935040119
+              },
+              "wald_smoothed": {
+                "coverage": 0.997,
+                "width": 0.07723656945989243
+              },
+              "bootstrap": {
+                "coverage": 0.892,
+                "width": 0.05105124062779152
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.874,
+                "width": 0.07101631020545636
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.3266265237186077,
+              "lo": 1.2933314727350793,
+              "hi": 1.3617456070272245
+            }
+          },
+          "M2": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0009539400684443592,
+            "mae": 0.016384248593333154,
+            "yield_mean": 35.542,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.625,
+                "width": 0.056314085376776034
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.14490801935088032
+              },
+              "bootstrap": {
+                "coverage": 0.646,
+                "width": 0.0534460967469929
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.802,
+                "width": 0.13595741411249573
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0706743846625838,
+                "mean_upper": 0.0706743846625838
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06723831739968336,
+                "mean_upper": 0.11749597502184775
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06364672560547582,
+                "mean_upper": 0.1625667930404349
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.219856072844764,
+              "lo": 5.094674796326038,
+              "hi": 5.350107715769941
+            }
+          },
+          "M3": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0008751587836212302,
+            "mae": 0.013731684148903753,
+            "yield_mean": 33.153,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.657,
+                "width": 0.04560378943638415
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.159044448677088
+              },
+              "bootstrap": {
+                "coverage": 0.68,
+                "width": 0.04416948280044587
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.223,
+                "width": 0.15226305995284606
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06884528581051821,
+                "mean_upper": 0.06884528581051821
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0654490974193652,
+                "mean_upper": 0.11620515284928387
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.062124283468860765,
+                "mean_upper": 0.15813559319315465
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 4.868996915846673,
+              "lo": 4.755710986877448,
+              "hi": 4.97911167467833
+            }
+          },
+          "M4": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00016643632736410574,
+            "mae": 0.011132304731321494,
+            "yield_mean": 9.552,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.876,
+                "width": 0.05084252289336971
+              },
+              "wald_smoothed": {
+                "coverage": 0.997,
+                "width": 0.07612319142136209
+              },
+              "bootstrap": {
+                "coverage": 0.888,
+                "width": 0.05039370410615373
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.879,
+                "width": 0.07072037723139103
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.4028491702158907,
+              "lo": 1.3665697199026907,
+              "hi": 1.4392619850833515
+            }
+          }
+        },
+        "200": {
+          "M0": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0007104445941394373,
+            "mae": 0.013983418659481309,
+            "yield_mean": 6.901,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.927,
+                "width": 0.06959433920155568
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.941,
+                "width": 0.06824764651397776
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00010239463829317969,
+            "mae": 0.014316627657546389,
+            "yield_mean": 7.877,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.922,
+                "width": 0.06627863556075558
+              },
+              "wald_smoothed": {
+                "coverage": 0.942,
+                "width": 0.07026668794145886
+              },
+              "bootstrap": {
+                "coverage": 0.942,
+                "width": 0.06686096091261204
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.927,
+                "width": 0.06827368221623441
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.942,
+                "mean_lower": 0.06961804995584626,
+                "mean_upper": 0.06961804995584626
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.991,
+                "mean_lower": 0.06609436602448414,
+                "mean_upper": 0.1161569271865943
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.998,
+                "mean_lower": 0.06255125908478629,
+                "mean_upper": 0.1622957224862411
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.1414287784379076,
+              "lo": 1.1172373888688294,
+              "hi": 1.1659629929285964
+            }
+          },
+          "M2p": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0004754340623309574,
+            "mae": 0.008384810597858974,
+            "yield_mean": 8.0505,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.931,
+                "width": 0.04041150656419211
+              },
+              "wald_smoothed": {
+                "coverage": 0.977,
+                "width": 0.04982498661907265
+              },
+              "bootstrap": {
+                "coverage": 0.93,
+                "width": 0.040904291596907214
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.898,
+                "width": 0.04712470949814751
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.16657006230981,
+              "lo": 1.1450326569141536,
+              "hi": 1.1887064631729758
+            }
+          },
+          "M2": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0006544283019454965,
+            "mae": 0.011749936262345132,
+            "yield_mean": 36.791,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.702,
+                "width": 0.04502537276956086
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.08811802922728997
+              },
+              "bootstrap": {
+                "coverage": 0.727,
+                "width": 0.043673158724354406
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.855,
+                "width": 0.08194506988885145
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.07037487289608493,
+                "mean_upper": 0.07037487289608493
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06695885886638378,
+                "mean_upper": 0.11697076097840817
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06325247960784626,
+                "mean_upper": 0.1640255786378666
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.331256339660919,
+              "lo": 5.246328965827874,
+              "hi": 5.419428437006503
+            }
+          },
+          "M3": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0006894482072251629,
+            "mae": 0.011431435144635642,
+            "yield_mean": 35.743,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.704,
+                "width": 0.041666284371444526
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.10618039218777539
+              },
+              "bootstrap": {
+                "coverage": 0.724,
+                "width": 0.040788159784449204
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.476,
+                "width": 0.09457313489390366
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0704098928013646,
+                "mean_upper": 0.0704098928013646
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06698823100014269,
+                "mean_upper": 0.1179032549429082
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06352155427655819,
+                "mean_upper": 0.16311876695200775
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.17939429068251,
+              "lo": 5.0942514708104,
+              "hi": 5.2628578046815555
+            }
+          },
+          "M4": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0008120401234629185,
+            "mae": 0.0075417484997476174,
+            "yield_mean": 10.2745,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.911,
+                "width": 0.036960504759006634
+              },
+              "wald_smoothed": {
+                "coverage": 0.981,
+                "width": 0.046691341320722515
+              },
+              "bootstrap": {
+                "coverage": 0.911,
+                "width": 0.03743763052469028
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.923,
+                "width": 0.044892691141798564
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.488842196783075,
+              "lo": 1.4630338781770673,
+              "hi": 1.5169049385474147
+            }
+          }
+        },
+        "400": {
+          "M0": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00044794459413943766,
+            "mae": 0.010495886662175817,
+            "yield_mean": 6.92725,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.938,
+                "width": 0.04821422543194766
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.936,
+                "width": 0.04773246463455708
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.06972044459413944,
+            "bias": 7.312597539376341e-05,
+            "mae": 0.009236360035852691,
+            "yield_mean": 7.40625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.957,
+                "width": 0.04647627291678973
+              },
+              "wald_smoothed": {
+                "coverage": 0.957,
+                "width": 0.04790046384802337
+              },
+              "bootstrap": {
+                "coverage": 0.96,
+                "width": 0.04777915386626802
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.947,
+                "width": 0.047041011283260346
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.957,
+                "mean_lower": 0.0697935705695332,
+                "mean_upper": 0.0697935705695332
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.996,
+                "mean_lower": 0.06610687639173742,
+                "mean_upper": 0.1163143775358381
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 0.999,
+                "mean_lower": 0.0628068291446927,
+                "mean_upper": 0.16219350533814025
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0691472084882168,
+              "lo": 1.053654448311629,
+              "hi": 1.0857765685464653
+            }
+          },
+          "M2p": {
+            "truth": 0.06972044459413944,
+            "bias": 6.927016683928553e-05,
+            "mae": 0.006079661819620591,
+            "yield_mean": 7.3425,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.925,
+                "width": 0.02918777846274336
+              },
+              "wald_smoothed": {
+                "coverage": 0.964,
+                "width": 0.032694106461742235
+              },
+              "bootstrap": {
+                "coverage": 0.933,
+                "width": 0.030105407716087856
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.93,
+                "width": 0.031569893061636906
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0599444223898373,
+              "lo": 1.046155710046039,
+              "hi": 1.0745158026667605
+            }
+          },
+          "M2": {
+            "truth": 0.06972044459413944,
+            "bias": 3.7337289247436385e-05,
+            "mae": 0.00811777032298014,
+            "yield_mean": 37.658,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.767,
+                "width": 0.03444956682889081
+              },
+              "wald_smoothed": {
+                "coverage": 0.998,
+                "width": 0.052319411541256564
+              },
+              "bootstrap": {
+                "coverage": 0.792,
+                "width": 0.034414487082278455
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.916,
+                "width": 0.04986036965308183
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.998,
+                "mean_lower": 0.06975778188338688,
+                "mean_upper": 0.06975778188338688
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06616781144737571,
+                "mean_upper": 0.11659660958921444
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06289281309146649,
+                "mean_upper": 0.16317500260968784
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.436212061063193,
+              "lo": 5.374049841216683,
+              "hi": 5.500512647582941
+            }
+          },
+          "M3": {
+            "truth": 0.06972044459413944,
+            "bias": -1.4991765485523389e-05,
+            "mae": 0.008061196780145217,
+            "yield_mean": 37.145,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.761,
+                "width": 0.032584224238009565
+              },
+              "wald_smoothed": {
+                "coverage": 0.999,
+                "width": 0.061496862793084674
+              },
+              "bootstrap": {
+                "coverage": 0.781,
+                "width": 0.032578023273582474
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.703,
+                "width": 0.057113548332771956
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.999,
+                "mean_lower": 0.06970545282865391,
+                "mean_upper": 0.06970545282865391
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.999,
+                "mean_lower": 0.06626935809580592,
+                "mean_upper": 0.11596273631765638
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06265248196405254,
+                "mean_upper": 0.16087875223216638
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.362156699989174,
+              "lo": 5.298564005761336,
+              "hi": 5.424353893906719
+            }
+          },
+          "M4": {
+            "truth": 0.06972044459413944,
+            "bias": -0.000531829318087149,
+            "mae": 0.005859992973656745,
+            "yield_mean": 10.96675,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.912,
+                "width": 0.026417666127857693
+              },
+              "wald_smoothed": {
+                "coverage": 0.964,
+                "width": 0.030097196118968772
+              },
+              "bootstrap": {
+                "coverage": 0.932,
+                "width": 0.027425455441242506
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.923,
+                "width": 0.029421307679353307
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.5831318344220289,
+              "lo": 1.5603890708118942,
+              "hi": 1.6071349021286399
+            }
+          }
+        },
+        "800": {
+          "M0": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0001754445941394382,
+            "mae": 0.006709736443246882,
+            "yield_mean": 6.9545,
+            "ci": {
+              "wilson_fpc": {
+                "coverage": 0.949,
+                "width": 0.03285030902943797
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.954,
+                "width": 0.03260069888851464
+              }
+            }
+          },
+          "M1": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00024192754777906762,
+            "mae": 0.006496923641815513,
+            "yield_mean": 7.147625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.952,
+                "width": 0.03163948475870338
+              },
+              "wald_smoothed": {
+                "coverage": 0.955,
+                "width": 0.03213690990745283
+              },
+              "bootstrap": {
+                "coverage": 0.959,
+                "width": 0.03387700221796328
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.947,
+                "width": 0.03177160239137756
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.955,
+                "mean_lower": 0.06947851704636038,
+                "mean_upper": 0.06947851704636038
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 0.996,
+                "mean_lower": 0.06594504981938971,
+                "mean_upper": 0.11605618916247057
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06252885901823634,
+                "mean_upper": 0.16265739942550236
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0277697893450284,
+              "lo": 1.0173717233468744,
+              "hi": 1.038218053879381
+            }
+          },
+          "M2p": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0004153153302381304,
+            "mae": 0.0040654631147414525,
+            "yield_mean": 7.134625,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.933,
+                "width": 0.020217930300256096
+              },
+              "wald_smoothed": {
+                "coverage": 0.949,
+                "width": 0.021465873206048657
+              },
+              "bootstrap": {
+                "coverage": 0.949,
+                "width": 0.021686391285819052
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.956,
+                "width": 0.020994556247894907
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.0259004960816736,
+              "lo": 1.0168760324987203,
+              "hi": 1.035155084503049
+            }
+          },
+          "M2": {
+            "truth": 0.06972044459413944,
+            "bias": 0.0003984669732819769,
+            "mae": 0.005672860333615481,
+            "yield_mean": 37.974375,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.85,
+                "width": 0.026280866154556912
+              },
+              "wald_smoothed": {
+                "coverage": 0.962,
+                "width": 0.03275922197197914
+              },
+              "bootstrap": {
+                "coverage": 0.89,
+                "width": 0.027201062451457418
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.928,
+                "width": 0.03166690383967665
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 0.962,
+                "mean_lower": 0.07011891156742142,
+                "mean_upper": 0.07011891156742142
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06668341020160029,
+                "mean_upper": 0.11637690828205147
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06314059107620049,
+                "mean_upper": 0.1625207264979899
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.4604033359695165,
+              "lo": 5.419371926792023,
+              "hi": 5.502220974524813
+            }
+          },
+          "M3": {
+            "truth": 0.06972044459413944,
+            "bias": -0.00017877428985474847,
+            "mae": 0.0054526757727283515,
+            "yield_mean": 37.59575,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.825,
+                "width": 0.0245710805598194
+              },
+              "wald_smoothed": {
+                "coverage": 1.0,
+                "width": 0.036111424895350935
+              },
+              "bootstrap": {
+                "coverage": 0.864,
+                "width": 0.02550643911018108
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.849,
+                "width": 0.034543878410239134
+              }
+            },
+            "unresolved": [
+              {
+                "unresolved_fraction": 0.0,
+                "contains_truth": 1.0,
+                "mean_lower": 0.0695416703042847,
+                "mean_upper": 0.0695416703042847
+              },
+              {
+                "unresolved_fraction": 0.05,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06616136696914793,
+                "mean_upper": 0.11642751805451894
+              },
+              {
+                "unresolved_fraction": 0.1,
+                "contains_truth": 1.0,
+                "mean_lower": 0.06250678020207849,
+                "mean_upper": 0.16289912220711625
+              }
+            ],
+            "yield_ratio_vs_M0": {
+              "ratio": 5.405960169674311,
+              "lo": 5.364289427056626,
+              "hi": 5.4485337948005625
+            }
+          },
+          "M4": {
+            "truth": 0.06972044459413944,
+            "bias": -0.0004941916032510443,
+            "mae": 0.003958833145817984,
+            "yield_mean": 11.7125,
+            "ci": {
+              "wald_plugin": {
+                "coverage": 0.912,
+                "width": 0.01807810005786626
+              },
+              "wald_smoothed": {
+                "coverage": 0.933,
+                "width": 0.019453116193628765
+              },
+              "bootstrap": {
+                "coverage": 0.938,
+                "width": 0.019659198303745747
+              },
+              "bayes_jeffreys": {
+                "coverage": 0.947,
+                "width": 0.019237853654429097
+              }
+            },
+            "yield_ratio_vs_M0": {
+              "ratio": 1.6841613343878064,
+              "lo": 1.6615572330163457,
+              "hi": 1.706257681431716
+            }
+          }
+        }
+      }
+    }
+  },
+  "runtime_seconds": 186.7
+}
