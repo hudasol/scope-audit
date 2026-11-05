@@ -52,7 +52,8 @@ def strata_table(df: pd.DataFrame, cols) -> pd.DataFrame:
 
 def _two_phase(N_h, K_h, n, S, rng):
     H = len(N_h)
-    a1 = allocate(N_h, N_h.astype(float), max(int(round(n * PILOT_SHARE)), 2 * H if n >= 2 * H * 2 else H))
+    pilot = int(min(max(round(n * PILOT_SHARE), 2 * H), n))
+    a1 = allocate(N_h, N_h.astype(float), pilot)
     x1 = simulate_counts(N_h, K_h, a1, S, rng)
     N2 = N_h - a1
     K2 = K_h[None, :] - x1

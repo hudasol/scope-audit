@@ -73,6 +73,8 @@ def draw_ids(df: pd.DataFrame, strata_cols, alloc_by_stratum: dict, seed: int, t
     cols = [strata_cols] if isinstance(strata_cols, str) else list(strata_cols)
     out = []
     for key, grp in df.groupby(cols, sort=True):
+        if len(cols) == 1 and isinstance(key, tuple):
+            key = key[0]
         k = int(alloc_by_stratum.get(key, 0))
         if k <= 0:
             continue
