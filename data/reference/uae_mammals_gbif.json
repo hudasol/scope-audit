@@ -1,0 +1,593 @@
+{
+  "label": "CANDIDATE reference list from GBIF occurrence records, not expert approved",
+  "source": "GBIF occurrence API, country=AE, classKey=359 (Mammalia)",
+  "retrieved_utc": "2026-11-05T23:21:15Z",
+  "total_occurrence_records": 2133,
+  "species_count": 73,
+  "species": [
+    {
+      "speciesKey": 5220158,
+      "scientificName": "Gazella arabica (Lichtenstein, 1827)",
+      "canonicalName": "Gazella arabica",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 315
+    },
+    {
+      "speciesKey": 2435035,
+      "scientificName": "Felis catus Linnaeus, 1758",
+      "canonicalName": "Felis catus",
+      "family": "Felidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 304
+    },
+    {
+      "speciesKey": 9091848,
+      "scientificName": "Gazella marica Thomas, 1897",
+      "canonicalName": "Gazella marica",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 222
+    },
+    {
+      "speciesKey": 5220164,
+      "scientificName": "Oryx leucoryx (Pallas, 1777)",
+      "canonicalName": "Oryx leucoryx",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 212
+    },
+    {
+      "speciesKey": 2437243,
+      "scientificName": "Funambulus pennantii Wroughton, 1905",
+      "canonicalName": "Funambulus pennantii",
+      "family": "Sciuridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 196
+    },
+    {
+      "speciesKey": 5219243,
+      "scientificName": "Vulpes vulpes (Linnaeus, 1758)",
+      "canonicalName": "Vulpes vulpes",
+      "family": "Canidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 136
+    },
+    {
+      "speciesKey": 9055455,
+      "scientificName": "Camelus dromedarius Linnaeus, 1758",
+      "canonicalName": "Camelus dromedarius",
+      "family": "Camelidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 128
+    },
+    {
+      "speciesKey": 2437619,
+      "scientificName": "Dolichotis patagonum (Zimmermann, 1780)",
+      "canonicalName": "Dolichotis patagonum",
+      "family": "Caviidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 90
+    },
+    {
+      "speciesKey": 2437830,
+      "scientificName": "Gerbillus cheesmani Thomas, 1919",
+      "canonicalName": "Gerbillus cheesmani",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 69
+    },
+    {
+      "speciesKey": 2441056,
+      "scientificName": "Capra hircus Linnaeus, 1758",
+      "canonicalName": "Capra hircus",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 44
+    },
+    {
+      "speciesKey": 2440891,
+      "scientificName": "Equus asinus Linnaeus, 1758",
+      "canonicalName": "Equus asinus",
+      "family": "Equidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 39
+    },
+    {
+      "speciesKey": 2437145,
+      "scientificName": "Paraechinus aethiopicus (Ehrenberg, 1832)",
+      "canonicalName": "Paraechinus aethiopicus",
+      "family": "Erinaceidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 37
+    },
+    {
+      "speciesKey": 2436736,
+      "scientificName": "Lepus capensis Linnaeus, 1758",
+      "canonicalName": "Lepus capensis",
+      "family": "Leporidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 25
+    },
+    {
+      "speciesKey": 2437788,
+      "scientificName": "Gerbillus nanus Blanford, 1875",
+      "canonicalName": "Gerbillus nanus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 18
+    },
+    {
+      "speciesKey": 2441110,
+      "scientificName": "Ovis aries Linnaeus, 1758",
+      "canonicalName": "Ovis aries",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 17
+    },
+    {
+      "speciesKey": 5218748,
+      "scientificName": "Rhinopoma muscatellum Thomas, 1903",
+      "canonicalName": "Rhinopoma muscatellum",
+      "family": "Rhinopomatidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 13
+    },
+    {
+      "speciesKey": 5219173,
+      "scientificName": "Canis lupus Linnaeus, 1758",
+      "canonicalName": "Canis lupus",
+      "family": "Canidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 12
+    },
+    {
+      "speciesKey": 5219598,
+      "scientificName": "Procavia capensis (Pallas, 1766)",
+      "canonicalName": "Procavia capensis",
+      "family": "Procaviidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 12
+    },
+    {
+      "speciesKey": 7429082,
+      "scientificName": "Mus musculus Linnaeus, 1758",
+      "canonicalName": "Mus musculus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 11
+    },
+    {
+      "speciesKey": 8888736,
+      "scientificName": "Giraffa reticulata de Winton, 1899",
+      "canonicalName": "Giraffa reticulata",
+      "family": "Giraffidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 11
+    },
+    {
+      "speciesKey": 2440506,
+      "scientificName": "Sousa plumbea (G.Cuvier, 1829)",
+      "canonicalName": "Sousa plumbea",
+      "family": "Delphinidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 10
+    },
+    {
+      "speciesKey": 5220173,
+      "scientificName": "Hemitragus jayakari Thomas, 1894",
+      "canonicalName": "Hemitragus jayakari",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 10
+    },
+    {
+      "speciesKey": 2436940,
+      "scientificName": "Oryctolagus cuniculus (Linnaeus, 1758)",
+      "canonicalName": "Oryctolagus cuniculus",
+      "family": "Leporidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 9
+    },
+    {
+      "speciesKey": 2441049,
+      "scientificName": "Capra nubiana F.Cuvier, 1825",
+      "canonicalName": "Capra nubiana",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 9
+    },
+    {
+      "speciesKey": 5219235,
+      "scientificName": "Vulpes cana Blanford, 1877",
+      "canonicalName": "Vulpes cana",
+      "family": "Canidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 8
+    },
+    {
+      "speciesKey": 5219723,
+      "scientificName": "Meriones arimalius Cheesman & Hinton, 1924",
+      "canonicalName": "Meriones arimalius",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 8
+    },
+    {
+      "speciesKey": 5219895,
+      "scientificName": "Jaculus jaculus (Linnaeus, 1758)",
+      "canonicalName": "Jaculus jaculus",
+      "family": "Dipodidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 8
+    },
+    {
+      "speciesKey": 5220149,
+      "scientificName": "Gazella dorcas (Linnaeus, 1758)",
+      "canonicalName": "Gazella dorcas",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 8
+    },
+    {
+      "speciesKey": 2440447,
+      "scientificName": "Tursiops truncatus (Montagu, 1821)",
+      "canonicalName": "Tursiops truncatus",
+      "family": "Delphinidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 7
+    },
+    {
+      "speciesKey": 2441005,
+      "scientificName": "Ammotragus lervia (Pallas, 1777)",
+      "canonicalName": "Ammotragus lervia",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 7
+    },
+    {
+      "speciesKey": 2437154,
+      "scientificName": "Paraechinus hypomelas (Brandt, 1836)",
+      "canonicalName": "Paraechinus hypomelas",
+      "family": "Erinaceidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 6
+    },
+    {
+      "speciesKey": 2439270,
+      "scientificName": "Rattus rattus (Linnaeus, 1758)",
+      "canonicalName": "Rattus rattus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 6
+    },
+    {
+      "speciesKey": 5220165,
+      "scientificName": "Oryx dammah (Cretzschmar, 1827)",
+      "canonicalName": "Oryx dammah",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 6
+    },
+    {
+      "speciesKey": 9729967,
+      "scientificName": "Dugong dugon (Müller, 1776)",
+      "canonicalName": "Dugong dugon",
+      "family": "Dugongidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 6
+    },
+    {
+      "speciesKey": 8324617,
+      "scientificName": "Delphinus delphis Linnaeus, 1758",
+      "canonicalName": "Delphinus delphis",
+      "family": "Delphinidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 5
+    },
+    {
+      "speciesKey": 4264830,
+      "scientificName": "Acomys dimidiatus (Cretzschmar, 1826)",
+      "canonicalName": "Acomys dimidiatus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 4
+    },
+    {
+      "speciesKey": 8555521,
+      "scientificName": "Protohummus dango Kraatz et al., 2013",
+      "canonicalName": "Protohummus dango",
+      "family": "Thryonomyidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 4
+    },
+    {
+      "speciesKey": 2432564,
+      "scientificName": "Vespertilio murinus Linnaeus, 1758",
+      "canonicalName": "Vespertilio murinus",
+      "family": "Vespertilionidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 2432602,
+      "scientificName": "Asellia tridens (É.Geoffroy Saint-Hilaire, 1813)",
+      "canonicalName": "Asellia tridens",
+      "family": "Hipposideridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 2438783,
+      "scientificName": "Mus macedonicus Petrov & Ruzic, 1983",
+      "canonicalName": "Mus macedonicus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 2440714,
+      "scientificName": "Balaenoptera edeni Anderson, 1879",
+      "canonicalName": "Balaenoptera edeni",
+      "family": "Balaenopteridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 2441022,
+      "scientificName": "Bos taurus Linnaeus, 1758",
+      "canonicalName": "Bos taurus",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 5219724,
+      "scientificName": "Meriones crassus Sundevall, 1842",
+      "canonicalName": "Meriones crassus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 5220146,
+      "scientificName": "Gazella subgutturosa (Güldenstaedt, 1780)",
+      "canonicalName": "Gazella subgutturosa",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 5220154,
+      "scientificName": "Gazella gazella (Pallas, 1766)",
+      "canonicalName": "Gazella gazella",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 3
+    },
+    {
+      "speciesKey": 2434150,
+      "scientificName": "Ichneumia albicauda (G.Cuvier, 1829)",
+      "canonicalName": "Ichneumia albicauda",
+      "family": "Herpestidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 2437246,
+      "scientificName": "Funambulus palmarum (Linnaeus, 1766)",
+      "canonicalName": "Funambulus palmarum",
+      "family": "Sciuridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 2439261,
+      "scientificName": "Rattus norvegicus (Berkenhout, 1769)",
+      "canonicalName": "Rattus norvegicus",
+      "family": "Muridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 2440455,
+      "scientificName": "Tursiops aduncus (Ehrenberg, 1833)",
+      "canonicalName": "Tursiops aduncus",
+      "family": "Delphinidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 2440735,
+      "scientificName": "Balaenoptera musculus (Linnaeus, 1758)",
+      "canonicalName": "Balaenoptera musculus",
+      "family": "Balaenopteridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 5218464,
+      "scientificName": "Pipistrellus kuhlii (Kuhl, 1817)",
+      "canonicalName": "Pipistrellus kuhlii",
+      "family": "Vespertilionidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 5218737,
+      "scientificName": "Taphozous nudiventris Cretzschmar, 1826",
+      "canonicalName": "Taphozous nudiventris",
+      "family": "Emballonuridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 5218742,
+      "scientificName": "Taphozous perforatus E.Geoffroy, 1818",
+      "canonicalName": "Taphozous perforatus",
+      "family": "Emballonuridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 5220136,
+      "scientificName": "Dama dama (Linnaeus, 1758)",
+      "canonicalName": "Dama dama",
+      "family": "Cervidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 2
+    },
+    {
+      "speciesKey": 11119347,
+      "scientificName": "Prostrepsiceros libycus (Lehmann & Thomas, 1987)",
+      "canonicalName": "Prostrepsiceros libycus",
+      "family": "Bovidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2432382,
+      "scientificName": "Otonycteris hemprichii Peters, 1859",
+      "canonicalName": "Otonycteris hemprichii",
+      "family": "Vespertilionidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2432470,
+      "scientificName": "Myotis emarginatus (E.Geoffroy, 1806)",
+      "canonicalName": "Myotis emarginatus",
+      "family": "Vespertilionidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2435010,
+      "scientificName": "Caracal caracal (Schreber, 1776)",
+      "canonicalName": "Caracal caracal",
+      "family": "Felidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2435506,
+      "scientificName": "Suncus etruscus (Savi, 1822)",
+      "canonicalName": "Suncus etruscus",
+      "family": "Soricidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2436436,
+      "scientificName": "Homo sapiens Linnaeus, 1758",
+      "canonicalName": "Homo sapiens",
+      "family": "Hominidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2440718,
+      "scientificName": "Balaenoptera physalus (Linnaeus, 1758)",
+      "canonicalName": "Balaenoptera physalus",
+      "family": "Balaenopteridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 2440934,
+      "scientificName": "Axis axis (Erxleben, 1777)",
+      "canonicalName": "Axis axis",
+      "family": "Cervidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 4971477,
+      "scientificName": "Propotamochoerus hysudricus Stehlin, 1899",
+      "canonicalName": "Propotamochoerus hysudricus",
+      "family": "Suidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 5218543,
+      "scientificName": "Lasiurus borealis (Müller, 1776)",
+      "canonicalName": "Lasiurus borealis",
+      "family": "Vespertilionidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 5219702,
+      "scientificName": "Cavia porcellus (Linnaeus, 1758)",
+      "canonicalName": "Cavia porcellus",
+      "family": "Caviidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 5219884,
+      "scientificName": "Hystrix indica Kerr, 1792",
+      "canonicalName": "Hystrix indica",
+      "family": "Hystricidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 5220055,
+      "scientificName": "Stenella coeruleoalba (Meyen, 1833)",
+      "canonicalName": "Stenella coeruleoalba",
+      "family": "Delphinidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 5220086,
+      "scientificName": "Megaptera novaeangliae (Borowski, 1781)",
+      "canonicalName": "Megaptera novaeangliae",
+      "family": "Balaenopteridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 7964291,
+      "scientificName": "Felis silvestris Schreber, 1777",
+      "canonicalName": "Felis silvestris",
+      "family": "Felidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 8123917,
+      "scientificName": "Physeter macrocephalus Linnaeus, 1758",
+      "canonicalName": "Physeter macrocephalus",
+      "family": "Physeteridae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 8480590,
+      "scientificName": "Hexaprotodon sahabiensis Gaziry, 1987",
+      "canonicalName": "Hexaprotodon sahabiensis",
+      "family": "Hippopotamidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 9469620,
+      "scientificName": "Hexaprotodon harvardi (Coryndon, 1977)",
+      "canonicalName": "Hexaprotodon harvardi",
+      "family": "Hippopotamidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    },
+    {
+      "speciesKey": 9496545,
+      "scientificName": "Ochotona gobiensis (Dawson, 1961)",
+      "canonicalName": "Ochotona gobiensis",
+      "family": "Ochotonidae",
+      "taxonomicStatus": "ACCEPTED",
+      "occurrenceRecords": 1
+    }
+  ]
+}
