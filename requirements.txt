@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+statsmodels
+pydantic
+opencv-python-headless
+pillow
+matplotlib
+plotly
+streamlit
+pytest
+jsonschema
+requests
