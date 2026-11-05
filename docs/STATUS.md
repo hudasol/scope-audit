@@ -37,7 +37,7 @@ Rung 1. Real benchmark images with expert labels (BORROWED, Caltech Camera Traps
 
 ## NOT RUN
 
-- Any test on UAE data. A reviewer agreement study. A test of the detector on unseen data. Species classification. Operation at field scale. Deployment on Ministry infrastructure.
+- Any test on UAE data. A reviewer agreement study. A test of the detector on unseen data. Accuracy of any species classifier (the suggestion adapter was tested on synthetic fixtures only). Operation at field scale. Deployment on Ministry infrastructure.
 
 ## Synthetic and borrowed items
 

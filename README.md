@@ -12,6 +12,7 @@ Author: Huda Mueen (Team IZZA).
 - Estimates the false omission rate of that pool with an interval, and handles unresolved reviews with bounds.
 - Keeps an append only, hash chained review log from machine suggestion to approved record.
 - Exports only human approved observations as a Camtrap DP 1.0.2 package with a separate audit package.
+- Reads the output of an external species classifier as suggestions only: a reviewer decides and an approver approves.
 
 It makes no statement about how many animals exist, where a species lives, or whether a species is gone.
 
@@ -45,7 +46,7 @@ python scripts/make_docs.py
 
 - scopeaudit: engine (estimators, sampling, strata, audit, review log, export, privacy, integrity).
 - app: the three screen demo. experiments: experiments A, B and C. scripts: data, evaluation and documentation.
-- docs: method, decisions, predictions, prior art, limitations, pilot plan, pitch and red team.
+- docs: method, decisions, predictions, prior art, open data check, limitations, pilot plan, canvas, pitch and red team.
 - results and figures: generated outputs, each labelled.
 
 ## Licence
