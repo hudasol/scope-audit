@@ -50,3 +50,26 @@ def test_bootstrap_interval_contains_estimate():
     x_h = np.array([3, 5])
     e, lo, hi = est.strat_bootstrap(N_h, n_h, x_h, rng, B=500)
     assert lo <= e <= hi
+
+
+def test_bayes_interval_contains_estimate_and_handles_zero_hits():
+    rng = rng_for(3, "bayes")
+    N_h = np.array([800, 200])
+    n_h = np.array([40, 20])
+    e, lo, hi = est.strat_bayes(N_h, n_h, np.array([0, 0]), rng, B=500)
+    assert e == 0 and lo == 0 and hi > 0
+    e, lo, hi = est.strat_bayes(N_h, n_h, np.array([2, 4]), rng, B=500)
+    assert lo <= e <= hi
+
+
+def test_bayes_coverage_is_reasonable_for_rare_events():
+    rng = rng_for(4, "bayes_cov")
+    N_h = np.array([900, 100])
+    K_h = np.array([3, 12])
+    truth = K_h.sum() / N_h.sum()
+    n_h = np.array([60, 30])
+    S = 400
+    x = rng.hypergeometric(K_h, N_h - K_h, n_h, size=(S, 2))
+    _, lo, hi = est.strat_bayes(N_h, np.broadcast_to(n_h, (S, 2)), x, rng, B=400)
+    cover = np.mean((lo <= truth) & (truth <= hi))
+    assert cover > 0.9

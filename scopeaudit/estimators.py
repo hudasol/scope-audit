@@ -112,6 +112,44 @@ def strat_bootstrap(N_h, n_h, x_h, rng, B: int = 1000, conf: float = CONF, chunk
     return est, lo, hi
 
 
+def strat_bayes(N_h, n_h, x_h, rng, B: int = 1000, conf: float = CONF, chunk: int = 250, prior: float = 0.5):
+    """Beta binomial credible interval for stratified FOR (exploratory, added after the first calibration run).
+
+    Each stratum rate gets a Jeffreys prior (0.5, 0.5). For every posterior draw the
+    number of hits among the events that were not reviewed is drawn from a binomial,
+    so the finite population correction is exact and strata with no hits keep a
+    realistic amount of uncertainty. The pool FOR is the total of reviewed and
+    unreviewed hits divided by the pool size. Returns the plug in stratified estimate
+    and the percentile interval.
+    """
+    N_h = np.asarray(N_h, dtype=np.int64)
+    n_h = np.asarray(n_h, dtype=np.int64)
+    x_h = np.asarray(x_h, dtype=np.int64)
+    single = x_h.ndim == 1
+    if single:
+        x_h, n_h = x_h[None, :], n_h[None, :]
+    S, H = x_h.shape
+    n_h = np.broadcast_to(n_h, (S, H))
+    est_pt = strat_point(np.broadcast_to(N_h, (S, H)), n_h, x_h)
+    lo = np.empty(S)
+    hi = np.empty(S)
+    a = (1 - conf) / 2
+    total_N = float(N_h.sum())
+    for start in range(0, S, chunk):
+        sl = slice(start, min(S, start + chunk))
+        c = sl.stop - sl.start
+        xa = x_h[sl][:, None, :]
+        na = n_h[sl][:, None, :]
+        p = rng.beta(xa + prior, na - xa + prior, size=(c, B, H))
+        unseen = rng.binomial(N_h[None, None, :] - na, p)
+        rep = (xa + unseen).sum(axis=-1) / total_N
+        q = np.quantile(rep, [a, 1 - a], axis=1)
+        lo[sl], hi[sl] = q[0], q[1]
+    if single:
+        return est_pt[0], lo[0], hi[0]
+    return est_pt, lo, hi
+
+
 def sensitivity_bounds(N_h, n_h, x_h, u_h, conf: float = CONF):
     """Bounds on FOR when some reviewed events are unresolved.
 

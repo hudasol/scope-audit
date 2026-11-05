@@ -81,8 +81,12 @@ def run_scheme(df: pd.DataFrame, scheme: str, n: int, S: int, rng, B: int = 1000
         x = rng.hypergeometric(K_total, N_total - K_total, n, size=(S, 1))
         nn = np.full((S, 1), n)
         p, lo, hi = est.wilson_fpc(x[:, 0], n, N_total)
+        ci0 = {"wilson_fpc": (lo, hi)}
+        if with_bootstrap:
+            _, blo, bhi = est.strat_bayes(np.array([N_total]), nn, x, rng, B=B)
+            ci0["bayes_jeffreys"] = (blo, bhi)
         return {"truth": truth, "n_h": nn, "x_h": x, "estimate": p,
-                "ci": {"wilson_fpc": (lo, hi)}, "yield": 100.0 * x[:, 0] / n, "N_h": np.array([N_total]),
+                "ci": ci0, "yield": 100.0 * x[:, 0] / n, "N_h": np.array([N_total]),
                 "K_h": np.array([K_total]), "mid": np.array([0.0])}
     tab = strata_table(df, sc["cols"])
     N_h = tab["N"].to_numpy(dtype=np.int64)
@@ -105,6 +109,8 @@ def run_scheme(df: pd.DataFrame, scheme: str, n: int, S: int, rng, B: int = 1000
     if with_bootstrap:
         _, lo, hi = est.strat_bootstrap(N_h, nn, x, rng, B=B)
         ci["bootstrap"] = (lo, hi)
+        _, lo, hi = est.strat_bayes(N_h, nn, x, rng, B=B)
+        ci["bayes_jeffreys"] = (lo, hi)
     yld = 100.0 * x.sum(axis=1) / nn.sum(axis=1)
     return {"truth": truth, "n_h": nn, "x_h": x, "estimate": point, "ci": ci, "yield": yld,
             "N_h": N_h, "K_h": K_h, "mid": mid}
