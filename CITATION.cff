@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Scope Audit: an audit of what an animal detector hides in the images it calls empty"
+type: software
+authors:
+  - family-names: Mueen
+    given-names: Huda
+license: MIT
+repository-code: "https://github.com/hudasol/scope-audit"
