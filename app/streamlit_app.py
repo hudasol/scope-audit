@@ -40,6 +40,7 @@ CONTEXT_NOTE = ("This demo reads Caltech Camera Traps images from the southweste
                 "Nothing shown describes the United Arab Emirates.")
 
 SAKURA, PEARL, ROSE, DEEP, PETAL = "#F8C8DC", "#FAF3F0", "#C2557A", "#4A2B3A", "#FDE8F0"
+ROSE_DARK = "#A63F66"  # rose darkened so small pearl text on it passes 4.5 to 1 contrast
 STATES = ["ai_candidate", "human_review", "adjudication", "approved", "exported"]
 
 st.set_page_config(page_title="SCOPE AUDIT", page_icon="🌸", layout="wide")
@@ -48,13 +49,13 @@ st.markdown(f"""<style>
 .block-container{{padding-top:1.6rem;max-width:1250px;}}
 h1,h2,h3{{color:{ROSE};font-weight:600;}}
 section[data-testid="stSidebar"]{{background:{SAKURA};}}
-.stButton>button,.stDownloadButton>button{{background:{ROSE};color:{PEARL};border:0;border-radius:10px;padding:0.45rem 1.1rem;}}
+.stButton>button,.stDownloadButton>button{{background:{ROSE_DARK};color:{PEARL};border:0;border-radius:10px;padding:0.45rem 1.1rem;}}
 .stButton>button:hover,.stDownloadButton>button:hover{{background:{DEEP};color:{PEARL};}}
 div[data-testid="stMetric"]{{background:white;border:1px solid {SAKURA};border-radius:14px;padding:12px 16px;
   box-shadow:0 1px 4px rgba(194,85,122,0.10);}}
 div[data-testid="stMetricLabel"]{{color:{DEEP};}}
 div[data-testid="stMetricValue"]{{color:{ROSE};font-size:1.6rem;}}
-div[data-testid="stMetricLabel"] p,div[data-testid="stMetricDelta"]{{white-space:normal;overflow:visible;text-overflow:clip;}}
+div[data-testid="stMetricLabel"] *{{white-space:normal !important;overflow:visible !important;text-overflow:clip !important;}}
 .hero{{background:linear-gradient(120deg,{SAKURA},{PETAL});border-radius:18px;padding:20px 26px;margin-bottom:12px;}}
 .hero h1{{margin:0;font-size:2.0rem;}}
 .hero p{{margin:4px 0 0 0;color:{DEEP};font-size:1.0rem;}}
@@ -63,7 +64,7 @@ div[data-testid="stMetricLabel"] p,div[data-testid="stMetricDelta"]{{white-space
 .chip{{display:inline-block;border-radius:999px;padding:4px 14px;margin:2px 4px 2px 0;font-size:0.88rem;
   background:white;border:1px solid {SAKURA};color:{DEEP};}}
 .chip.done{{background:{SAKURA};}}
-.chip.now{{background:{ROSE};color:{PEARL};border-color:{ROSE};font-weight:600;}}
+.chip.now{{background:{ROSE_DARK};color:{PEARL};border-color:{ROSE_DARK};font-weight:600;}}
 .card{{background:white;border:1px solid {SAKURA};border-radius:14px;padding:14px 18px;color:{DEEP};}}
 </style>""", unsafe_allow_html=True)
 
@@ -86,6 +87,59 @@ def load_species() -> list[str]:
     items = d.get("species", d) if isinstance(d, dict) else d
     names = [s.get("canonicalName") or s["scientificName"] if isinstance(s, dict) else s for s in items]
     return sorted(set(names))
+
+
+EXTRA_NAMES = {"M2p": "Detector confidence strata, proportional",
+               "M4": "Two phase: pilot, then reviews to uncertain strata"}
+INTERVAL_NAMES = {"wilson_fpc": "Wilson, finite population", "wald_plugin": "Wald, plug in",
+                  "wald_smoothed": "Wald, smoothed", "bootstrap": "Bootstrap", "bayes_jeffreys": "Jeffreys (exploratory)"}
+
+
+@st.cache_data
+def load_benchmark() -> dict:
+    return json.load(open(ROOT / "results" / "experiment_b.json", encoding="utf8"))
+
+
+def design_name(code: str) -> str:
+    return au.METHOD_NAMES.get(code, EXTRA_NAMES.get(code, code))
+
+
+def benchmark_rows(bench: dict, threshold: float, budget: int) -> tuple[list[dict], dict]:
+    """Rows of the 1,000 repeat benchmark (experiment B) for one threshold and budget."""
+    res = bench["regimes"][str(threshold)]["results"][str(budget)]
+    rows = []
+    for code in [c for c in ["M0", "M1", "M2p", "M2", "M3", "M4"] if c in res]:
+        v = res[code]
+        head = "wilson_fpc" if code == "M0" else "wald_smoothed"
+        rr = v.get("yield_ratio_vs_M0")
+        rows.append({"code": code, "design": design_name(code),
+                     "found per 100 reviews": round(v["yield_mean"], 2),
+                     "times simple random": "1.00" if rr is None else f"{rr['ratio']:.2f} ({rr['lo']:.2f} to {rr['hi']:.2f})",
+                     "mean absolute error": round(100 * v["mae"], 2),
+                     "interval coverage": f"{100 * v['ci'][head]['coverage']:.1f}%"})
+    return rows, res
+
+
+def benchmark_sentence(res: dict, scheme: str) -> str:
+    """Plain sentence comparing the chosen design with simple random sampling, from the benchmark."""
+    ch, m0 = res[scheme], res["M0"]
+    codes = [c for c in ["M0", "M1", "M2p", "M2", "M3", "M4"] if c in res]
+    most_found = max(codes, key=lambda c: res[c]["yield_mean"])
+    most_precise = min(codes, key=lambda c: res[c]["mae"])
+    if scheme == "M0":
+        first = f"Over 1,000 repeated audits, simple random sampling finds {m0['yield_mean']:.2f} hidden events per 100 reviews"
+    else:
+        ratio = ch["yield_ratio_vs_M0"]["ratio"]
+        first = (f"Over 1,000 repeated audits, {design_name(scheme).lower()} finds {ch['yield_mean']:.2f} hidden events per 100 "
+                 f"reviews, {ratio:.2f} times simple random sampling")
+    err = (f"Its estimate misses the benchmark value by {100 * ch['mae']:.2f} percentage points on average, "
+           f"against {100 * m0['mae']:.2f} for simple random sampling.")
+    if most_found == most_precise:
+        best = f"At this setting {design_name(most_found).lower()} both finds the most and gives the most precise estimate."
+    else:
+        best = (f"At this setting the design that finds the most is {design_name(most_found).lower()}; "
+                f"the design with the most precise estimate is {design_name(most_precise).lower()}.")
+    return f"{first}. {err} {best}"
 
 
 def log() -> ReviewLog:
@@ -121,6 +175,7 @@ def chips(current: str | None, history: list[str]) -> str:
     return "".join(out)
 
 
+@st.cache_data(show_spinner=False)
 def run_design(pool: pd.DataFrame, scheme: str, budget: int, unres: int) -> dict:
     """Plan, review with the labelled stand in reviewer, and estimate."""
     if scheme == "M3" and "night" not in pool:
@@ -182,96 +237,115 @@ if screen.startswith("1"):
 
 elif screen.startswith("2"):
     st.header("Audit of AI negative events")
+    st.write("Pick a detector threshold, a review budget and a sampling design. The app draws the review sample, reads the "
+             "benchmark labels in place of a reviewer, and estimates how many animal events the detector called empty.")
     events = load_events()
+    bench = load_benchmark()
     with st.container(border=True):
-        c1, c2, c3, c4 = st.columns(4)
-        T = c1.select_slider("Detector threshold", [0.1, 0.2, 0.4, 0.6, 0.8], value=0.2,
+        c1, c2, c3, c4 = st.columns([1, 1, 1.7, 1])
+        T = c1.select_slider("Detector threshold", [0.1, 0.2, 0.4, 0.6, 0.8], value=0.2, key="threshold",
                              help="An event is called empty only if no frame reaches this animal confidence.")
-        budget = c2.slider("Review budget (events)", 50, 800, 200, step=50)
-        scheme = c3.selectbox("Sampling method", list(au.METHOD_NAMES), index=2, format_func=lambda k: au.METHOD_NAMES[k])
-        unres = c4.slider("Unresolved reviews (share)", 0, 10, 0, format="%d%%")
+        budget = c2.select_slider("Review budget (events)", [50, 100, 200, 400, 800], value=200, key="budget",
+                                  help="These budgets match the 1,000 repeat benchmark, so every setting has evidence behind it.")
+        scheme = c3.selectbox("Sampling method", list(au.METHOD_NAMES), index=2, key="method",
+                              format_func=lambda k: au.METHOD_NAMES[k])
+        unres = c4.slider("Unresolved reviews (share)", 0, 10, 0, format="%d%%", key="unresolved",
+                          help="Share of sampled events a reviewer could not decide. They are bounded, never guessed.")
     pool = au.build_pool(events, T)
     if scheme == "M3" and "night" not in pool:
         scheme = "M2"
-    e = run_design(pool, scheme, budget, unres)
-    base = run_design(pool, "M0", budget, unres)
+    try:
+        with st.spinner("Drawing the review sample and estimating the rate"):
+            e = run_design(pool, scheme, budget, unres)
+    except (ValueError, KeyError) as ex:
+        st.error(f"The audit could not run for this setting: {ex}")
+        st.stop()
     truth = float(pool["hit"].mean())
     st.caption("The reviewer here is a stand in that reads benchmark labels. In use, a person reviews each event.")
-    m = st.columns([1, 1.1, 1.5, 1.3])
+    m = st.columns([1, 1, 1.6, 1])
     m[0].metric("AI negative events", f"{len(pool):,}")
-    m[1].metric("Estimated omission rate", f"{100 * e['estimate']:.2f}%")
+    m[1].metric("Estimated rate", f"{100 * e['estimate']:.2f}%", help="False omission rate estimated from this run.")
     iname, (lo, hi) = au.headline_interval(e)
-    m[2].metric(f"95% interval ({iname})", f"{100 * lo:.2f}% to {100 * hi:.2f}%")
-    m[3].metric("Hidden found per 100 reviews", f"{e['yield_per_100_reviews']:.1f}",
-                delta=f"{e['yield_per_100_reviews'] - base['yield_per_100_reviews']:+.1f} vs simple random",
-                delta_color="off")
-    st.markdown(f"<div class='card'>Reviewed <b>{e['reviewed']}</b> events, found <b>{e['hidden_found']}</b> with an animal, "
-                f"<b>{e['unresolved']}</b> unresolved. Benchmark value for this pool, known only because the data are labelled: "
-                f"<b>{100 * truth:.2f}%</b>.</div>", unsafe_allow_html=True)
+    m[2].metric("95% interval", f"{100 * lo:.2f}% to {100 * hi:.2f}%", help=f"Headline interval for this design: {INTERVAL_NAMES.get(iname, iname)}.")
+    m[3].metric("Found per 100", f"{e['yield_per_100_reviews']:.1f}",
+                help="Hidden events found in this single run. The panel below averages 1,000 runs.")
+    st.markdown(f"<div class='card'>This run reviewed <b>{e['reviewed']}</b> events, found <b>{e['hidden_found']}</b> with an animal "
+                f"and left <b>{e['unresolved']}</b> unresolved. Benchmark value for this pool, known only because the data are "
+                f"labelled: <b>{100 * truth:.2f}%</b>.</div>", unsafe_allow_html=True)
     if "sensitivity" in e:
         sb = e["sensitivity"]
         st.info(f"Unresolved reviews are handled by bounds, not guessed: the rate lies between {100 * sb['lower_bound']:.2f}% and "
                 f"{100 * sb['upper_bound']:.2f}% if every unresolved event were empty or an animal.")
 
+    rows, res = benchmark_rows(bench, T, budget)
     left, right = st.columns(2)
     with left:
-        st.subheader("Intervals against the benchmark")
+        st.subheader("This run: intervals against the benchmark")
         fig, ax = new_fig(6.0, 3.2)
         items = list(e["interval"].items())
         for i, (k_, v) in enumerate(items):
-            ax.plot([100 * v[0], 100 * v[1]], [i, i], color=ROSE, lw=3, solid_capstyle="round")
+            ax.plot([100 * v[0], 100 * v[1]], [i, i], color=ROSE if k_ == iname else SAKURA, lw=4, solid_capstyle="round")
             ax.plot([100 * e["estimate"]], [i], "o", color=DEEP, ms=5)
         ax.axvline(100 * truth, color=DEEP, ls="--", lw=1.2, label="benchmark value")
         ax.set_yticks(range(len(items)))
-        ax.set_yticklabels([k_ for k_, _ in items])
+        ax.set_yticklabels([INTERVAL_NAMES.get(k_, k_) + (" (headline)" if k_ == iname else "") for k_, _ in items])
         ax.invert_yaxis()
         ax.set_xlabel("False omission rate (%)")
         ax.legend(frameon=False, fontsize=8)
         fig.tight_layout()
         st.pyplot(fig)
         plt.close(fig)
+        st.dataframe(pd.DataFrame([{"interval": INTERVAL_NAMES.get(k_, k_), "lower %": round(100 * v[0], 2),
+                                    "upper %": round(100 * v[1], 2)} for k_, v in items]),
+                     hide_index=True, use_container_width=True)
     with right:
-        st.subheader("Chosen design against simple random")
+        st.subheader("1,000 repeated audits at this setting")
         fig, ax = new_fig(6.0, 3.2)
-        labels = [au.METHOD_NAMES[scheme] if scheme != "M0" else "Chosen (simple random)", "Simple random"]
-        vals = [e["yield_per_100_reviews"], base["yield_per_100_reviews"]]
-        bars = ax.bar(["Chosen", "Simple random"], vals, color=[ROSE, SAKURA], width=0.5)
-        for b, v in zip(bars, vals):
-            ax.text(b.get_x() + b.get_width() / 2, v, f"{v:.1f}", ha="center", va="bottom", color=DEEP, fontsize=9)
-        ax.set_ylabel("Hidden found per 100 reviews")
+        codes = [r_["code"] for r_ in rows]
+        vals = [r_["found per 100 reviews"] for r_ in rows]
+        bars = ax.bar(codes, vals, color=[ROSE if c == scheme else SAKURA for c in codes], width=0.6)
+        for b_, v_ in zip(bars, vals):
+            ax.text(b_.get_x() + b_.get_width() / 2, v_, f"{v_:.2f}", ha="center", va="bottom", color=DEEP, fontsize=8)
+        ax.axhline(res["M0"]["yield_mean"], color=DEEP, ls="--", lw=1.0, label="simple random")
+        ax.set_ylabel("Hidden events found per 100 reviews")
+        ax.legend(frameon=False, fontsize=8)
         fig.tight_layout()
         st.pyplot(fig)
         plt.close(fig)
-        st.caption(f"Chosen method: {au.METHOD_NAMES[scheme]}. Same budget, same threshold, same stand in reviewer. "
-                   "Risk weighting pays off most in the stress regime (threshold 0.6 or higher, see results/RESULTS.md); "
-                   "at low thresholds simple random can do as well or better.")
+    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True,
+                 column_config={"code": st.column_config.TextColumn(width="small"),
+                                "design": st.column_config.TextColumn(width="large")})
+    st.markdown(f"<div class='card'>{benchmark_sentence(res, scheme)}</div>", unsafe_allow_html=True)
+    st.caption("Each value in the right panel averages 1,000 seeded audits on the labelled benchmark (BORROWED), read from "
+               "results/experiment_b.json. The single run on the left is one draw, so it can land above or below that average. "
+               "Times simple random shows a 95% bootstrap interval. Mean absolute error is the average distance between the estimate "
+               "and the benchmark value, in percentage points. Interval coverage is how often the headline interval held the benchmark value.")
 
     if "strata" in e:
-        st.subheader("Where the reviews went")
-        sd = pd.DataFrame(e["strata"])
+        st.subheader("Where this run spent its reviews")
+        sd = pd.DataFrame(e["strata"]).assign(stratum=lambda d: d["stratum"].replace({"none": "no detection"}))
         fig, ax = new_fig(9.0, 3.0)
         x = np.arange(len(sd))
         ax.bar(x - 0.2, sd["pool"] / sd["pool"].sum(), 0.4, color=SAKURA, label="share of pool")
         ax.bar(x + 0.2, sd["reviewed"] / max(sd["reviewed"].sum(), 1), 0.4, color=ROSE, label="share of reviews")
         ax.set_xticks(x)
-        ax.set_xticklabels(sd["stratum"], rotation=30, ha="right")
+        ax.set_xticklabels(sd["stratum"], rotation=20, ha="right")
         ax.set_ylabel("Share")
         ax.legend(frameon=False, fontsize=8)
         fig.tight_layout()
         st.pyplot(fig)
         plt.close(fig)
         with st.expander("Strata table"):
-            st.dataframe(sd, use_container_width=True)
-    with st.expander("All intervals as a table"):
-        st.dataframe(pd.DataFrame([{"interval": k_, "lower %": 100 * v[0], "upper %": 100 * v[1]} for k_, v in e["interval"].items()]),
-                     use_container_width=True)
+            st.dataframe(sd, hide_index=True, use_container_width=True)
     with st.expander("How to read this screen"):
         st.write("The false omission rate is the share of events that contain an animal among those the detector called empty. "
-                 "The interval shows how sure the audit is after the chosen number of reviews. Risk weighted sampling spends reviews "
-                 "where hidden animals are likelier, so it finds more of them per review than simple random sampling. "
-                 "The dashed line is known only because this benchmark is fully labelled.")
+                 "The interval shows how sure the audit is after the chosen number of reviews. Risk weighted designs spend reviews "
+                 "where hidden animals are likelier, so on average they find more of them per review than simple random sampling, "
+                 "which helps recover missed records. Finding more is not the same as estimating better: compare the mean absolute "
+                 "error column before choosing a design for reporting. The dashed lines are known only because this benchmark is "
+                 "fully labelled.")
     report_text = audit_report(e, T, LABEL)
-    d1, d2, _ = st.columns([1, 1, 3])
+    d1, d2, _ = st.columns([1.1, 1.5, 2.4])
     d1.download_button("Download report", report_text, "scope_audit_report.md")
     d2.download_button("Download numbers (JSON)", json.dumps(e, indent=2, default=str), "scope_audit_numbers.json")
     st.caption("The false omission rate is the share of animal events inside the AI negative pool. It is not the miss rate. "
